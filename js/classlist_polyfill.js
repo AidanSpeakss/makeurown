@@ -3,7 +3,7 @@
       "classList" in document.documentElement) {
     return;
   }
-
+  
   var prototype = Array.prototype,
       push = prototype.push,
       splice = prototype.splice,
