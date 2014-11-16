@@ -20,7 +20,7 @@ Many thanks to [rayhaanj](https://github.com/rayhaanj), [Mechazawa](https://gith
 ### Screenshot
 
 <p align="center">
-  <img src="http://pictures.gabrielecirulli.com/2048-20140309-234100.png" alt="Screenshot"/>
+  <img src="https://raw.githubusercontent.com/cdivry/2048-with-IMAGES/master/screenshot.png" alt="Screenshot"/>
 </p>
 
 That screenshot is fake, by the way. I never reached 2048 :smile:
