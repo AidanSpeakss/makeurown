@@ -381,7 +381,7 @@ hr {
     font-size: 0px; }
     @media screen and (max-width: 520px) {
       .tile.tile-512 .tile-inner {
-        font-size: 25px; } }
+        font-size: 0px; } }
   .tile.tile-1024 .tile-inner {
     color: #f9f6f2;
     background: none repeat scroll 0% 0% rgba(238, 228, 218, 0.35);
@@ -392,7 +392,7 @@ hr {
     font-size: 0px; }
     @media screen and (max-width: 520px) {
       .tile.tile-1024 .tile-inner {
-        font-size: 15px; } }
+        font-size: 0px; } }
   .tile.tile-2048 .tile-inner {
     color: #f9f6f2;
     background: none repeat scroll 0% 0% rgba(238, 228, 218, 0.35);
@@ -734,7 +734,7 @@ hr {
     transform: translate(202px, 202px); }
 
   .tile .tile-inner {
-    font-size: 35px; }
+    font-size: 0px; }
 
   .game-message p {
     font-size: 30px !important;
