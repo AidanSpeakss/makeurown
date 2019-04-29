@@ -1,3 +1,4 @@
+document.body.getElementsByClass('sam')[0].innerHTML = "<h1> Change Images </h1><br><p> Image for 2 </p><textarea class='input2' placeholder='www.starwars.com/darkvader.png'></textarea><br><p> Image for 4 </p><textarea class='input4' placeholder='www.starwars.com/lukeskywalker.png'></textarea><br><p> Image for 8 </p><textarea class='input8' placeholder='www.starwars.com/yoda.png'></textarea><br><p> Image for 16 </p><textarea class='input16' placeholder='www.starwars.com/samtheevil.png'></textarea><br><p> Image for 32 </p><textarea class='input32' placeholder='www.starwars.com/aidanthehacker.png'></textarea><br><p> Image for 64 </p><textarea class='input64' placeholder='www.starwars.com/urmom.png'></textarea><br><p> Image for 128 </p><textarea class='input128' placeholder='www.starwars.com/urdad.png'></textarea><br><p> Image for 256 </p><textarea class='input256' placeholder='www.starwars.com/ursister1.png'></textarea><br><p> Image for 512 </p><textarea class='input512' placeholder='www.starwars.com/ursister2.png'></textarea><br><p> Image for 1024 </p><textarea class='input1024' placeholder='www.starwars.com/urbrother1.png'></textarea><br><p> Image for 2048 </p><textarea class='input2048' placeholder='www.starwars.com/urbrother2_aidan_ur_awesome_sam_keep_doing_you.png'></textarea><br>"
 var no2 = document.cookie = 'game2=' + game2input + '"';
 var no4 = document.cookie = 'game4=' + game4input + '"';
 var no8 = document.cookie = 'game8=' + game8input + '"';
@@ -11,7 +12,7 @@ var no1024 = document.cookie = 'game1024=' + game1024input + '"';
 var no2048 = document.cookie = 'game2048=' + game2048input + '"';
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
-var game8input = document.getElementsByClassName("input8")[0].value;
+var game8input = document.getElementsByClassName("input8")[0].value; 
 var game16input = document.getElementsByClassName("input16")[0].value;
 var game32input = document.getElementsByClassName("input32")[0].value;
 var game64input = document.getElementsByClassName("input64")[0].value;
@@ -31,5 +32,3 @@ addStyleString('  .tile.tile-256 .tile-inner { background-image: url("' + no256 
 addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
-
-document.body.getElementsByClass('sam')[0].innerHTML = "<h1> Change Images </h1><br><p> Image for 2 </p><textarea class='input2' placeholder='www.starwars.com/darkvader.png'></textarea><br><p> Image for 4 </p><textarea class='input4' placeholder='www.starwars.com/lukeskywalker.png'></textarea><br><p> Image for 8 </p><textarea class='input8' placeholder='www.starwars.com/yoda.png'></textarea><br><p> Image for 16 </p><textarea class='input16' placeholder='www.starwars.com/samtheevil.png'></textarea><br><p> Image for 32 </p><textarea class='input32' placeholder='www.starwars.com/aidanthehacker.png'></textarea><br><p> Image for 64 </p><textarea class='input64' placeholder='www.starwars.com/urmom.png'></textarea><br><p> Image for 128 </p><textarea class='input128' placeholder='www.starwars.com/urdad.png'></textarea><br><p> Image for 256 </p><textarea class='input256' placeholder='www.starwars.com/ursister1.png'></textarea><br><p> Image for 512 </p><textarea class='input512' placeholder='www.starwars.com/ursister2.png'></textarea><br><p> Image for 1024 </p><textarea class='input1024' placeholder='www.starwars.com/urbrother1.png'></textarea><br><p> Image for 2048 </p><textarea class='input2048' placeholder='www.starwars.com/urbrother2_aidan_ur_awesome_sam_keep_doing_you.png'></textarea><br>"
