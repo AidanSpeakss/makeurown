@@ -13,15 +13,18 @@ flex: 1
 }
 
 ::-webkit-input-placeholder { /* Edge */
-  color: #232323;
+  color: #928c8c;
+  font-style: italic;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #232323;
+  color: #928c8c;
+  afont-style: italic;
 }
 
 ::placeholder {
   color: #232323;
+  font-style: italic;
 }
 
 textarea {
