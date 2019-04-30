@@ -18,17 +18,17 @@ flex: 1;
 }
 
 ::-webkit-input-placeholder { /* Edge */
-  color: #928c8c;
+  color: rgb(169, 169, 169);
   font-style: italic;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #928c8c;
+  color: rgb(169, 169, 169);
   afont-style: italic;
 }
 
 ::placeholder {
-  color: #232323;
+  color: rgb(169, 169, 169);
   font-style: italic;
 }
 
