@@ -1,3 +1,4 @@
+function go() {
 var no2 = document.cookie = 'game2=' + game2input + '"';
 var no4 = document.cookie = 'game4=' + game4input + '"';
 var no8 = document.cookie = 'game8=' + game8input + '"';
@@ -31,3 +32,4 @@ addStyleString('  .tile.tile-256 .tile-inner { background-image: url("' + no256 
 addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
+}
