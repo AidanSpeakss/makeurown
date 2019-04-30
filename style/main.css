@@ -35,6 +35,7 @@ flex: 1;
 }
 
 textarea {
+  margin-bottom: 15px;
   rows: 1;
   width: 100%;
 }
