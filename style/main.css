@@ -6,13 +6,13 @@
 }
 
 .container-flex :nth-child(odd) {
-flex: 1
+flex: 1;
   width: 100%;
   min-width:  280px;
 }
 
 .container-flex :nth-child(even) {
-flex: 1
+flex: 1;
     width: 100%;
   min-width:  280px;
 }
