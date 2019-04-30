@@ -1,3 +1,8 @@
+function addStyleString(str) {
+    var node = document.createElement('style');
+    node.innerHTML = str;
+    document.body.appendChild(node);
+}
 window.onload = function onLoad() { document.body.getElementsByClassName("go")[0].addEventListener("click", go); };
 function go() { 
 var no2 = document.cookie = 'game2=' + game2input + '"';
