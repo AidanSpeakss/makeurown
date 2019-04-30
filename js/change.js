@@ -1,5 +1,5 @@
-window.onload = document.body.getElementsByClassName("go")[0].addEventListener("click", go);
-function go() {
+window.onload = function onLoad() { document.body.getElementsByClassName("go")[0].addEventListener("click", go); };
+function go() { 
 var no2 = document.cookie = 'game2=' + game2input + '"';
 var no4 = document.cookie = 'game4=' + game4input + '"';
 var no8 = document.cookie = 'game8=' + game8input + '"';
