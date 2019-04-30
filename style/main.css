@@ -1,4 +1,17 @@
 @import url(fonts/clear-sans.css);
+
+::-webkit-input-placeholder { /* Edge */
+  color: #232323a;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #232323;
+}
+
+::placeholder {
+  color: #232323;
+}
+
 html, body {
   margin: 0;
   padding: 0;
