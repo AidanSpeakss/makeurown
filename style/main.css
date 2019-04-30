@@ -2,17 +2,18 @@
 
 .container-flex {
   display: flex;
-  
 }
+
 .container-flex :nth-child(odd) {
 flex: 1
 }
+
 .container-flex :nth-child(even) {
 flex: 1
 }
 
 ::-webkit-input-placeholder { /* Edge */
-  color: #232323a;
+  color: #232323;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
