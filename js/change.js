@@ -4,7 +4,6 @@ function addStyleString(str) {
     document.body.appendChild(node);
 }
 
-document.body.getElementsByClassName("go")[0].addEventListener("click", do); });
 function do() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
@@ -54,3 +53,4 @@ addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
 }
+document.body.getElementsByClassName("go")[0].addEventListener("click", do); });
