@@ -53,4 +53,4 @@ addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
 }
-document.body.getElementsByClassName("go")[0].addEventListener("click", do); });
+document.body.getElementsByClassName("go")[0].addEventListener("click", do);
