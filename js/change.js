@@ -4,7 +4,7 @@ function addStyleString(str) {
     document.body.appendChild(node);
 }
 
-window.addEventListener('load', function go() { document.body.getElementsByClassName("go")[0].addEventListener("click", go); };
+window.addEventListener('load', function go() { document.body.getElementsByClassName("go")[0].addEventListener("click", go); });
 function go() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
