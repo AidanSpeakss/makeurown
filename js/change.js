@@ -3,6 +3,7 @@ function addStyleString(str) {
     node.innerHTML = str;
     document.body.appendChild(node);
 }
+window.onload = function go(){
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
@@ -51,4 +52,4 @@ addStyleString('  .tile.tile-256 .tile-inner { background-image: url("' + no256 
 addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
-});
+}};
