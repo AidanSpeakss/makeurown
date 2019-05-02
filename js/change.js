@@ -3,7 +3,15 @@ function addStyleString(str) {
     node.innerHTML = str;
     document.body.appendChild(node);
 }
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 window.onload = function go(){
+    if (getCookie("images_changed") == "true") {
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
@@ -28,6 +36,8 @@ document.cookie = 'game256=' + game256input + '"';
 document.cookie = 'game512=' + game512input + '"';
 document.cookie = 'game1024=' + game1024input + '"';
 document.cookie = 'game2048=' + game2048input + '"';
+document.cookie = 'images_changed=true';
+
     
 var no2 = document.cookie = 'game2=' + game2input + '"';
 var no4 = document.cookie = 'game4=' + game4input + '"';
@@ -52,4 +62,4 @@ addStyleString('  .tile.tile-256 .tile-inner { background-image: url("' + no256 
 addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
-})};
+    }})};
