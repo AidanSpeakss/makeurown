@@ -52,4 +52,4 @@ addStyleString('  .tile.tile-256 .tile-inner { background-image: url("' + no256 
 addStyleString('  .tile.tile-512 .tile-inner { background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner { background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-image: url("' + no2048 + '"}');
-}};
+})};
