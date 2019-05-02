@@ -62,4 +62,4 @@ addStyleString('  .tile.tile-256 .tile-inner {  background: unset; background-si
 addStyleString('  .tile.tile-512 .tile-inner {  background: unset;  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"}');
 addStyleString('  .tile.tile-1024 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"}');
 addStyleString('  .tile.tile-2048 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"}');
-)}}};
+})}};
