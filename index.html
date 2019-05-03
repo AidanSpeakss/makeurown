@@ -131,6 +131,14 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
   </script>
+	<script>
+		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+	</script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
 <form method="signInWithEmailAndPassword" " action="index.html">
