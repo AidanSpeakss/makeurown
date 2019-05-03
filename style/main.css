@@ -700,8 +700,9 @@ hr {
     margin-right: 10px;
     float: left;
     border-radius: 3px;
-    background-color: #000; }
-    .grid-cell:last-child {
+  }
+  
+  .grid-cell:last-child {
       margin-right: 0; }
 
   .tile-container {
