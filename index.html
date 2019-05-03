@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script>
+		ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+			
+});
+	</script>
+	<script>
+		// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+	</script>
+	<script>
+		var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  signInSuccessUrl: 'https://aidanspeakss.github.io/makeurown/',
+  signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    firebase.auth.PhoneAuthProvider.PROVIDER_ID
+  ],
+  // Terms of service url.
+  tosUrl: 'https://aidanspeakss.github.io/makeurown/tos.html',
+  // Privacy policy url.
+  privacyPolicyUrl: 'https://aidanspeakss.github.io/makeurown/privacy.html'
+};
+	</script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 	  <script src="js/change.js"></script>
@@ -132,7 +175,11 @@
 });
 	</script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<h1>Welcome to 2048: Custum Mode</h1>
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
 <form method="signInWithEmailAndPassword" " action="index.html">
 <div class="box">
 <h1>Dashboard</h1>
