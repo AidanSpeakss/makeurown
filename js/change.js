@@ -11,17 +11,17 @@ function getCookie(name) {
 }
 funtion injectCSS() {
 if (getCookie("images_changed") == "true") {
-addStyleString('  .tile.tile-2 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"}');
-addStyleString('  .tile.tile-4 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"}');
-addStyleString('  .tile.tile-8 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '"}');
-addStyleString('  .tile.tile-16 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no16 + '"}');
-addStyleString('  .tile.tile-32 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no32 + '"}');
-addStyleString('  .tile.tile-64 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no64 + '"}');
-addStyleString('  .tile.tile-128 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no128 + '"}');
-addStyleString('  .tile.tile-256 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no256 + '"}');
-addStyleString('  .tile.tile-512 .tile-inner {  background: unset;  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"}');
-addStyleString('  .tile.tile-1024 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"}');
-addStyleString('  .tile.tile-2048 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"}');
+addStyleString('  .tile.tile-2 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"}');
+addStyleString('  .tile.tile-4 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"}');
+addStyleString('  .tile.tile-8 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '"}');
+addStyleString('  .tile.tile-16 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no16 + '"}');
+addStyleString('  .tile.tile-32 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no32 + '"}');
+addStyleString('  .tile.tile-64 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no64 + '"}');
+addStyleString('  .tile.tile-128 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no128 + '"}');
+addStyleString('  .tile.tile-256 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no256 + '"}');
+addStyleString('  .tile.tile-512 .tile-inner { background: unset; background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"}');
+addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"}');
+addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"}');
 }
 }
 window.onload = function go(){
