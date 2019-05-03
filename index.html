@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-  <!-- Loads the entire Firebase JavaScript SDK -->
-  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAUwZv6XXMjz3pH-RCpvrmS4zsVY2yRVTk",
+    authDomain: "github-thing-85048.firebaseapp.com",
+    databaseURL: "https://github-thing-85048.firebaseio.com",
+    projectId: "github-thing-85048",
+    storageBucket: "github-thing-85048.appspot.com",
+    messagingSenderId: "443195271357",
+    appId: "1:443195271357:web:55a238fe25cb0a7b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	
   <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      var firebaseConfig = {
-        // ...
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-  </script
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-	<script>
+	  		// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 		ui.start('#firebaseui-auth-container', {
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -24,12 +29,6 @@
   // Other config options...
 			
 });
-	</script>
-	<script>
-		// Initialize the FirebaseUI Widget using Firebase.
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
-	</script>
-	<script>
 		var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
@@ -164,27 +163,6 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-  <!-- Loads the entire Firebase JavaScript SDK -->
-  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
-
-  <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      var firebaseConfig = {
-        // ...
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-  </script>
-	<script>
-		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-});
-	</script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 <!-- The surrounding HTML is left untouched by FirebaseUI.
      Your app may use that space for branding, controls and other customizations.-->
