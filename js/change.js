@@ -25,6 +25,7 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 }
 }
 window.onload = function go(){
+injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
@@ -63,5 +64,4 @@ var no256 = document.cookie = 'game256=' + game256input + '"';
 var no512 = document.cookie = 'game512=' + game512input + '"';
 var no1024 = document.cookie = 'game1024=' + game1024input + '"';
 var no2048 = document.cookie = 'game2048=' + game2048input + '"';
-injectCSS();
 })};
