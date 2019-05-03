@@ -9,7 +9,21 @@ function getCookie(name) {
   var parts = value.split("; " + name + "=");
   if (parts.length == 2) return parts.pop().split(";").shift();
 }
-
+funtion injectCSS() {
+if (getCookie("images_changed") == "true") {
+addStyleString('  .tile.tile-2 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"}');
+addStyleString('  .tile.tile-4 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"}');
+addStyleString('  .tile.tile-8 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '"}');
+addStyleString('  .tile.tile-16 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no16 + '"}');
+addStyleString('  .tile.tile-32 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no32 + '"}');
+addStyleString('  .tile.tile-64 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no64 + '"}');
+addStyleString('  .tile.tile-128 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no128 + '"}');
+addStyleString('  .tile.tile-256 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no256 + '"}');
+addStyleString('  .tile.tile-512 .tile-inner {  background: unset;  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"}');
+addStyleString('  .tile.tile-1024 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"}');
+addStyleString('  .tile.tile-2048 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"}');
+}
+}
 window.onload = function go(){
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
@@ -49,16 +63,5 @@ var no256 = document.cookie = 'game256=' + game256input + '"';
 var no512 = document.cookie = 'game512=' + game512input + '"';
 var no1024 = document.cookie = 'game1024=' + game1024input + '"';
 var no2048 = document.cookie = 'game2048=' + game2048input + '"';
-        if (getCookie("images_changed") == "true") {
-addStyleString('  .tile.tile-2 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"}');
-addStyleString('  .tile.tile-4 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"}');
-addStyleString('  .tile.tile-8 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '"}');
-addStyleString('  .tile.tile-16 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no16 + '"}');
-addStyleString('  .tile.tile-32 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no32 + '"}');
-addStyleString('  .tile.tile-64 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no64 + '"}');
-addStyleString('  .tile.tile-128 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no128 + '"}');
-addStyleString('  .tile.tile-256 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no256 + '"}');
-addStyleString('  .tile.tile-512 .tile-inner {  background: unset;  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"}');
-addStyleString('  .tile.tile-1024 .tile-inner {  background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"}');
-addStyleString('  .tile.tile-2048 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"}');
-}})};
+injectCSS();
+})};
