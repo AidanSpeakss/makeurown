@@ -11,17 +11,17 @@ function getCookie(name) {
 }
 function injectCSS() {
 if (getCookie("images_changed") == "true") {
-var no2 = document.cookie = 'game2=' + game2input + '"';
-var no4 = document.cookie = 'game4=' + game4input + '"';
-var no8 = document.cookie = 'game8=' + game8input + '"';
-var no16 = document.cookie = 'game16=' + game16input + '"';
-var no32 = document.cookie = 'game32=' + game32input + '"';
-var no64 = document.cookie = 'game64=' + game64input + '"';
-var no128 = document.cookie = 'game128=' + game128input + '"';
-var no256 = document.cookie = 'game256=' + game256input + '"';
-var no512 = document.cookie = 'game512=' + game512input + '"';
-var no1024 = document.cookie = 'game1024=' + game1024input + '"';
-var no2048 = document.cookie = 'game2048=' + game2048input + '"';
+var no2 = getCookie("game2");
+var no4 = getCookie("game4");
+var no8 = getCookie("game8");
+var no16 = getCookie("game16");
+var no32 = getCookie("game32");
+var no64 = getCookie("game64");
+var no128 = getCookie("game128")
+var no256 = getCookie("game256")
+var no512 = getCookie("game512");
+var no1024 = getCookie("game1024");
+var no2048 = getCookie("game2048");
     
 addStyleString('  .tile.tile-2 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"}');
 addStyleString('  .tile.tile-4 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"}');
