@@ -8,6 +8,9 @@
 #firebaseui-auth-container {
   display: none;
 }
+#loader {
+  display: none;
+}
 .game-intro2 {
   float: left;
   line-height: 42px;
