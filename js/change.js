@@ -39,16 +39,14 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 window.onload = function go(){
     function signWindow() {
     document.body.getElementsByClassName("restart-button2")[0].addEventListener("click", function displaySignWindow() { 
-addStyleString('  #auth { display: inline-block;} ');
-addStyleString(' #authbehind {display: inline-block; } ');
+addStyleString('  #firebaseui-auth-container { display: inline-block;} ');
         var showing = true;
     });
     if(showing = true) {
 document.body.getElementById("authbehind")[0].addEventListener("click", function closeSignWindow() { 
-addStyleString(' #auth { display: none;}');
-addStyleString(' #authbehind {display: none; }');
-})};
-};
+addStyleString('  #firebaseui-auth-container { display: none;} ');
+    })
+    };
 injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
