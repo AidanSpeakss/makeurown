@@ -45,10 +45,10 @@ addStyleString(' #authbehind {display: inline-block; } ');
     });
     if(showing = true) {
 document.body.getElementById("authbehind")[0].addEventListener("click", function closeSignWindow() { 
-addStyleString('  #auth { display: none;} ');
- addStyleString(' #authbehind {display: none; } ');
-    })
-    };
+addStyleString(' #auth { display: none;}');
+addStyleString(' #authbehind {display: none; }');
+})};
+};
 injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
