@@ -44,10 +44,9 @@ addStyleString(' #loader {display: inline-block; } ');
         var showing = true;
     });
     if(showing = true) {
-document.body.getElementById("authbehind")[0].addEventListener("click", function closeSignWindow() { 
 addStyleString(' #firebaseui-auth-container { display: none;}');
 addStyleString(' #loader {display: none; }');
-})};
+};
 };
 injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
