@@ -1,4 +1,39 @@
 @import url(fonts/clear-sans.css);
+
+.above-game2:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+#auth {
+ display: none;
+}
+#authbehind {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.game-intro2 {
+  float: left;
+  line-height: 42px;
+  margin-bottom: 0; }
+
+.restart-button2 {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  display: block;
+  text-align: center;
+  float: right; }
+
+.game-explanation2 {
+  margin-top: 50px; }
+
 .go {
 margin-top: 15px;
 }
