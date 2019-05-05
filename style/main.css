@@ -1,5 +1,7 @@
 @import url(fonts/clear-sans.css);
-
+#container-above-game2 {
+  display: flex;
+}
 .above-game2:after {
   content: "";
   display: block;
@@ -12,7 +14,6 @@
   display: none;
 }
 .game-intro2 {
-  float: left;
   line-height: 42px;
   margin-bottom: 0; }
 
@@ -25,9 +26,7 @@
   color: #f9f6f2;
   height: 40px;
   line-height: 42px;
-  display: block;
-  text-align: center;
-  float: right; }
+}
 
 .game-explanation2 {
   margin-top: 50px; }
