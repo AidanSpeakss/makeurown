@@ -397,6 +397,7 @@ hr {
     background: none repeat scroll 0% 0% rgba(238, 228, 218, 0.35);
     background-image: url('../img/4.png');
     background-repeat: no-repeat;
+background-size: contain; 
     background-position: right top;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
   .tile.tile-8 .tile-inner {
@@ -405,6 +406,7 @@ hr {
     background: none repeat scroll 0% 0% rgba(238, 228, 218, 0.35);
     background-image: url('../img/8.png');
     background-repeat: no-repeat;
+background-size: contain; 
     background-position: right top;}
   .tile.tile-16 .tile-inner {
     color: #f9f6f2;
@@ -415,6 +417,7 @@ hr {
     background-position: right top;}
   .tile.tile-32 .tile-inner {
     color: #f9f6f2;
+background-size: contain; 
     background: none repeat scroll 0% 0% rgba(238, 228, 218, 0.35);
     background-image: url('../img/32.png');
     background-repeat: no-repeat;
