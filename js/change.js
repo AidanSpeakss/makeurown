@@ -38,7 +38,7 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 }
 window.onload = function go(){
     function signWindow() {
-    document.body.getElementsByClassName("restart-button2")[0].addEventListener("click", function displaySignWindow() { 
+    document.body.getElementById("container-above-game").getElementsByClassName("restart-button2")[0].addEventListener("click", function displaySignWindow() { 
 addStyleString('  #firebaseui-auth-container { display: inline-block;} ');
 addStyleString(' #loader {display: inline-block; } ');
         var showing = true;
