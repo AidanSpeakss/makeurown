@@ -36,21 +36,20 @@ addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; backgr
 addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
 }
-window.onload = function (){
+
     function signWindow() {
     document.body.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
-    var node = document.createElement('style');
-    node.innerHTML = '  #firebaseui-auth-container { display: inline-block; } ';
-    document.body.appendChild(node);
-        addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
-addStyleString(' #loader { display: inline-block; } ');
-        var showing = true;
-        if(showing = true) {
-addStyleString(' #firebaseui-auth-container { display: none;}');
-addStyleString(' #loader {display: none; }');
-                }});
-
+                   addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
+                   addStyleString(' #loader { display: inline-block; } ');
+            var showing = true;
+     if(showing = true) {
+            addStyleString(' #firebaseui-auth-container { display: none;}');
+            addStyleString(' #loader {display: none; }');
+     }});
 };
+
+window.onload = function (){
+signWindow();
 injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
