@@ -42,10 +42,11 @@ window.onload = function go(){
 addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
 addStyleString(' #loader { display: inline-block; } ');
         var showing = true;
-    });
-    if(showing = true) {
+        if(showing = true) {
 addStyleString(' #firebaseui-auth-container { display: none;}');
 addStyleString(' #loader {display: none; }');
+                });
+
 };
 };
 injectCSS();
