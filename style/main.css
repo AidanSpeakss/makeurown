@@ -2,6 +2,9 @@
 #container-above-game2 {
   display: flex;
 }
+.firebaseui-auth2 {
+display: none;
+}
 .above-game2:after {
   content: "";
   display: block;
