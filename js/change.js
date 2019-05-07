@@ -6,9 +6,20 @@ function addStyleString(str) {
     var firebaseuiauthcontainer = "firebaseui-auth-container-style";
     var firebaseuiauth = "firebaseui-auth2-style";
     var loader = "loader-style";
-
-function addStyleString2(str, str2) {
-    if (str2 != document.body.getElementsByClassName(loader)[0].className, str2 != document.body.getElementsByClassName(firebaseuiauth)[0].className, str2 != document.body.getElementsByClassName(firebaseuiauthcontainer)[0].className) {
+    function addStyleString2(str, str2) {
+                var ifloader = "none";
+                var iffirebaseuiauth = "none";
+                var iffirebaseuiauthcontainer = "none";
+if (document.body.getElementsByClassName(loader)[0]) {
+ifloader = document.body.getElementsByClassName(loader)[0].className;
+}
+if (document.body.getElementsByClassName(firebaseuiauth)[0]) {
+iffirebaseuiauth = document.body.getElementsByClassName(firebaseuiauth)[0].className;
+}
+if (document.body.getElementsByClassName(firebaseuiauthcontainer)[0]) {
+iffirebaseuiauthcontainer = document.body.getElementsByClassName(firebaseuiauthcontainer)[0].className;
+}
+    if (str2 != ifloader, str2 != iffirebaseuiauth, str2 != iffirebaseuiauthcontainer) {
     var node = document.createElement('style');
     node.innerHTML = str;
     node.className = str2;
