@@ -227,6 +227,8 @@ firebase.initializeApp({
   projectId: 'github-thing-85048',
 }, "database" );
 		
+		var db = firebase.firestore();
+
 firebase.firestore().enablePersistence()
   .catch(function(err) {
       if (err.code == 'failed-precondition') {
