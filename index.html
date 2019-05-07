@@ -220,8 +220,47 @@ ui.start('#firebaseui-auth-container', uiConfig);
 	
 
 </script>
-	
-	
+	<script>firebase.initializeApp({
+  apiKey: 'AIzaSyAUwZv6XXMjz3pH-RCpvrmS4zsVY2yRVTk',
+  authDomain: 'github-thing-85048.firebaseapp.com',
+  projectId: 'github-thing-85048',
+}
+);
+
+firebase.firestore().enablePersistence()
+  .catch(function(err) {
+      if (err.code == 'failed-precondition') {
+          // Multiple tabs open, persistence can only be enabled
+          // in one tab at a a time.
+          // ...
+      } else if (err.code == 'unimplemented') {
+          // The current browser does not support all of the
+          // features required to enable persistence
+          // ...
+      }
+  });
+// Subsequent queries will use persistence, if it was enabled successfully
+		
+		db.collection("users").add({
+    gameState: localStorage.getItem('gameState');
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
+
+		
+		
+		db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+});
+	  
+	  
+	  </script>
 	
 <script>
 </script>
