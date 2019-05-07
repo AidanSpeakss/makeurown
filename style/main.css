@@ -1,4 +1,7 @@
 @import url(fonts/clear-sans.css);
+.restart-button3 {
+  display: none;
+}
 #container-above-game2 {
   display: flex;
 }
