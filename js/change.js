@@ -69,7 +69,20 @@ function signWindow() {
                    addStyleString2(' #loader { display: inline-block; } ', loader);
     });
     };
-
+var loggedIn = local.storage.getItem("firebaseui::rememberedAccounts");
+if (loggedIn) {
+function logOut() {
+            addStyleString('  .restart-button3 { display: inline-block; } ');
+                addStyleString('  .restart-button2 { display: none; } ');
+    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
+localStorage.removeItem("firebaseui::rememberedAccounts");
+        sessionStorage.removeItem('firebase:authUser');
+                           addStyleString('  .restart-button2 { display: inline-block; } ');
+                   addStyleString(' .restart-button3 { display: none; } ');
+    });
+    };
+}
+};
 window.onload = function (){
 signWindow();
 injectCSS();
