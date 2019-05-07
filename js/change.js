@@ -7,7 +7,7 @@ function addStyleString(str) {
         var firebaseuiauth = "firebaseui-auth2-style";
         var loader = "loader-style";
 function addStyleString2(str, str2) {
-    if (str2 !== loader, str2 !== firebaseuiauth, str2 !== firebaseuiauthcontainer) {
+    if (str2 != loader, str2 != firebaseuiauth, str2 != firebaseuiauthcontainer) {
     var node = document.createElement('style');
     node.innerHTML = str;
     node.className = str2;
