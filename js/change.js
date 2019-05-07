@@ -27,8 +27,6 @@ iffirebaseuiauthcontainer = document.body.getElementsByClassName(firebaseuiauthc
     }
         else {
     document.body.getElementsByClassName(str2)[0].remove();
-    document.body.getElementsByClassName(str2)[0].remove();
-    document.body.getElementsByClassName(str2)[0].remove();
         }
 }
 function getCookie(name) {
