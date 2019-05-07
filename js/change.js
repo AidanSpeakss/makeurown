@@ -37,8 +37,8 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 }
 }
 
-    function signWindow() {
-    document.body.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
+function signWindow() {
+    document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
                    addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
                    addStyleString(' #loader { display: inline-block; } ');
             var showing = true;
