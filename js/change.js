@@ -8,7 +8,7 @@ function addStyleString(str) {
     var loader = "loader-style";
 
 function addStyleString2(str, str2) {
-    if (str2 != document.body.getElementsByClassName(loader)[0], str2 != document.body.getElementsByClassName(firebaseuiauth)[0], str2 != document.body.getElementsByClassName(firebaseuiauthcontainer)[0]) {
+    if (str2 != document.body.getElementsByClassName(loader)[0].className, str2 != document.body.getElementsByClassName(firebaseuiauth)[0].className, str2 != document.body.getElementsByClassName(firebaseuiauthcontainer)[0].className) {
     var node = document.createElement('style');
     node.innerHTML = str;
     node.className = str2;
