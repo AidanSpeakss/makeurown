@@ -243,25 +243,26 @@ firebase.firestore().enablePersistence()
   });
 		var gameStat = localStorage.getItem('gameState');
 // Subsequent queries will use persistence, if it was enabled successfully
-		db.collection("users").add({
+		var uuid = firebase.auth().currentUser.getIdToken;
+
+		function saveGame() {
+					db.collection("users").doc(uuid).set({
     gameState: gameStat
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
 });
+		}
 
 		
 		
-		db.collection("users").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-    });
-});
-	  
-	  
+		
+		function getGame() {
+			var ls = db.collection("cities").doc(uuid).getString("gameState");
+			console.log(ls);
+		}	
+		window.onload = function () {
+			saveGame();
+			getGame();
+		}
+		
 	  </script>
 	
 <script>
