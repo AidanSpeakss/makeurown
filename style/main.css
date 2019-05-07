@@ -570,17 +570,19 @@ hr {
   animation: pop 200ms ease 100ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards; 
+    }
 
 .above-game:after {
   content: "";
-  display: block;
-  clear: both; }
+  display: flex;
+  clear: both; 
+    }
 
 .game-intro {
-  float: left;
   line-height: 42px;
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+    }
 
 .restart-button {
   display: inline-block;
@@ -591,9 +593,7 @@ hr {
   color: #f9f6f2;
   height: 40px;
   line-height: 42px;
-  display: block;
-  text-align: center;
-  float: right; }
+    }
 
 .game-explanation {
   margin-top: 50px; }
