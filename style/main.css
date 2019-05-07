@@ -2,7 +2,7 @@
 #container-above-game2 {
   display: flex;
 }
-.firebaseui-auth2 {
+#firebaseui-auth2 {
 display: none;
 }
 .above-game2:after {
