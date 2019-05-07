@@ -239,10 +239,10 @@ firebase.firestore().enablePersistence()
           // ...
       }
   });
+		var gameStat = localStorage.getItem('gameState');
 // Subsequent queries will use persistence, if it was enabled successfully
-		
 		db.collection("users").add({
-    gameState: localStorage.getItem('gameState');
+    gameState: gameStat
 })
 .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
