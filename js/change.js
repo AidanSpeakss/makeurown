@@ -41,12 +41,7 @@ function signWindow() {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
                    addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
                    addStyleString(' #loader { display: inline-block; } ');
-            var showing = true;
-     if(showing = true) {
-            addStyleString(' #firebaseui-auth-container { display: none;}');
-            addStyleString(' #loader {display: none; }');
-     }});
-};
+    };
 
 window.onload = function (){
 signWindow();
