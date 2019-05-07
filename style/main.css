@@ -2,6 +2,10 @@
 #container-above-game2 {
   display: flex;
 }
+#firebaseui-auth-container {
+  border: none;
+    margin-left: 1px solid #d8d4d0;
+}
 #firebaseui-auth2 .title2,.firebaseui-auth-container {
  flex: 1;
 }
