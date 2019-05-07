@@ -70,6 +70,7 @@ function signWindow() {
     });
     };
 var loggedIn = local.storage.getItem("firebaseui::rememberedAccounts");
+
 if (loggedIn) {
 function logOut() {
             addStyleString('  .restart-button3 { display: inline-block; } ');
@@ -81,7 +82,6 @@ localStorage.removeItem("firebaseui::rememberedAccounts");
                    addStyleString(' .restart-button3 { display: none; } ');
     });
     };
-}
 };
 window.onload = function (){
 signWindow();
