@@ -183,11 +183,11 @@ ui.start('#firebaseui-auth-container', {
 	
 var uiConfig = {
   callbacks: {
-    signInSuccessWithAuthResult: function(authResult) {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      return true;
+      return false;
     },
     uiShown: function() {
       // The widget is rendered.
@@ -197,6 +197,8 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
+	  signInSuccessUrl: 'none',
+
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
