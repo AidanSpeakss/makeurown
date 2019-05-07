@@ -4,10 +4,11 @@ function addStyleString(str) {
     document.body.appendChild(node);
 }
     var firebaseuiauthcontainer = "firebaseui-auth-container-style";
-        var firebaseuiauth = "firebaseui-auth2-style";
-        var loader = "loader-style";
+    var firebaseuiauth = "firebaseui-auth2-style";
+    var loader = "loader-style";
+
 function addStyleString2(str, str2) {
-    if (str2 != loader, str2 != firebaseuiauth, str2 != firebaseuiauthcontainer) {
+    if (str2 != document.body.getElementsByClassName(loader)[0], str2 != document.body.getElementsByClassName(firebaseuiauth)[0], str2 != document.body.getElementsByClassName(firebaseuiauthcontainer)[0]) {
     var node = document.createElement('style');
     node.innerHTML = str;
     node.className = str2;
