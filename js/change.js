@@ -3,6 +3,7 @@ function addStyleString(str) {
     node.innerHTML = str;
     document.body.appendChild(node);
 }
+
 function addStyleString2(str, str2) {
     if (!document.body.getElementsByClassName(str2)[0]) {
     var node = document.createElement('style');
@@ -14,12 +15,13 @@ function addStyleString2(str, str2) {
     document.body.getElementsByClassName(str2)[0].remove();
         }
 }
+
 function getCookie(name) {
   var value = "; " + document.cookie;
   var parts = value.split("; " + name + "=");
   if (parts.length == 2) return parts.pop().split(";").shift();
 }
-function injectCSS() {
+
 if (getCookie("images_changed") == "true") {
 var no2 = getCookie("game2");
 var no4 = getCookie("game4");
@@ -32,7 +34,6 @@ var no256 = getCookie("game256")
 var no512 = getCookie("game512");
 var no1024 = getCookie("game1024");
 var no2048 = getCookie("game2048");
-    
 addStyleString('  .tile.tile-2 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '}');
 addStyleString('  .tile.tile-4 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '}');
 addStyleString('  .tile.tile-8 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '}');
@@ -45,44 +46,36 @@ addStyleString('  .tile.tile-512 .tile-inner { background: unset; background-siz
 addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
 addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-}
 
 var user = firebase.auth().currentUser;
-
 if (user) {
             addStyleString('  .restart-button3 { display: inline-block; } ');
-                addStyleString('  .restart-button2 { display: none; } ');
-        document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
-firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-}).catch(function(error) {
-  // An error happened.
-});
-                           addStyleString('  .restart-button2 { display: inline-block; } ');
-                   addStyleString(' .restart-button3 { display: none; } ');
+            addStyleString('  .restart-button2 { display: none; } ');
+    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            }).catch(function(error) {
+            // An error happened.
+          });
+     addStyleString('  .restart-button2 { display: inline-block; } ');
+     addStyleString(' .restart-button3 { display: none; } ');
     });
 } else {
 }
 
-function signWindow() {
-    if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login"){
-
+if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login"){
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
-        addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
-                           addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
-        addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
-        document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
-    });
+                addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
+                addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
+                addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
+            document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
+        });
     }
-    };
-if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close"){
-document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
-        document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-});
+else {
+    document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
 }
+
 window.onload = function (){
-signWindow();
-injectCSS();
 document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() { 
 var game2input = document.getElementsByClassName("input2")[0].value;
 var game4input = document.getElementsByClassName("input4")[0].value;
@@ -95,7 +88,6 @@ var game256input = document.getElementsByClassName("input256")[0].value;
 var game512input = document.getElementsByClassName("input512")[0].value;
 var game1024input = document.getElementsByClassName("input1024")[0].value;
 var game2048input = document.getElementsByClassName("input2048")[0].value;
-
 document.cookie = 'game2=' + game2input + '"';
 document.cookie = 'game4=' + game4input + '"';
 document.cookie = 'game8=' + game8input + '"';
