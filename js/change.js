@@ -60,19 +60,19 @@ if (user) {
         addStyleString(' .restart-button3 { display: none; } ');
     });
 }
-var switch = null;
+var value1 = null;
 if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login") {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
-        if (switch = false) {
+        if (value1 = false) {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
         addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
-        switch = true;
+        value1 = true;
         }
-        if (switch = true) {
+        if (value1 = true) {
                      document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-        switch = false;
+        value1 = false;
         }
     });
 }
