@@ -60,7 +60,7 @@ if (user) {
         addStyleString(' .restart-button3 { display: none; } ');
     });
 }
-var value1 = null;
+var value1 = "false";
 if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login") {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
         if (value1 == "false") {
@@ -72,7 +72,7 @@ if (document.getElementById("container-above-game2").getElementsByClassName("res
         }
         if (value1 == "true") {
                      document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-        value1 = false;
+        value1 = "false";
         }
     });
 }
