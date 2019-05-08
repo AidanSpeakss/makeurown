@@ -47,6 +47,22 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 }
 }
 
+var user = firebase.auth().currentUser;
+
+if (user) {
+            addStyleString('  .restart-button3 { display: inline-block; } ');
+                addStyleString('  .restart-button2 { display: none; } ');
+        document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
+var gameStat = localStorage.getItem("gameState");
+        sessionStorage.clear();
+        localStorage.clear();
+            localStorage.setItem("gameState", gameStat);
+                           addStyleString('  .restart-button2 { display: inline-block; } ');
+                   addStyleString(' .restart-button3 { display: none; } ');
+    });
+} else {
+}
+
 function signWindow() {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
@@ -54,20 +70,7 @@ function signWindow() {
                    addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
     });
     };
-var loggedIn = localStorage.getItem("firebaseui::rememberedAccounts");
 
-if (loggedIn) {
-function logOut() {
-            addStyleString('  .restart-button3 { display: inline-block; } ');
-                addStyleString('  .restart-button2 { display: none; } ');
-    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
-localStorage.removeItem("firebaseui::rememberedAccounts");
-        sessionStorage.removeItem('firebase:authUser');
-                           addStyleString('  .restart-button2 { display: inline-block; } ');
-                   addStyleString(' .restart-button3 { display: none; } ');
-    });
-    };
-};
 window.onload = function (){
 signWindow();
 injectCSS();
