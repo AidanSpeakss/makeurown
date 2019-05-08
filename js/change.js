@@ -69,7 +69,7 @@ function signWindow() {
                    addStyleString2(' #loader { display: inline-block; } ', loader);
     });
     };
-var loggedIn = window.local.storage.getItem("firebaseui::rememberedAccounts");
+var loggedIn = document.localStorage.getItem("firebaseui::rememberedAccounts");
 
 if (loggedIn) {
 function logOut() {
