@@ -445,7 +445,7 @@ hr {
     @media screen and (max-width: 520px) {
       .tile.tile-128 .tile-inner {
         font-size: 0px; } }
-  .tile.tile-256 .tile-inner {
+  .tile.title-256 .tile-inner {
     background-image: url('../img/256.png');
     background-repeat: no-repeat;
     background-size: contain; 
