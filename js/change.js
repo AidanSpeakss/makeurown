@@ -53,10 +53,11 @@ if (user) {
             addStyleString('  .restart-button3 { display: inline-block; } ');
                 addStyleString('  .restart-button2 { display: none; } ');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function () { 
-var gameStat = localStorage.getItem("gameState");
-        sessionStorage.clear();
-        localStorage.clear();
-            localStorage.setItem("gameState", gameStat);
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
                            addStyleString('  .restart-button2 { display: inline-block; } ');
                    addStyleString(' .restart-button3 { display: none; } ');
     });
