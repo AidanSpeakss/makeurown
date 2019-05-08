@@ -63,7 +63,7 @@ if (user) {
 var value1 = null;
 if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login") {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
-        if (value1 = false || null) {
+        if (value1 == false || null) {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
         addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
