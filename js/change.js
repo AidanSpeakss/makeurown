@@ -70,7 +70,7 @@ if (document.getElementById("container-above-game2").getElementsByClassName("res
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
         value1 = true;
         }
-        if (value1 = true) {
+        if (value1 == true) {
                      document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
         value1 = false;
         }
