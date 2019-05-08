@@ -65,12 +65,15 @@ firebase.auth().signOut().then(function() {
 }
 
 function signWindow() {
+    if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login"){
+
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
                            addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
         addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
     });
+    }
     };
 if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close"){
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
