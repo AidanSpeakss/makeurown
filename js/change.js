@@ -3,23 +3,8 @@ function addStyleString(str) {
     node.innerHTML = str;
     document.body.appendChild(node);
 }
-    var firebaseuiauthcontainer = "firebaseui-auth-container-style";
-    var firebaseuiauth = "firebaseui-auth2-style";
-    var loader = "loader-style";
-    function addStyleString2(str, str2) {
-                var ifloader = "none";
-                var iffirebaseuiauth = "none";
-                var iffirebaseuiauthcontainer = "none";
-if (document.body.getElementsByClassName(loader)[0]) {
-ifloader = document.body.getElementsByClassName(loader)[0].className;
-}
-if (document.body.getElementsByClassName(firebaseuiauth)[0]) {
-iffirebaseuiauth = document.body.getElementsByClassName(firebaseuiauth)[0].className;
-}
-if (document.body.getElementsByClassName(firebaseuiauthcontainer)[0]) {
-iffirebaseuiauthcontainer = document.body.getElementsByClassName(firebaseuiauthcontainer)[0].className;
-}
-    if (str2 != ifloader, str2 != iffirebaseuiauth, str2 != iffirebaseuiauthcontainer) {
+function addStyleString2(str, str2) {
+    if (!document.body.getElementsByClassName(str2)[0]) {
     var node = document.createElement('style');
     node.innerHTML = str;
     node.className = str2;
@@ -64,9 +49,9 @@ addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; backgr
 
 function signWindow() {
     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function () { 
-        addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', firebaseuiauthcontainer);
-                           addStyleString2('  #firebaseui-auth2 { display: flex; } ', firebaseuiauth);
-                   addStyleString2(' #loader { display: inline-block; } ', loader);
+        addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
+                           addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
+                   addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
     });
     };
 var loggedIn = localStorage.getItem("firebaseui::rememberedAccounts");
