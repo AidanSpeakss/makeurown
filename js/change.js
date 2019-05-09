@@ -73,7 +73,10 @@ if (document.getElementById("container-above-game2").getElementsByClassName("res
         else {
             if (value1 == "true") {
                      document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-        value1 = "false";
+                addStyleString('  #firebaseui-auth-container { display: none; } ');
+        addStyleString('  #firebaseui-auth2 { display: none; } ');
+        addStyleString(' #loader { display: none; } ');
+                value1 = "false";
         }
         }
     });
