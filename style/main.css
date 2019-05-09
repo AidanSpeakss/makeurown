@@ -1,4 +1,20 @@
 @import url(fonts/clear-sans.css);
+.profile {
+display: flex;
+}
+.title3 {
+    flex: 1;
+    background-image: url('../img/profile.png');
+    background-repeat: no-repeat;
+    background-size: contain; 
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+    width: 29px;
+    height: 29px;
+    line-height: 67.5px; 
+}
+.profile-picture {
+ flex: 1; 
+}
 .restart-button3 {
   display: none;
   background: #8f7a66;
