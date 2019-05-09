@@ -3,16 +3,27 @@
 display: flex;
 }
 .title3 {
+      font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+    flex: 2;
+    
+}
+.title4 {
+          font-size: 20px;
+  font-style: italic;
+  margin: 0;
     flex: 1;
-    background-image: url('../img/profile.png');
+    
+}
+.profile-picture {
+        background-image: url('../img/profile.png');
     background-repeat: no-repeat;
     background-size: contain; 
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
     width: 29px;
     height: 29px;
     line-height: 67.5px; 
-}
-.profile-picture {
  flex: 1; 
 }
 .restart-button3 {
