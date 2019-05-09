@@ -5,7 +5,7 @@ border-left: 1px solid #d8d4d0;
   max-width: 1px;
 }
 .profile-desc {
-  margin-right: 10px;
+  padding-right: 10px;
               font-size: 15px;
   max-width: 300px;
   margin: 0;
