@@ -46,7 +46,10 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-
+var photo = firebase.auth().currentUser.photoURL;
+addStyleString('  .profile-photo { background-image: url("' + photo + '}');
+var name = firebase.auth().currentUser.displayName; 
+document.getElementByClassName("profile-desc")[0].innerText = name;
 var user = firebase.auth().currentUser;
 if (user) {
     addStyleString('  .restart-button3 { display: inline-block; } ');
