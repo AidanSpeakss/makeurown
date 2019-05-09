@@ -1,21 +1,4 @@
 @import url(fonts/clear-sans.css);
-.profile {
-display: flex;
-}
-.title3 {
-      font-size: 80px;
-  font-weight: bold;
-  margin: 0;
-    flex: 2;
-    
-}
-.title4 {
-          font-size: 20px;
-  font-style: italic;
-  margin: 0;
-    flex: 1;
-    
-}
 .profile-picture {
         background-image: url('../img/profile.png');
     background-repeat: no-repeat;
