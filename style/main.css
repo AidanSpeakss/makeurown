@@ -1,5 +1,6 @@
 @import url(fonts/clear-sans.css);
 .profile-picture {
+            border-left: 1px solid #d8d4d0;
         background-image: url('../img/profile.png');
     background-repeat: no-repeat;
     background-size: contain; 
@@ -24,8 +25,7 @@
 }
 #firebaseui-auth-container {
   border: none;
-    border-left: 1px solid #d8d4d0;
-}
+    border-left: 1px solid #d8d4d0;}
 #firebaseui-auth2 .title2 {
       align-self: center;
 
