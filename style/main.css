@@ -11,6 +11,7 @@
 }
 #container-above-game2 {
   display: flex;
+}
 #firebaseui-auth-container {
   border: none;
     border-left: 1px solid #d8d4d0;
