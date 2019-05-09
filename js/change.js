@@ -61,8 +61,7 @@ if (user) {
     });
 }
 var value1 = "false";
-if (document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login") {
-    document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
+document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
         if (value1 == "false") {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
@@ -80,7 +79,6 @@ if (document.getElementById("container-above-game2").getElementsByClassName("res
         }
         }
     });
-}
 
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
