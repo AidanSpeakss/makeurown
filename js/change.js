@@ -1,6 +1,7 @@
-function addStyleString(str) {
+function addStyleString(str, str2) {
     var node = document.createElement('style');
     node.innerHTML = str;
+    node.className = str2;
     document.body.appendChild(node);
 }
 
@@ -52,18 +53,24 @@ if (user) {
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
         if (value1 == "false") {
-        addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
-        addStyleString('  #firebaseui-auth2 { display: flex; } ');
-        addStyleString(' #loader { display: inline-block; } ');
+            document.getElementsByClassName('class4')[0].remove();
+            document.getElementsByClassName('class5')[0].remove();
+            document.getElementsByClassName('class6')[0].remove();
+        addStyleString('  #firebaseui-auth-container { display: inline-block; } ', 'class1');
+        addStyleString('  #firebaseui-auth2 { display: flex; } ', 'class2');
+        addStyleString(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
         value1 = "true";
         }
         else {
             if (value1 == "true") {
                      document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-                addStyleString('  #firebaseui-auth-container { display: none; } ');
-        addStyleString('  #firebaseui-auth2 { display: none; } ');
-        addStyleString(' #loader { display: none; } ');
+                            document.getElementsByClassName('class1')[0].remove();
+                            document.getElementsByClassName('class2')[0].remove();
+                            document.getElementsByClassName('class3')[0].remove();
+                addStyleString('  #firebaseui-auth-container { display: none; } ', 'class4');
+        addStyleString('  #firebaseui-auth2 { display: none; } ', 'class5');
+        addStyleString(' #loader { display: none; } ', 'class6');
                 value1 = "false";
         }
         }
