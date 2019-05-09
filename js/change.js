@@ -57,7 +57,7 @@ var photo = firebase.auth().currentUser.photoURL;
 addStyleString('  .profile-photo { background-image: url("' + photo + '}');
 }
 
-if (firebase.auth().currentUser;) {
+if (firebase.auth().currentUser) {
     addStyleString('  .restart-button3 { display: inline-block; } ');
     addStyleString('  .restart-button2 { display: none; } ');
     document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
