@@ -1,7 +1,7 @@
 @import url(fonts/clear-sans.css);
 .profile-picture {
             border-left: 1px solid #d8d4d0;
-        background-image: url('../img/profile.png');
+        background-image: url('../img/2.png');
     background-repeat: no-repeat;
     background-size: contain; 
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
