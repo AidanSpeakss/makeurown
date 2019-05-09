@@ -5,10 +5,9 @@ border-left: 1px solid #d8d4d0;
   max-width: 1px;
 }
 .profile-desc {
+  margin-right: 10px;
               font-size: 15px;
-  font-style: italic;
-    max-width: 300px;
-  margin: 0;
+  max-width: 300px;
 }
 .profile {
 display: flex;
