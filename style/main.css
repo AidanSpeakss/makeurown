@@ -15,6 +15,7 @@ display: flex;
       justify-content: flex-end;
 }
 .profile-picture {
+  margin-left: 10px;
     max-width: 29px;
         background-image: url('../img/2.png');
     background-repeat: no-repeat;
