@@ -4,17 +4,6 @@ function addStyleString(str) {
     document.body.appendChild(node);
 }
 
-function addStyleString2(str, str2) {
-    if (!document.body.getElementsByClassName(str2)[0]) {
-        var node = document.createElement('style');
-        node.innerHTML = str;
-        node.className = str2;
-        document.body.appendChild(node);
-    } else {
-        document.body.getElementsByClassName(str2)[0].remove();
-    }
-}
-
 function getCookie(name) {
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
@@ -63,9 +52,9 @@ if (user) {
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
         if (value1 == "false") {
-        addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', "firebaseuiauthcontainerstyle");
-        addStyleString2('  #firebaseui-auth2 { display: flex; } ', "firebaseuiauthstyle");
-        addStyleString2(' #loader { display: inline-block; } ', "loaderstyle");
+        addStyleString('  #firebaseui-auth-container { display: inline-block; } ');
+        addStyleString('  #firebaseui-auth2 { display: flex; } ');
+        addStyleString(' #loader { display: inline-block; } ');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
         value1 = "true";
         }
