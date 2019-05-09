@@ -1,14 +1,21 @@
 @import url(fonts/clear-sans.css);
+.vertical-seperate {
+border-left: 1px solid #d8d4d0;
+  width: 1px;
+  max-width: 1px;
+}
 .profile-desc {
               font-size: 15px;
   font-style: italic;
+    max-width: 300px;
   margin: 0;
 }
 .profile {
 display: flex;
+      justify-content: flex-end;
 }
 .profile-picture {
-            border-left: 1px solid #d8d4d0;
+    max-width: 29px;
         background-image: url('../img/2.png');
     background-repeat: no-repeat;
     background-size: contain; 
