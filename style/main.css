@@ -1,4 +1,12 @@
 @import url(fonts/clear-sans.css);
+.profile-desc {
+              font-size: 15px;
+  font-style: italic;
+  margin: 0;
+}
+.profile {
+display: flex;
+}
 .profile-picture {
             border-left: 1px solid #d8d4d0;
         background-image: url('../img/2.png');
