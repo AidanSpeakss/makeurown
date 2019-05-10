@@ -46,22 +46,22 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-if (firebase.auth().currentUser) {
-if (firebase.auth().currentUser.displayName) {
-var name = firebase.auth().currentUser.displayName;
+if (firebaseui.auth().currentUser) {
+if (firebaseui.auth().currentUser.displayName) {
+var name = firebaseui.auth().currentUser.displayName;
 document.getElementByClassName("profile-desc")[0].innerText = name;
 }
 
-if (firebase.auth().currentUser.photoURL) {
-var photo = firebase.auth().currentUser.photoURL;
+if (firebaseui.auth().currentUser.photoURL) {
+var photo = firebaseui.auth().currentUser.photoURL;
 addStyleString('  .profile-photo { background-image: url("' + photo + '}');
 }
 }
-if (firebase.auth().currentUser) {
+if (firebaseui.auth().currentUser) {
     addStyleString('  .restart-button3 { display: inline-block; } ');
     addStyleString('  .restart-button2 { display: none; } ');
     document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
-        firebase.auth().signOut().then(function() {
+        firebaseui.auth().signOut().then(function() {
             // Sign-out successful.
         }).catch(function(error) {
             // An error happened.
