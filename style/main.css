@@ -668,6 +668,7 @@ hr {
   background: #8f7a66;
   border-radius: 3px;
   padding: 0 20px;
+  text-align: center;
   text-decoration: none;
   color: #f9f6f2;
   height: 40px;
@@ -715,6 +716,7 @@ hr {
     width: 42%;
     padding: 0;
     display: block;
+    text-align: center;
     box-sizing: border-box;
     margin-top: 2px; }
 
