@@ -264,9 +264,9 @@ firebase.auth.Auth.Persistence.LOCAL
             
             var gameStat = localStorage.getItem('gameState');
             // Subsequent queries will use persistence, if it was enabled successfully
-            var uuid = firebase.auth().currentUser.uid;
-
-            function saveGame() {
+            function gameState() { setTimeout(function(){             
+                
+           function saveGame() {
                 db.collection("users").doc(uuid).set({
                     gameState: gameStat
                 });
@@ -275,10 +275,13 @@ firebase.auth.Auth.Persistence.LOCAL
             function getGame() {
                 var ls = db.collection("cities").doc(uuid).getString("gameState");
                 console.log(ls);
-            }
+            }           var uuid = firebase.auth().currentUser.uid;
+                        }, 3000);
+            
+            
+                                 }
             window.onload = function() {
-                saveGame();
-                getGame();
+                gameState();
             }
         </script>
 
