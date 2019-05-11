@@ -120,7 +120,7 @@ window.onload = function() {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    addStyleString('  .restart-button3 { display: inline-block; } ');
+      addStyleString('  .restart-button3 { display: inline-block; } ');
     addStyleString('  .restart-button2 { display: none; } ');
     document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
         firebase.auth().signOut().then(function() {
@@ -130,6 +130,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
         addStyleString('  .restart-button2 { display: inline-block; } ');
         addStyleString(' .restart-button3 { display: none; } ');
+    });
   } else {
     // No user is signed in.
   }
