@@ -246,7 +246,23 @@
                 privacyPolicyUrl: 'https://aidanspeakss.github.io/makeurown/privacy.html'
             };
 
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+.then(function() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+    var provider2 = new firebase.auth.EmailAuthProvider();
+    var provider3 = new firebase.auth.PhoneAuthProvider();
+  // In memory persistence will be applied to the signed in Google user
+  // even though the persistence was set to 'none' and a page redirect
+  // occurred.
+  return firebase.auth().signInWithRedirect(provider);
+     return firebase.auth().signInWithRedirect(provider2);
+     return firebase.auth().signInWithRedirect(provider3);
+})
+.catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+});
 
             // The start method will wait until the DOM is loaded.
             ui.start('#firebaseui-auth-container', uiConfig);
