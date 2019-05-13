@@ -125,8 +125,11 @@ firebase.auth.getRedirectResult().then(function(result) {
                         // An error happened.
                         console.log("Sign out failed.");
                     });
-                    addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5'); addStyleString2(' .restart-button3 { display: none; } ', 'class4');
+            });
+                    addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5'); 
+                    addStyleString2(' .restart-button3 { display: none; } ', 'class4');
                 });
+        
         });
 
 } else {
