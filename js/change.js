@@ -130,10 +130,11 @@ addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'cla
         addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
         addStyleString2(' .restart-button3 { display: none; } ', 'class4');
     });
+            });
+
   } else {
     // No user is signed in.
       console.log("No user detected. ELSE");
-
   } 
 }
 });
