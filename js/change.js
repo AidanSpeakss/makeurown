@@ -137,10 +137,13 @@ addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'cla
   } 
 }
 });
-       var devmode1 = false;
+var devmode1 = false;
+
 if (devmode1 = true) {
 firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
+  
+if (user) {
+ 
 if (firebase.auth().currentUser.displayName) {
 var name = firebaseui.auth().currentUser.displayName;
 document.getElementByClassName("profile-desc")[0].innerText = name;
@@ -161,6 +164,7 @@ addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'cla
         }).catch(function(error) {
             // An error happened.
         });
+    });
         addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
         addStyleString2(' .restart-button3 { display: none; } ', 'class4');
     });
