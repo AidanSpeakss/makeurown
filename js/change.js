@@ -95,6 +95,50 @@ window.onload = function() {
     })
 };
 
+
+firebase.auth.getRedirectResult().then(function(result) {
+          console.log("Get redirect result function succesfully called.");
+    if(result) {
+          console.log(result);
+    }
+    if (result.user) {
+          console.log(result.user);
+    }
+    
+    if (result.user) {
+       if (result.user.displayName) {
+var name = firebaseui.auth().currentUser.displayName;
+document.getElementByClassName("profile-desc")[0].innerText = name;
+}
+
+if (result.user.photoURL) {
+var photo = firebase.auth().currentUser.photoURL;
+addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'class6');
+}
+                      addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+        addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+        addStyleString2(' #loader { display: none; } ', 'class3');
+      addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
+    addStyleString2('  .restart-button2 { display: none; } ', 'class5');
+    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+            console.log("Sign out failed.");
+        });
+        addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
+        addStyleString2(' .restart-button3 { display: none; } ', 'class4');
+    });
+  } else {
+    // No user is signed in.
+      console.log("No user detected. ELSE");
+
+  } 
+}
+});
+       var devmode1 = false;
+if (devmode1 = true) {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 if (firebase.auth().currentUser.displayName) {
@@ -124,3 +168,4 @@ addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'cla
     // No user is signed in.
   }
 });
+}
