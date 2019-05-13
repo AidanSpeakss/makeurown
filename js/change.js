@@ -1,12 +1,11 @@
 function addStyleString2(str, str2) {
-    if(document.getElementsByClassName(str2)[0]) {
+    if (document.getElementsByClassName(str2)[0]) {
         document.getElementsByClassName(str2)[0].remove();
-       }
-    else {
-    var node = document.createElement('style');
-    node.innerHTML = str;
-    node.className = str2;
-    document.body.appendChild(node);
+    } else {
+        var node = document.createElement('style');
+        node.innerHTML = str;
+        node.className = str2;
+        document.body.appendChild(node);
     }
 }
 
@@ -49,23 +48,22 @@ if (getCookie("images_changed") == "true") {
 
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
-        if (value1 == "false") {
+    if (value1 == "false") {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', 'class1');
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', 'class2');
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
         value1 = "true";
+    } else {
+        if (value1 == "true") {
+            document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
+            addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+            addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+            addStyleString2(' #loader { display: none; } ', 'class3');
+            value1 = "false";
         }
-        else {
-            if (value1 == "true") {
-                     document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-                addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
-        addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
-        addStyleString2(' #loader { display: none; } ', 'class3');
-                value1 = "false";
-        }
-        }
-    });
+    }
+});
 
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
@@ -97,80 +95,80 @@ window.onload = function() {
 
 
 firebase.auth.getRedirectResult().then(function(result) {
-          console.log("Get redirect result function succesfully called.");
-    if(result) {
-          console.log(result);
+    console.log("Get redirect result function succesfully called.");
+    if (result) {
+        console.log(result);
     }
     if (result.user) {
-          console.log(result.user);
+        console.log(result.user);
     }
-    
-    if (result.user) {
-       if (result.user.displayName) {
-var name = firebaseui.auth().currentUser.displayName;
-document.getElementByClassName("profile-desc")[0].innerText = name;
-}
 
-if (result.user.photoURL) {
-var photo = firebase.auth().currentUser.photoURL;
-addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'class6');
-}
-                      addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+    if (result.user) {
+        if (result.user.displayName) {
+            var name = firebaseui.auth().currentUser.displayName;
+            document.getElementByClassName("profile-desc")[0].innerText = name;
+        }
+
+        if (result.user.photoURL) {
+            var photo = firebase.auth().currentUser.photoURL;
+            addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'class6');
+        }
+        addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
         addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
         addStyleString2(' #loader { display: none; } ', 'class3');
-      addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
-    addStyleString2('  .restart-button2 { display: none; } ', 'class5');
-    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
-        firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
-            console.log("Sign out failed.");
+        addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
+        addStyleString2('  .restart-button2 { display: none; } ', 'class5');
+        document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
+                firebase.auth().signOut().then(function() {
+                    // Sign-out successful.
+                }).catch(function(error) {
+                        // An error happened.
+                        console.log("Sign out failed.");
+                    }
+                    addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5'); addStyleString2(' .restart-button3 { display: none; } ', 'class4');
+                });
         });
-        addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
-        addStyleString2(' .restart-button3 { display: none; } ', 'class4');
-    });
-            });
 
-  } else {
+} else {
     // No user is signed in.
-      console.log("No user detected. ELSE");
-  } 
+    console.log("No user detected. ELSE");
+}
 }
 });
 var devmode1 = false;
 
 if (devmode1 = true) {
-firebase.auth().onAuthStateChanged(function(user) {
-  
-if (user) {
- 
-if (firebase.auth().currentUser.displayName) {
-var name = firebaseui.auth().currentUser.displayName;
-document.getElementByClassName("profile-desc")[0].innerText = name;
-}
+    firebase.auth().onAuthStateChanged(function(user) {
 
-if (firebase.auth().currentUser.photoURL) {
-var photo = firebase.auth().currentUser.photoURL;
-addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'class6');
-}
-                      addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
-        addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
-        addStyleString2(' #loader { display: none; } ', 'class3');
-      addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
-    addStyleString2('  .restart-button2 { display: none; } ', 'class5');
-    document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
-        firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
-        });
-    });
-        addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
-        addStyleString2(' .restart-button3 { display: none; } ', 'class4');
-    });
-  } else {
-    // No user is signed in.
-  }
+            if (user) {
+
+                if (firebase.auth().currentUser.displayName) {
+                    var name = firebaseui.auth().currentUser.displayName;
+                    document.getElementByClassName("profile-desc")[0].innerText = name;
+                }
+
+                if (firebase.auth().currentUser.photoURL) {
+                    var photo = firebase.auth().currentUser.photoURL;
+                    addStyleString2('  .profile-photo { background-image: url("' + photo + '}', 'class6');
+                }
+                addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+                addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+                addStyleString2(' #loader { display: none; } ', 'class3');
+                addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
+                addStyleString2('  .restart-button2 { display: none; } ', 'class5');
+                document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
+                    firebase.auth().signOut().then(function() {
+                        // Sign-out successful.
+                    }).catch(function(error) {
+                        // An error happened.
+                    });
+                });
+                addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
+                addStyleString2(' .restart-button3 { display: none; } ', 'class4');
+            });
+    }
+    else {
+        // No user is signed in.
+    }
 });
 }
