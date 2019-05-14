@@ -94,7 +94,7 @@ window.onload = function() {
 };
 
 
-firebase.auth.Auth.getRedirectResult().then(function(result) {
+firebase.auth().getRedirectResult().then(function(result) {
     console.log("Get redirect result function succesfully called.");
     if (result) {
         console.log(result); 
