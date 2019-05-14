@@ -148,9 +148,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 if (typing = true) {
 document.getElementsByClassName('login-hide')[0].style.display = "inline-block";
+document.getElementsByClassName('paused-button')[0].style.display = "inline-block";
+document.getElementsByClassName('lower-hide')[0].style.display = "inline-block";
     document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager_.js";
 }
 if (typing = false) {
 document.getElementsByClassName('login-hide')[0].style.display = "none";
+document.getElementsByClassName('paused-button')[0].style.display = "none";
+document.getElementsByClassName('lower-hide')[0].style.display = "none";
     document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager.js";
 }
