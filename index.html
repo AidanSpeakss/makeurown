@@ -190,7 +190,14 @@
             };
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
-
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+.then(function() {
+})
+.catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+});
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -245,15 +252,6 @@
                 // Privacy policy url.
                 privacyPolicyUrl: 'https://aidanspeakss.github.io/makeurown/privacy.html'
             };
-
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-.then(function() {
-})
-.catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-});
 
             // The start method will wait until the DOM is loaded.
             ui.start('#firebaseui-auth-container', uiConfig);
