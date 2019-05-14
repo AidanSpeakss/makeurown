@@ -1,6 +1,26 @@
 @import url(fonts/clear-sans.css);
+@media screen and (max-width: 520px) {
+  .lower-hide {
+    margin-top: 30px !important; 
+     }
+}
+.lower-hide {
+     display: block;
+     margin-top: 59px; 
+}
+.paused-button {
+    display: none;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    margin-left: 9px;
+}
 .login-hide {
-     display: none;
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -336,7 +356,7 @@ hr {
       line-height: 42px;
       margin-left: 9px; }
 
-.game-container .game-message a.keep-playing-button {
+.game-container .game-message a.` {
         display: none; }
 
 .game-container .game-message.game-won {
