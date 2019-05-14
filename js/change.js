@@ -45,7 +45,7 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-
+var typing = false;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -54,6 +54,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
         value1 = "true";
+        typing = true;
     } else {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
@@ -61,6 +62,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
             addStyleString2(' #loader { display: none; } ', 'class3');
             value1 = "false";
+            typing = false;
         }
     }
 });
@@ -143,3 +145,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("No user detected. Else Statement");
     }
 });
+
+if (typing = true) {
+document.getElementsByClassName('login-hide')[0].style.display = "inline-block";
+}
+else {
+document.getElementsByClassName('login-hide')[0].style.display = "none";
+}
