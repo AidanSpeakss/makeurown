@@ -60,9 +60,9 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
             addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
             addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
-            addStyleString2(' #loader { display: none; } ', 'class3');
-            value1 = "false";
+            addStyleString2(' #loader { display: none; } ', 'class3');            
             typing = false;
+            value1 = "false";
         }
     }
 });
@@ -150,7 +150,7 @@ if (typing = true) {
 document.getElementsByClassName('login-hide')[0].style.display = "inline-block";
     document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager_.js";
 }
-else {
+if (typing = false) {
 document.getElementsByClassName('login-hide')[0].style.display = "none";
     document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager.js";
 }
