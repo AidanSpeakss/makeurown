@@ -1,4 +1,4 @@
-# 2048 with IMAGES
+# 2048: CUSTOM
 
 A 2048 clone where users can save there progress across devices, generate their own custum 2048 games with images or animated GIF's easily. And save those custume games to the cloud.
 
