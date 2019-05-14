@@ -1,4 +1,3 @@
-if (typing = false) {
 function KeyboardInputManager() {
   this.events = {};
 
@@ -143,4 +142,3 @@ KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
   button.addEventListener("click", fn.bind(this));
   button.addEventListener(this.eventTouchend, fn.bind(this));
 };
-}
