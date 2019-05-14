@@ -104,7 +104,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (firebase.auth().currentUser.displayName) {
             localStorage.setItem('displayName', firebase.auth().currentUser.displayName);
             localStorage.setItem('displayNameExists', 'true');
-            document.getElementByClassName("profile-desc")[0].innerText = firebase.auth().currentUser.displayName;
+            document.getElementsByClassName("profile-desc")[0].innerText = firebase.auth().currentUser.displayName;
         }
         else {
             localStorage.setItem('displayNameExists', 'false');
@@ -112,7 +112,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (firebase.auth().currentUser.photoURL) {
             localStorage.setItem('photoURLExists', 'true');
             localStorage.setItem('photoURL', firebase.auth().currentUser.photoURL);
-            addStyleString2('  .profile-photo { background-image: url("' + firebase.auth().currentUser.photoURL + '}', 'class6');
+            addStyleString('  .profile-picture { background-image: url("' + firebase.auth().currentUser.photoURL + '}', 'class6');
         }
         else {
             localStorage.setItem('photoURLExists', 'false');
