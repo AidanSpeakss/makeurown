@@ -95,24 +95,24 @@ window.onload = function() {
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("Get redirect result function succesfully called.");
-    if (user) {
-        console.log(user); 
+    if (firebase.auth().currentUser) {
+        console.log(firebase.auth().currentUser); 
     }
     
-    if (user) {
+    if (firebase.auth().currentUser) {
         localStorage.setItem('signin', 'true');
-        if (user.displayName) {
-            localStorage.setItem('displayName', user.displayName);
+        if (firebase.auth().currentUser.displayName) {
+            localStorage.setItem('displayName', firebase.auth().currentUser.displayName);
             localStorage.setItem('displayNameExists', 'true');
-            document.getElementByClassName("profile-desc")[0].innerText = user.displayName;
+            document.getElementByClassName("profile-desc")[0].innerText = firebase.auth().currentUser.displayName;
         }
         else {
             localStorage.setItem('displayNameExists', 'false');
         }
-        if (user.photoURL) {
+        if (firebase.auth().currentUser.photoURL) {
             localStorage.setItem('photoURLExists', 'true');
-            localStorage.setItem('photoURL', user.photoURL);
-            addStyleString2('  .profile-photo { background-image: url("' + user.photoURL + '}', 'class6');
+            localStorage.setItem('photoURL', firebase.auth().currentUser.photoURL);
+            addStyleString2('  .profile-photo { background-image: url("' + firebase.auth().currentUser.photoURL + '}', 'class6');
         }
         else {
             localStorage.setItem('photoURLExists', 'false');
