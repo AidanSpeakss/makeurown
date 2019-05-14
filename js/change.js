@@ -124,14 +124,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         addStyleString2('  .restart-button2 { display: none; } ', 'class5');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
             firebase.auth().signOut().then(function() {
-                location.reload();
                 // Sign-out successful.
             }).catch(function(error) {
                 // An error happened.
                 console.log("Sign out failed.");
             });
-            addStyleString2('  .restart-button2 { display: inline-block; } ', 'class5');
-            addStyleString2(' .restart-button3 { display: none; } ', 'class4');
+                localStorage.removeItem('photoURLExists');
+                localStorage.removeItem('displayNameExists');
+                localStorage.removeItem('displayName');
+                localStorage.removeItem('photoURL');
+                localStorage.removeItem('signin');
+                location.reload();
+
         });
     } 
     else {
