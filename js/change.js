@@ -93,12 +93,6 @@ window.onload = function() {
     })
 };
 
-
-
-    // User is signed in.
-  }
-});
-
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("Get redirect result function succesfully called.");
     if (user) {
