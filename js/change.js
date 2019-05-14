@@ -148,7 +148,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 if (typing = true) {
 document.getElementsByClassName('login-hide')[0].style.display = "inline-block";
+    document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager_.js";
 }
 else {
 document.getElementsByClassName('login-hide')[0].style.display = "none";
+    document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager.js";
 }
