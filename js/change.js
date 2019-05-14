@@ -129,6 +129,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 localStorage.removeItem('displayName');
                 localStorage.removeItem('photoURL');
                 localStorage.removeItem('signin');
+                location.reload();
                 // Sign-out successful.
             }).catch(function(error) {
                 // An error happened.
