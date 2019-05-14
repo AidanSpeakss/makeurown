@@ -124,11 +124,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         addStyleString2('  .restart-button2 { display: none; } ', 'class5');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
             firebase.auth().signOut().then(function() {
-                localStorage.removeItem('photoURLExists');
-                localStorage.removeItem('displayNameExists');
-                localStorage.removeItem('displayName');
-                localStorage.removeItem('photoURL');
-                localStorage.removeItem('signin');
+                var gameState = localStorage.getItem('gameState');
+                storage.clear();
+                localStorage.setItem("gameState", gameState)
                 location.reload();
                 // Sign-out successful.
             }).catch(function(error) {
