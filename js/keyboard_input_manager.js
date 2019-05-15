@@ -1,6 +1,5 @@
 function KeyboardInputManager() {
-  if (typing == true) {
-    console.log("input triggured");
+  console.log("input triggured");
   this.events = {};
 
   if (window.navigator.msPointerEnabled) {
@@ -16,10 +15,8 @@ function KeyboardInputManager() {
 
   this.listen();
 }
-}
 
 KeyboardInputManager.prototype.on = function (event, callback) {
-if (typing == true) {
   if (!this.events[event]) {
     this.events[event] = [];
   }
@@ -35,11 +32,9 @@ if (typing == true) {
       callback(data);
     });
   }
-}
 };
 
 KeyboardInputManager.prototype.listen = function () {
-if (typing == true) {
   var self = this;
 
   var map = {
@@ -133,27 +128,20 @@ if (typing == true) {
       self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
     }
   });
-}
 };
 
 KeyboardInputManager.prototype.restart = function (event) {
-if (typing == true) {
   event.preventDefault();
   this.emit("restart");
-}
 };
 
 KeyboardInputManager.prototype.keepPlaying = function (event) {
-if (typing == true) {
   event.preventDefault();
   this.emit("keepPlaying");
-}
 };
 
 KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
-if (typing == true) {
   var button = document.querySelector(selector);
   button.addEventListener("click", fn.bind(this));
   button.addEventListener(this.eventTouchend, fn.bind(this));
-}
 };
