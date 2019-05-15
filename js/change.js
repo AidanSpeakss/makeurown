@@ -61,6 +61,9 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     } else {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
+            addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+            addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+            addStyleString2(' #loader { display: none; } ', 'class3');   
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
