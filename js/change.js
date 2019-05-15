@@ -55,6 +55,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: inline-block;} ');
                 addStyleString('  .paused-button {display: inline-block;} ');
                 addStyleString('  .lower-hide {display: inline-block;} ');
+        addEvent();
         var saveGame = localStorage.getItem("gameState");
         
                     value1 = "true";
@@ -68,12 +69,52 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
-            
+                    removeEvent();
                         value1 = "false";
         }
     }
 });
+function addKey(index) {
+    function (event) {
+                               var inputval = inputs[index].value;
+                                  if (event.key = "a") {
+                               inputs[index].value = inputval + "a";
+                               }
+                                  if (event.key = "w") {
+                               inputs[index].value = inputval + "w";
+                               }
+                                  if (event.key = "s") {
+                               inputs[index].value = inputval + "s";
+                               }
+                                  if (event.key = "d") {
+                               inputs[index].value = inputval + "d";
+                               }
+                                  if (event.key = "r") {
+                               inputs[index].value = inputval + "r";
+                               }
+}
+function addEvent() {
+var inputs, index;
 
+// Get the container element
+// Find its child `input` elements
+inputs = document.getElementsByTagName('input');
+for (index = 0; index < inputs.length; ++index) {
+inputs[index].addEventListener("keydown", addKey(index));
+}
+                               }
+          
+function removeEvent() {
+var inputs, index;
+
+// Get the container element
+// Find its child `input` elements
+inputs = document.getElementsByTagName('input');
+for (index = 0; index < inputs.length; ++index) {
+inputs[index].removeEventListener("keydown", addKey(index));   
+}
+
+                               }
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
         var game2input = document.getElementsByClassName("input2")[0].value;
