@@ -77,7 +77,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
 });
 
 function addKey(index) {
-    function(event) {
+    function thing2(event) {
         var inputval = inputs[index].value;
         if (event.key = "a") {
             inputs[index].value = inputval + "a";
