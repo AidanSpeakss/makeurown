@@ -1,5 +1,6 @@
 function KeyboardInputManager() {
   if (typing == true) {
+    console.log("input triggured");
   this.events = {};
 
   if (window.navigator.msPointerEnabled) {
