@@ -94,101 +94,102 @@ function addKey(index) {
             inputs[index].value = inputval + "r";
         }
     }
+}
 
-    function addEvent() {
-        var inputs, index;
+function addEvent() {
+    var inputs, index;
 
-        // Get the container element
-        // Find its child `input` elements
-        inputs = document.getElementsByTagName('input');
-        for (index = 0; index < inputs.length; ++index) {
-            inputs[index].addEventListener("keydown", addKey(index));
-        }
+    // Get the container element
+    // Find its child `input` elements
+    inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; ++index) {
+        inputs[index].addEventListener("keydown", addKey(index));
+    }
+}
+
+function removeEvent() {
+    var inputs, index;
+
+    // Get the container element
+    // Find its child `input` elements
+    inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; ++index) {
+        inputs[index].removeEventListener("keydown", addKey(index));
     }
 
-    function removeEvent() {
-        var inputs, index;
+}
+window.onload = function() {
+    document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
+        var game2input = document.getElementsByClassName("input2")[0].value;
+        var game4input = document.getElementsByClassName("input4")[0].value;
+        var game8input = document.getElementsByClassName("input8")[0].value;
+        var game16input = document.getElementsByClassName("input16")[0].value;
+        var game32input = document.getElementsByClassName("input32")[0].value;
+        var game64input = document.getElementsByClassName("input64")[0].value;
+        var game128input = document.getElementsByClassName("input128")[0].value;
+        var game256input = document.getElementsByClassName("input256")[0].value;
+        var game512input = document.getElementsByClassName("input512")[0].value;
+        var game1024input = document.getElementsByClassName("input1024")[0].value;
+        var game2048input = document.getElementsByClassName("input2048")[0].value;
+        document.cookie = 'game2=' + game2input + '"';
+        document.cookie = 'game4=' + game4input + '"';
+        document.cookie = 'game8=' + game8input + '"';
+        document.cookie = 'game16=' + game16input + '"';
+        document.cookie = 'game32=' + game32input + '"';
+        document.cookie = 'game64=' + game64input + '"';
+        document.cookie = 'game128=' + game128input + '"';
+        document.cookie = 'game256=' + game256input + '"';
+        document.cookie = 'game512=' + game512input + '"';
+        document.cookie = 'game1024=' + game1024input + '"';
+        document.cookie = 'game2048=' + game2048input + '"';
+        document.cookie = 'images_changed=true';
+    })
+};
 
-        // Get the container element
-        // Find its child `input` elements
-        inputs = document.getElementsByTagName('input');
-        for (index = 0; index < inputs.length; ++index) {
-            inputs[index].removeEventListener("keydown", addKey(index));
-        }
-
+firebase.auth().onAuthStateChanged(function(user) {
+    console.log("Get redirect result function succesfully called.");
+    if (firebase.auth().currentUser) {
+        console.log(firebase.auth().currentUser);
     }
-    window.onload = function() {
-        document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
-            var game2input = document.getElementsByClassName("input2")[0].value;
-            var game4input = document.getElementsByClassName("input4")[0].value;
-            var game8input = document.getElementsByClassName("input8")[0].value;
-            var game16input = document.getElementsByClassName("input16")[0].value;
-            var game32input = document.getElementsByClassName("input32")[0].value;
-            var game64input = document.getElementsByClassName("input64")[0].value;
-            var game128input = document.getElementsByClassName("input128")[0].value;
-            var game256input = document.getElementsByClassName("input256")[0].value;
-            var game512input = document.getElementsByClassName("input512")[0].value;
-            var game1024input = document.getElementsByClassName("input1024")[0].value;
-            var game2048input = document.getElementsByClassName("input2048")[0].value;
-            document.cookie = 'game2=' + game2input + '"';
-            document.cookie = 'game4=' + game4input + '"';
-            document.cookie = 'game8=' + game8input + '"';
-            document.cookie = 'game16=' + game16input + '"';
-            document.cookie = 'game32=' + game32input + '"';
-            document.cookie = 'game64=' + game64input + '"';
-            document.cookie = 'game128=' + game128input + '"';
-            document.cookie = 'game256=' + game256input + '"';
-            document.cookie = 'game512=' + game512input + '"';
-            document.cookie = 'game1024=' + game1024input + '"';
-            document.cookie = 'game2048=' + game2048input + '"';
-            document.cookie = 'images_changed=true';
-        })
-    };
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        console.log("Get redirect result function succesfully called.");
-        if (firebase.auth().currentUser) {
-            console.log(firebase.auth().currentUser);
-        }
-
-        if (firebase.auth().currentUser) {
-            localStorage.setItem('signin', 'true');
-            if (firebase.auth().currentUser.displayName) {
-                localStorage.setItem('displayName', firebase.auth().currentUser.displayName);
-                localStorage.setItem('displayNameExists', 'true');
-                document.getElementsByClassName("profile-desc")[0].innerText = firebase.auth().currentUser.displayName;
-            } else {
-                localStorage.setItem('displayNameExists', 'false');
-            }
-            if (firebase.auth().currentUser.photoURL) {
-                localStorage.setItem('photoURLExists', 'true');
-                localStorage.setItem('photoURL', firebase.auth().currentUser.photoURL);
-                addStyleString('  .profile-picture { background-image: url("' + firebase.auth().currentUser.photoURL + '}', 'class6');
-            } else {
-                localStorage.setItem('photoURLExists', 'false');
-            }
-            addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
-            addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
-            addStyleString2(' #loader { display: none; } ', 'class3');
-            addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
-            addStyleString2('  .restart-button2 { display: none; } ', 'class5');
-            document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
-                firebase.auth().signOut().then(function() {
-                    // Sign-out successful.
-                }).catch(function(error) {
-                    // An error happened.
-                    console.log("Sign out failed.");
-                });
-                localStorage.removeItem('photoURLExists');
-                localStorage.removeItem('displayNameExists');
-                localStorage.removeItem('displayName');
-                localStorage.removeItem('photoURL');
-                localStorage.removeItem('signin');
-                location.reload();
-
-            });
+    if (firebase.auth().currentUser) {
+        localStorage.setItem('signin', 'true');
+        if (firebase.auth().currentUser.displayName) {
+            localStorage.setItem('displayName', firebase.auth().currentUser.displayName);
+            localStorage.setItem('displayNameExists', 'true');
+            document.getElementsByClassName("profile-desc")[0].innerText = firebase.auth().currentUser.displayName;
         } else {
-            // No user is signed in.
-            console.log("No user detected. Else Statement");
+            localStorage.setItem('displayNameExists', 'false');
         }
-    });
+        if (firebase.auth().currentUser.photoURL) {
+            localStorage.setItem('photoURLExists', 'true');
+            localStorage.setItem('photoURL', firebase.auth().currentUser.photoURL);
+            addStyleString('  .profile-picture { background-image: url("' + firebase.auth().currentUser.photoURL + '}', 'class6');
+        } else {
+            localStorage.setItem('photoURLExists', 'false');
+        }
+        addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+        addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+        addStyleString2(' #loader { display: none; } ', 'class3');
+        addStyleString2('  .restart-button3 { display: inline-block; } ', 'class4');
+        addStyleString2('  .restart-button2 { display: none; } ', 'class5');
+        document.getElementById("container-above-game2").getElementsByClassName("restart-button3")[0].addEventListener("click", function() {
+            firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+            }).catch(function(error) {
+                // An error happened.
+                console.log("Sign out failed.");
+            });
+            localStorage.removeItem('photoURLExists');
+            localStorage.removeItem('displayNameExists');
+            localStorage.removeItem('displayName');
+            localStorage.removeItem('photoURL');
+            localStorage.removeItem('signin');
+            location.reload();
+
+        });
+    } else {
+        // No user is signed in.
+        console.log("No user detected. Else Statement");
+    }
+});
