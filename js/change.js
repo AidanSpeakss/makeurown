@@ -53,8 +53,8 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', 'class2');
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
-        value1 = "true";
         typing = true;
+        value1 = "true";
     } else {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
