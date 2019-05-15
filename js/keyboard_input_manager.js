@@ -53,7 +53,8 @@ KeyboardInputManager.prototype.listen = function () {
   };
 
   // Respond to direction keys
-  document.addEventListener(fixed, function thing(event) {
+  if (value1 = "true") {
+  document.addEventListener("keydown", function thing(event) {
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
                     event.shiftKey;
     var mapped    = map[event.which];
@@ -70,7 +71,26 @@ KeyboardInputManager.prototype.listen = function () {
       self.restart.call(self, event);
     }
   });
+}
+  else {
+  document.removeEventListener("keydown", function thing(event) {
+    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
+                    event.shiftKey;
+    var mapped    = map[event.which];
 
+    if (!modifiers) {
+      if (mapped !== undefined) {
+        event.preventDefault();
+        self.emit("move", mapped);
+      }
+    }
+
+    // R key restarts the game
+    if (!modifiers && event.which === 82) {
+      self.restart.call(self, event);
+    }
+  });
+  }
   // Respond to button presses
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".restart-button", this.restart);
