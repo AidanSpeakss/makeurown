@@ -55,8 +55,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: inline-block;} ');
                 addStyleString('  .paused-button {display: inline-block;} ');
                 addStyleString('  .lower-hide {display: inline-block;} ');
-                        value1 = "true";
-                            GameManager();
+                    value1 = "true";
     } else {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
@@ -66,10 +65,6 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
-            document.getElementsByClassName("game-container")[0].removeEventListener("keydown", thing);
-            document.getElementsByClassName("retry-button")[0].removeEventListener("keydown", thing);
-            document.getElementsByClassName("restart-button")[0].removeEventListener("keydown", thing);
-            document.getElementsByClassName("keep-playing-button")[0].removeEventListener("keydown", thing);
                         value1 = "false";
         }
     }
