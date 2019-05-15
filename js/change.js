@@ -45,7 +45,7 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-var typing = true;
+var typing = false;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -146,13 +146,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-if (typing = true) {
+if (typing == true) {
     addStyleString('  .login-hide {display: inline-block;} ');
     addStyleString('  .paused-button {display: inline-block;} ');
     addStyleString('  .lower-hide {display: inline-block;} ');
         document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager_.js";
 }
-if (typing = false) {
+if (typing == false) {
     addStyleString('  .login-hide {display: none;} ');
     addStyleString('  .paused-button {display: none;} ');
     addStyleString('  .lower-hide {display: none;} ');
