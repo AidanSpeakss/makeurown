@@ -45,11 +45,9 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
-var typing = true;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
-        typing = false;
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', 'class1');
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', 'class2');
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
@@ -64,7 +62,6 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         resume(document.getElementsByClassName("keep-playing-button")[0]);
     } else {
         if (value1 == "true") {
-            typing = true;
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
             addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
             addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
