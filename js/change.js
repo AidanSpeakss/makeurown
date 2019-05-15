@@ -83,6 +83,7 @@ function addEvent() {
     // Find its child `input` elements
     inputs = document.getElementsByTagName('input');
     for (index = 0; index < inputs.length; ++index) {
+                        console.log("works2");
         inputs[index].addEventListener("keydown", function addKey(index, event) {
             console.log(event);
             console.log(index);
