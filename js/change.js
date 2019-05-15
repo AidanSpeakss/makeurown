@@ -75,8 +75,17 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
+function addEvent() {
+                console.log("works");
+    var inputs, index;
 
-function addKey(index) {
+    // Get the container element
+    // Find its child `input` elements
+    inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; ++index) {
+        inputs[index].addEventListener("keydown", function addKey(index, event) {
+            console.log(event);
+            console.log(index);
     function thing2(event) {
         var inputval = inputs[index].value;
         if (event.key = "a") {
@@ -97,14 +106,14 @@ function addKey(index) {
     }
 }
 
-function addEvent() {
-    var inputs, index;
-
-    // Get the container element
-    // Find its child `input` elements
-    inputs = document.getElementsByTagName('input');
-    for (index = 0; index < inputs.length; ++index) {
-        inputs[index].addEventListener("keydown", addKey(index));
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      );
     }
 }
 
