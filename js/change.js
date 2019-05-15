@@ -56,7 +56,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: inline-block;} ');
                 addStyleString('  .paused-button {display: inline-block;} ');
                 addStyleString('  .lower-hide {display: inline-block;} ');
-                    document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager_.js";        
+                    typing = true;
                         value1 = "true";
     } else {
         if (value1 == "true") {
@@ -67,7 +67,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
-                    document.getElementsByClassName('paused')[0].src = "js/keyboard_input_manager.js";
+                    typing = false;
                         value1 = "false";
         }
     }
