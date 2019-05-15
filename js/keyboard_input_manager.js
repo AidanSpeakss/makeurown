@@ -54,7 +54,7 @@ KeyboardInputManager.prototype.listen = function () {
 
   // Respond to direction keys
   if (value1 = "true") {
-  document.addEventListener("keydown", function thing(event) {
+  document.addEventListener("keydown", function (event) {
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
                     event.shiftKey;
     var mapped    = map[event.which];
