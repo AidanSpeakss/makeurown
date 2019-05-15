@@ -58,6 +58,10 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .paused-button {display: inline-block;} ');
                 addStyleString('  .lower-hide {display: inline-block;} ');
                         value1 = "true";
+        resume(document.getElementsByClassName("game-container")[0]);
+        resume(document.getElementsByClassName("retry-button")[0]);
+        resume(document.getElementsByClassName("restart-button")[0]);
+        resume(document.getElementsByClassName("keep-playing-button")[0]);
     } else {
         if (value1 == "true") {
             typing = true;
@@ -68,6 +72,10 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
+            pause(document.getElementsByClassName("game-container")[0]);
+            pause(document.getElementsByClassName("retry-button")[0]);
+            pause(document.getElementsByClassName("restart-button")[0]);
+            pause(document.getElementsByClassName("keep-playing-button")[0]);
                         value1 = "false";
         }
     }
