@@ -55,16 +55,20 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
                 addStyleString('  .login-hide {display: inline-block;} ');
                 addStyleString('  .paused-button {display: inline-block;} ');
                 addStyleString('  .lower-hide {display: inline-block;} ');
+        var saveGame = localStorage.getItem("gameState");
+        
                     value1 = "true";
     } else {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
+            localStorage.setItem("gameState", saveGame);
             addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
             addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
             addStyleString2(' #loader { display: none; } ', 'class3');   
                 addStyleString('  .login-hide {display: none;} ');
                 addStyleString('  .paused-button {display: none;} ');
                 addStyleString('  .lower-hide {display: none;} ');
+            
                         value1 = "false";
         }
     }
