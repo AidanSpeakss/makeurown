@@ -53,7 +53,7 @@ KeyboardInputManager.prototype.listen = function () {
   };
 
   // Respond to direction keys
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function thing(event) {
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
                     event.shiftKey;
     var mapped    = map[event.which];
