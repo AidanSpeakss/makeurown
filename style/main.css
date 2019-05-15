@@ -539,7 +539,7 @@ hr {
     background-image: url('../img/128.png');
     background-repeat: no-repeat;
     background-size: contain; 
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
     @media screen and (max-width: 520px) {
       .tile.tile-128 .tile-inner {
         font-size: 0px; 
