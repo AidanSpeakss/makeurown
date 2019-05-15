@@ -45,6 +45,7 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
+var saveGame = null;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -56,7 +57,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         addStyleString('  .paused-button {display: inline-block;} ');
         addStyleString('  .lower-hide {display: inline-block;} ');
         addEvent();
-        var saveGame = localStorage.getItem("gameState");
+        saveGame = localStorage.getItem("gameState");
 
         value1 = "true";
     } else {
