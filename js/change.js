@@ -74,38 +74,36 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     }
 });
 document.addEventListener("keyup", function key(event) {
-
-    function key(event) {
-        console.log("function called");
-        var inputval = document.activeElement.value;
-        if (event.key == "a") {
-            console.log("a called");
-            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
-                console.log("activ element called");
-                document.activeElement.value = inputval + "a";
-            }
-        }
-        if (event.key == "w") {
-            if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "input") {
-                document.activeElement.value = inputval + "w";
-            }
-        }
-        if (event.key == "s") {
-            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
-                document.activeElement.value = inputval + "s";
-            }
-        }
-        if (event.key == "d") {
-            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
-                document.activeElement.value = inputval + "d";
-            }
-        }
-        if (event.key == "r") {
-            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
-                document.activeElement.value = inputval + "r";
-            }
+    console.log("function called");
+    var inputval = document.activeElement.value;
+    if (event.key == "a") {
+        console.log("a called");
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+            console.log("activ element called");
+            document.activeElement.value = inputval + "a";
         }
     }
+    if (event.key == "w") {
+        if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "input") {
+            document.activeElement.value = inputval + "w";
+        }
+    }
+    if (event.key == "s") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+            document.activeElement.value = inputval + "s";
+        }
+    }
+    if (event.key == "d") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+            document.activeElement.value = inputval + "d";
+        }
+    }
+    if (event.key == "r") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+            document.activeElement.value = inputval + "r";
+        }
+    }
+}
 });
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
