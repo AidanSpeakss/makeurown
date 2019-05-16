@@ -122,13 +122,16 @@ document.addEventListener("keypress", function key(event) {
         }
         if (event.key == "j") {
             if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                document.activeElement.value = inputval + "h";
+                document.activeElement.value = inputval + "j";
             }
         }
         if (event.key == "l") {
             if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                document.activeElement.value = inputval + "h";
+                document.activeElement.value = inputval + "l";
             }
+        }
+        if (event.key == "a") {
+                document.activeElement.value = inputval + "a";
         }
     }
 });
