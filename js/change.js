@@ -74,10 +74,10 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     }
 });
 document.addEventListener("keyup", function key(event) {
+
+function key(event) {
     console.log("function called");
-    function keyGo(event) {
-            console.log("keygo function called");
-        var inputval = document.activeElement.value;
+    var inputval = document.activeElement.value;
         if (event.key = "a") {
                 console.log("a called");
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
@@ -105,6 +105,7 @@ document.addEventListener("keyup", function key(event) {
                 document.activeElement.value = inputval + "r";
             }
         }
+}
     }
 });
 window.onload = function() {
