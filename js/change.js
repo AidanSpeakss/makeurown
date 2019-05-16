@@ -56,7 +56,6 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         addStyleString('  .login-hide {display: inline-block;} ');
         addStyleString('  .paused-button {display: inline-block;} ');
         addStyleString('  .lower-hide {display: inline-block;} ');
-        addEvent();
         saveGame = localStorage.getItem("gameState");
 
         value1 = "true";
@@ -70,7 +69,6 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString('  .login-hide {display: none;} ');
             addStyleString('  .paused-button {display: none;} ');
             addStyleString('  .lower-hide {display: none;} ');
-            removeEvent();
             value1 = "false";
         }
     }
