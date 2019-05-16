@@ -120,7 +120,6 @@ document.addEventListener("keydown", function key(event) {
             }
         }
     }
-}
 });
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
