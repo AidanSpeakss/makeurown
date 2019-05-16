@@ -78,29 +78,29 @@ document.addEventListener("keyup", function key(event) {
 function key(event) {
     console.log("function called");
     var inputval = document.activeElement.value;
-        if (event.key = "a") {
+        if (event.key == "a") {
                 console.log("a called");
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
                     console.log("activ element called");
                 document.activeElement.value = inputval + "a";
             }
         }
-        if (event.key = "w") {
+        if (event.key == "w") {
             if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "input") {
                 document.activeElement.value = inputval + "w";
             }
         }
-        if (event.key = "s") {
+        if (event.key == "s") {
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
                 document.activeElement.value = inputval + "s";
             }
         }
-        if (event.key = "d") {
+        if (event.key == "d") {
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
                 document.activeElement.value = inputval + "d";
             }
         }
-        if (event.key = "r") {
+        if (event.key == "r") {
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
                 document.activeElement.value = inputval + "r";
             }
