@@ -73,10 +73,21 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
+var modkey = false;
 document.addEventListener("keydown", function key(event) {
-    if (!event.keyCode == 16 || !event.keyCode == 17 || !event.keyCode == 18) {
-        console.log("function called");
-        var inputval = document.activeElement.value;
+    if (event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18) {
+        modkey = true;
+    }
+});
+document.addEventListener("keyup", function key(event) {
+    if (event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18) {
+        modkey = false;
+    }
+});
+document.addEventListener("keydown", function key(event) {
+    console.log("function called");
+    var inputval = document.activeElement.value;
+    if (modkey = false) {
         if (event.key == "a") {
             console.log("a called");
             if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
