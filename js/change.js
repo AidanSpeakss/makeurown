@@ -87,7 +87,7 @@ document.addEventListener("keyup", function key(event) {
 document.addEventListener("keydown", function key(event) {
     console.log("function called");
     var inputval = document.activeElement.value;
-    if (modkey = false) {
+    if (modkey == false) {
         if (event.key == "a") {
             console.log("a called");
             if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
