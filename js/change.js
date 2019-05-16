@@ -73,34 +73,54 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
-document.addEventListener("keyup", function key(event) {
+document.addEventListener("keypress", function key(event) {
     console.log("function called");
     var inputval = document.activeElement.value;
     if (event.key == "a") {
         console.log("a called");
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             console.log("activ element called");
             document.activeElement.value = inputval + "a";
         }
     }
     if (event.key == "w") {
-        if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "input") {
+        if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "w";
         }
     }
     if (event.key == "s") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "s";
         }
     }
     if (event.key == "d") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "d";
         }
     }
     if (event.key == "r") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "r";
+        }
+    }
+        if (event.key == "h") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+            document.activeElement.value = inputval + "h";
+        }
+    }
+            if (event.key == "j") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+            document.activeElement.value = inputval + "h";
+        }
+    }
+            if (event.key == "l") {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+            document.activeElement.value = inputval + "h";
+        }
+    }
+     if (event.key) {
+        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+            document.activeElement.value = inputval + event.key;
         }
     }
 });
