@@ -76,10 +76,14 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     }
 });
 document.addEventListener("keydown", function key(event) {
+    console.log("function called");
     function keyGo(event) {
+            console.log("keygo function called");
         var inputval = document.activeElement.value;
         if (event.key = "a") {
+                console.log("a called");
             if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                    console.log("activ element called");
                 document.activeElement.value = inputval + "a";
             }
         }
