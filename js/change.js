@@ -75,13 +75,13 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
 });
 document.addEventListener("keyup", function key(event) {
 
-function key(event) {
-    console.log("function called");
-    var inputval = document.activeElement.value;
+    function key(event) {
+        console.log("function called");
+        var inputval = document.activeElement.value;
         if (event.key == "a") {
-                console.log("a called");
+            console.log("a called");
             if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "input") {
-                    console.log("activ element called");
+                console.log("activ element called");
                 document.activeElement.value = inputval + "a";
             }
         }
@@ -105,7 +105,6 @@ function key(event) {
                 document.activeElement.value = inputval + "r";
             }
         }
-}
     }
 });
 window.onload = function() {
