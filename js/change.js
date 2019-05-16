@@ -75,60 +75,36 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
-function addEvent() {
-                console.log("works");
-    var inputs, index;
-
-    // Get the container element
-    // Find its child `input` elements
-    inputs = document.getElementsByTagName('textarea');
-    for (index = 0; document.activeElement === inputs[index]; ++index) {
-                        console.log("works2");
-        inputs[index].addEventListener("keydown", function addKey(index, event) {
-            console.log(event);
-            console.log(index);
-    function thing2(event) {
-        var inputval = inputs[index].value;
+document.addEventListener("keydown", function key(event) {
+    function keyGo(event) {
+        var inputval = document.activeElement.value;
         if (event.key = "a") {
-            inputs[index].value = inputval + "a";
+            if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                document.activeElement.value = inputval + "a";
+            }
         }
         if (event.key = "w") {
-            inputs[index].value = inputval + "w";
+            if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                document.activeElement.value = inputval + "w";
+            }
         }
         if (event.key = "s") {
-            inputs[index].value = inputval + "s";
+            if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                document.activeElement.value = inputval + "s";
+            }
         }
         if (event.key = "d") {
-            inputs[index].value = inputval + "d";
+            if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                document.activeElement.value = inputval + "d";
+            }
         }
         if (event.key = "r") {
-            inputs[index].value = inputval + "r";
+            if (document.activeElement.tagName == "textarea" || document.activeElement.tagName == "input") {
+                document.activeElement.value = inputval + "r";
+            }
         }
     }
-}
-
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      );
-    }
-}
-
-function removeEvent() {
-    var inputs, index;
-
-    // Get the container element
-    // Find its child `input` elements
-    inputs = document.getElementsByTagName('input');
-    for (index = 0; index < inputs.length; ++index) {
-        inputs[index].removeEventListener("keydown", addKey(index));
-    }
-
-}
+});
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
         var game2input = document.getElementsByClassName("input2")[0].value;
