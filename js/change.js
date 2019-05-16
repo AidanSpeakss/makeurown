@@ -73,7 +73,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
-document.addEventListener("keydown", function key(event) {
+document.addEventListener("keyup", function key(event) {
     console.log("function called");
     function keyGo(event) {
             console.log("keygo function called");
