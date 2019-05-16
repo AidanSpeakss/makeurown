@@ -9,6 +9,18 @@ function addStyleString2(str, str2) {
     }
 }
 
+function addStyleString(str) {
+    var node = document.createElement('style');
+    node.innerHTML = str;
+    document.body.appendChild(node);
+}
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 if (getCookie("images_changed") == "true") {
     var no2 = getCookie("game2");
     var no4 = getCookie("game4");
@@ -67,8 +79,8 @@ document.addEventListener("keypress", function key(event) {
     console.log("function called");
     var inputval = document.activeElement.value;
     var modkey = false;
-    document.removeEventListener("keyup", key2(event));
-    document.removeEventListener("keydown", key3(event));
+    document.removeEventListener("keyup", function key2(event));
+    document.removeEventListener("keydown", function key3(event));
     document.addEventListener("keydown", function key3(event) {
         if (event.key == "Control" || event.key == "Alt" || event.key == "Shift") {
             modkey = true;
