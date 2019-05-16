@@ -74,50 +74,53 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     }
 });
 document.addEventListener("keydown", function key(event) {
-    console.log("function called");
-    var inputval = document.activeElement.value;
-    if (event.key == "a") {
-        console.log("a called");
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            console.log("activ element called");
-            document.activeElement.value = inputval + "a";
+    if (!event.keyCode == 16 || !event.keyCode == 17 || !event.keyCode == 18) {
+        console.log("function called");
+        var inputval = document.activeElement.value;
+        if (event.key == "a") {
+            console.log("a called");
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                console.log("activ element called");
+                document.activeElement.value = inputval + "a";
+            }
+        }
+        if (event.key == "w") {
+            if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "w";
+            }
+        }
+        if (event.key == "s") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "s";
+            }
+        }
+        if (event.key == "d") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "d";
+            }
+        }
+        if (event.key == "r") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "r";
+            }
+        }
+        if (event.key == "h") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "h";
+            }
+        }
+        if (event.key == "j") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "h";
+            }
+        }
+        if (event.key == "l") {
+            if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                document.activeElement.value = inputval + "h";
+            }
         }
     }
-    if (event.key == "w") {
-        if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "w";
-        }
-    }
-    if (event.key == "s") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "s";
-        }
-    }
-    if (event.key == "d") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "d";
-        }
-    }
-    if (event.key == "r") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "r";
-        }
-    }
-    if (event.key == "h") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "h";
-        }
-    }
-    if (event.key == "j") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "h";
-        }
-    }
-    if (event.key == "l") {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + "h";
-        }
-    }
+}
 });
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
