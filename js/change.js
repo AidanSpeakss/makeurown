@@ -103,7 +103,6 @@ document.addEventListener("keyup", function key(event) {
             document.activeElement.value = inputval + "r";
         }
     }
-}
 });
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
