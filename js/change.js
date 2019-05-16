@@ -73,7 +73,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         }
     }
 });
-document.addEventListener("keypress", function key(event) {
+document.addEventListener("keydown", function key(event) {
     console.log("function called");
     var inputval = document.activeElement.value;
     if (event.key == "a") {
@@ -103,24 +103,19 @@ document.addEventListener("keypress", function key(event) {
             document.activeElement.value = inputval + "r";
         }
     }
-        if (event.key == "h") {
+    if (event.key == "h") {
         if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "h";
         }
     }
-            if (event.key == "j") {
+    if (event.key == "j") {
         if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "h";
         }
     }
-            if (event.key == "l") {
+    if (event.key == "l") {
         if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
             document.activeElement.value = inputval + "h";
-        }
-    }
-     if (event.key) {
-        if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
-            document.activeElement.value = inputval + event.key;
         }
     }
 });
