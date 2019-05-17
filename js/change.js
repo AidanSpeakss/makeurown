@@ -94,6 +94,9 @@ window.addEventListener("keydown", function key(event) {
                 if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
                     window.activeElement.value = inputval + "a";
                 }
+                if (window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "a";
+                }
             }
             if (event.key == "w") {
                 if (window.activeElement.tagName === "TEXTAREA" || window.activeElement.tagName == "INPUT") {
