@@ -75,17 +75,17 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
 });
 
 var modkey = false;
-document.addEventListener("keydown", function key3(event) {
+window.addEventListener("keydown", function key3(event) {
     if (event.key == "Control" || event.key == "Alt" || event.key == "Shift") {
         modkey = true;
     }
 });
-document.addEventListener("keyup", function key2(event) {
+window.addEventListener("keyup", function key2(event) {
     if (event.key == "Control" || event.key == "Alt" || event.key == "Shift") {
         modkey = false;
     }
 });
-document.addEventListener("keydown", function key(event) {
+window.addEventListener("keydown", function key(event) {
     var modkey = false;
     var inputval = window.activeElement.value;
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
