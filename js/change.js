@@ -45,7 +45,10 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '}');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '}');
 }
+
 var saveGame = null;
+var tilecheck;
+var tileState;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -53,11 +56,12 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', 'class2');
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
+        tileState = document.getElementsByClassName("tile-container")[0].innerHTML;
+        tileCheck = true;
         addStyleString('  .login-hide {display: inline-block;} ');
         addStyleString('  .paused-button {display: inline-block;} ');
         addStyleString('  .lower-hide {display: inline-block;} ');
         saveGame = localStorage.getItem("gameState");
-
         value1 = "true";
     } else {
         if (value1 == "true") {
@@ -69,10 +73,32 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString('  .login-hide {display: none;} ');
             addStyleString('  .paused-button {display: none;} ');
             addStyleString('  .lower-hide {display: none;} ');
+            tileCheck = false;
             value1 = "false";
         }
     }
 });
+
+document.getElementsByClassName("paused-button")[0].addEventListener("click", function() {
+        if (value1 == "true") {
+            document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
+            localStorage.setItem("gameState", saveGame);
+            addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+            addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+            addStyleString2(' #loader { display: none; } ', 'class3');
+            addStyleString('  .login-hide {display: none;} ');
+            addStyleString('  .paused-button {display: none;} ');
+            addStyleString('  .lower-hide {display: none;} ');
+            tileCheck = false;
+            value1 = "false";
+        }
+});
+
+if (tileCheck = true) {
+    if (tileState == document.getElementsByClassName("tile-container")[0].innerHTML) {
+        document.getElementsByClassName("tile-container")[0].innerHTML = tileState;
+        }
+}
 
 var modkey = false;
 document.addEventListener("keydown", function key3(event) {
