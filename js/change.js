@@ -47,17 +47,16 @@ if (getCookie("images_changed") == "true") {
 }
 
 var saveGame = null;
-var tileCheck = false;
-var tileState;
 var value1 = "false";
+function reLoad() {
+setTimeout(function(){ location.reload(); }, 1000);    
+}
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', 'class1');
         addStyleString2('  #firebaseui-auth2 { display: flex; } ', 'class2');
         addStyleString2(' #loader { display: inline-block; } ', 'class3');
         document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Close";
-        tileState = document.getElementsByClassName("tile-container")[0].innerHTML;
-        tileCheck = true;
         addStyleString('  .login-hide {display: inline-block;} ');
         addStyleString('  .paused-button {display: inline-block;} ');
         addStyleString('  .lower-hide {display: inline-block;} ');
@@ -73,8 +72,9 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString('  .login-hide {display: none;} ');
             addStyleString('  .paused-button {display: none;} ');
             addStyleString('  .lower-hide {display: none;} ');
-            tileCheck = false;
+            reLoad();
             value1 = "false";
+            
         }
     }
 });
@@ -89,16 +89,10 @@ document.getElementsByClassName("unpause")[0].addEventListener("click", function
             addStyleString('  .login-hide {display: none;} ');
             addStyleString('  .paused-button {display: none;} ');
             addStyleString('  .lower-hide {display: none;} ');
-            tileCheck = false;
+            reLoad();
             value1 = "false";
         }
 });
-
-if (tileCheck == true) {
-    if (tileState == document.getElementsByClassName("tile-container")[0].innerHTML) {
-        document.getElementsByClassName("tile-container")[0].innerHTML = tileState;
-        }
-}
 
 var modkey = false;
 document.addEventListener("keydown", function key3(event) {
