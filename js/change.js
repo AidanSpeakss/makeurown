@@ -41,12 +41,6 @@ function getGame() {
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
-window.onload = function() {
-    if (firebase.auth().currentUser.uid) {
-        getGame();
-    }
-}
-
 if (getCookie("images_changed") == "true") {
     var no2 = getCookie("game2");
     var no4 = getCookie("game4");
@@ -262,3 +256,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log("No user detected. Else Statement");
     }
 });
+
+window.onload = function() {
+    if (firebase.auth().currentUser.uid) {
+        getGame();
+    }
+}
