@@ -91,17 +91,6 @@ document.addEventListener("keydown", function key(event) {
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
         if (modkey == false) {
             if (event.key == "a") {
-function simulateKeyPress(character) {
-  jQuery.event.trigger({ type : 'keypress', which : character.charCodeAt(0) });
-}
-
-$(function() {
-  $('body').keypress(function(e) {
-    alert(e.which);
-  });
-
-  simulateKeyPress("a");
-});
                 if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
                     document.activeElement.value = inputval + "a";
                 }
