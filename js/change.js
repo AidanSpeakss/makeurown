@@ -1,3 +1,32 @@
+function simulateKey (keyCode, type, modifiers) {
+	var evtName = (typeof(type) === "string") ? "key" + type : "keydown";	
+	var modifier = (typeof(modifiers) === "object") ? modifier : {};
+
+	var event = document.createEvent("HTMLEvents");
+	event.initEvent(evtName, true, false);
+	event.keyCode = keyCode;
+	
+	for (var i in modifiers) {
+		event[i] = modifiers[i];
+	}
+
+	document.dispatchEvent(event);
+}
+
+var onKeyEvent = function (event) {
+	var state = "pressed";
+	
+	if (event.type !== "keypress") {
+		state = event.type.replace("key", "");
+	}
+	
+	console.log("Key with keyCode " + event.keyCode + " is " + state);
+};
+
+document.addEventListener("keypress", onKeyEvent, false);
+document.addEventListener("keydown", onKeyEvent, false);
+document.addEventListener("keyup", onKeyEvent, false);
+
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
         document.getElementsByClassName(str2)[0].remove();
@@ -91,10 +120,8 @@ window.addEventListener("keydown", function key(event) {
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
         if (modkey == false) {
             if (event.key == "a") {
+                simulateKey(65);
                 if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "a";
-                }
-                if (window.activeElement.tagName == "INPUT") {
                     window.activeElement.value = inputval + "a";
                 }
             }
