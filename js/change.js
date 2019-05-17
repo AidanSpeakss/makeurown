@@ -120,7 +120,7 @@ window.addEventListener("keydown", function key(event) {
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
         if (modkey == false) {
             if (event.key == "a") {
-                simulateKey(65);
+                simulateKey(65,"press");
                 if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
                     window.activeElement.value = inputval + "a";
                 }
