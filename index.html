@@ -57,6 +57,7 @@
             <div class="above-game">
                 <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
                 <a class="restart-button">New Game</a>
+                <a class="save-button">Save</a>
             </div>
 
             <div class="game-container">
@@ -257,28 +258,6 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
             }, "database");
 
             var db = firebase.firestore();
-            
-            var gameStat = localStorage.getItem('gameState');
-            // Subsequent queries will use persistence, if it was enabled successfully
-            function gameState() { setTimeout(function(){             
-                var uuid = firebase.auth().currentUser.uid;
-           function saveGame() {
-                db.collection("users").doc(uuid).set({
-                    gameState: gameStat
-                });
-            }
-
-            function getGame() {
-                var ls = db.collection("cities").doc(uuid).getString("gameState");
-                console.log(ls);
-            }           
-                        }, 3000);
-            
-            
-                                 }
-            window.onload = function() {
-                gameState();
-            }
         </script>
 
         <script>
