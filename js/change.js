@@ -20,32 +20,32 @@ function getCookie(name) {
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
-            var gameStat = localStorage.getItem('gameState');
-            var bestScore = localStorage.getItem('bestScore');
-            // Subsequent queries will use persistence, if it was enabled successfully
-            function saveGame() {          
-                var uuid = firebase.auth().currentUser.uid;
-                db.collection("users").doc(uuid).set({
-                    gameState: gameStat
-                });
-            }
+var gameStat = localStorage.getItem('gameState');
+var bestScore = localStorage.getItem('bestScore');
+// Subsequent queries will use persistence, if it was enabled successfully
+function saveGame() {
+    var uuid = firebase.auth().currentUser.uid;
+    db.collection("users").doc(uuid).set({
+        gameState: gameStat
+    });
+}
 
-            function getGame() {
-                                            addStyleString('  .start-new-button {display: inline-block;} ');
-            addStyleString('  .restore-message {display: inline-block;} ');
-            addStyleString('  .restore-hide {display: inline-block;} ');
-                            addStyleString('  .continue-button {display: inline-block;} ');
-                var ls = db.collection("users").doc(uuid).getString("gameState");
-                console.log(ls);
-            }       
+function getGame() {
+    addStyleString('  .start-new-button {display: inline-block;} ');
+    addStyleString('  .restore-message {display: inline-block;} ');
+    addStyleString('  .restore-hide {display: inline-block;} ');
+    addStyleString('  .continue-button {display: inline-block;} ');
+    var ls = db.collection("users").doc(uuid).getString("gameState");
+    console.log(ls);
+}
 
 document.getElementsByClassName("save-game")[0].addEventListener("click", saveGame());
-            
+
 window.onload = function() {
-                if (firebase.auth().currentUser.uid) {
-                getGame();
-                }
-            }
+    if (firebase.auth().currentUser.uid) {
+        getGame();
+    }
+}
 
 if (getCookie("images_changed") == "true") {
     var no2 = getCookie("game2");
@@ -74,8 +74,11 @@ if (getCookie("images_changed") == "true") {
 
 var saveGame = null;
 var value1 = "false";
+
 function reLoad() {
-setTimeout(function(){ location.reload(); }, 1000);    
+    setTimeout(function() {
+        location.reload();
+    }, 1000);
 }
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -100,24 +103,24 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString('  .lower-hide {display: none;} ');
             reLoad();
             value1 = "false";
-            
+
         }
     }
 });
 
 document.getElementsByClassName("unpause")[0].addEventListener("click", function() {
-        if (value1 == "true") {
-            document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
-            localStorage.setItem("gameState", saveGame);
-            addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
-            addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
-            addStyleString2(' #loader { display: none; } ', 'class3');
-            addStyleString('  .login-hide {display: none;} ');
-            addStyleString('  .paused-button {display: none;} ');
-            addStyleString('  .lower-hide {display: none;} ');
-            reLoad();
-            value1 = "false";
-        }
+    if (value1 == "true") {
+        document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
+        localStorage.setItem("gameState", saveGame);
+        addStyleString2('  #firebaseui-auth-container { display: none; } ', 'class1');
+        addStyleString2('  #firebaseui-auth2 { display: none; } ', 'class2');
+        addStyleString2(' #loader { display: none; } ', 'class3');
+        addStyleString('  .login-hide {display: none;} ');
+        addStyleString('  .paused-button {display: none;} ');
+        addStyleString('  .lower-hide {display: none;} ');
+        reLoad();
+        value1 = "false";
+    }
 });
 
 var modkey = false;
