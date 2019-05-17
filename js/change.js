@@ -79,7 +79,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
     }
 });
 
-document.getElementsByClassName("paused-button")[0].addEventListener("click", function() {
+document.getElementsByClassName("unpause")[0].addEventListener("click", function() {
         if (value1 == "true") {
             document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].innerText = "Login";
             localStorage.setItem("gameState", saveGame);
