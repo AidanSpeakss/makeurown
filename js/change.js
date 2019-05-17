@@ -156,6 +156,11 @@ document.addEventListener("keydown", function key(event) {
                     document.activeElement.value = inputval + "l";
                 }
             }
+            if (event.key == "k") {
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "k";
+                }
+            }
         }
     }
 });
