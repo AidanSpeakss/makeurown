@@ -20,6 +20,32 @@ function getCookie(name) {
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
+            var gameStat = localStorage.getItem('gameState');
+            var bestScore = localStorage.getItem('bestScore');
+            // Subsequent queries will use persistence, if it was enabled successfully
+            function saveGame() {          
+                var uuid = firebase.auth().currentUser.uid;
+                db.collection("users").doc(uuid).set({
+                    gameState: gameStat
+                });
+            }
+
+            function getGame() {
+                                            addStyleString('  .start-new-button {display: inline-block;} ');
+            addStyleString('  .restore-message {display: inline-block;} ');
+            addStyleString('  .restore-hide {display: inline-block;} ');
+                            addStyleString('  .continue-button {display: inline-block;} ');
+                var ls = db.collection("users").doc(uuid).getString("gameState");
+                console.log(ls);
+            }       
+
+document.getElementsByClassName("save-game")[0].addEventListener("click", saveGame());
+            
+window.onload = function() {
+                if (firebase.auth().currentUser.uid) {
+                getGame();
+                }
+            }
 
 if (getCookie("images_changed") == "true") {
     var no2 = getCookie("game2");
