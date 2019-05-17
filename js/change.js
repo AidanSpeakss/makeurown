@@ -86,55 +86,49 @@ document.addEventListener("keyup", function key2(event) {
     }
 });
 document.addEventListener("keydown", function key(event) {
-    console.log("function called");
     var modkey = false;
-    var inputval = document.activeElement.value;
+    var inputval = window.activeElement.value;
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
         if (modkey == false) {
             if (event.key == "a") {
-                console.log("a called");
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    console.log("activ element called");
-                    document.activeElement.value = inputval + "a";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "a";
                 }
             }
             if (event.key == "w") {
-                if (document.activeElement.tagName === "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "w";
+                if (window.activeElement.tagName === "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "w";
                 }
             }
             if (event.key == "s") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "s";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "s";
                 }
             }
             if (event.key == "d") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "d";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "d";
                 }
             }
             if (event.key == "r") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "r";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "r";
                 }
             }
             if (event.key == "h") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "h";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "h";
                 }
             }
             if (event.key == "j") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "j";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "j";
                 }
             }
             if (event.key == "l") {
-                if (document.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    document.activeElement.value = inputval + "l";
+                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
+                    window.activeElement.value = inputval + "l";
                 }
-            }
-            if (event.key == "a") {
-                document.activeElement.value = inputval + "a";
             }
         }
     }
