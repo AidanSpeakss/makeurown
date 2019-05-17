@@ -94,7 +94,7 @@ document.getElementsByClassName("unpause")[0].addEventListener("click", function
         }
 });
 
-if (tileCheck = true) {
+if (tileCheck == true) {
     if (tileState == document.getElementsByClassName("tile-container")[0].innerHTML) {
         document.getElementsByClassName("tile-container")[0].innerHTML = tileState;
         }
