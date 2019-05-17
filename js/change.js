@@ -47,7 +47,7 @@ if (getCookie("images_changed") == "true") {
 }
 
 var saveGame = null;
-var tilecheck;
+var tilecheck = false;
 var tileState;
 var value1 = "false";
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
