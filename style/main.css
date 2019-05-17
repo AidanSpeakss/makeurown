@@ -1,6 +1,23 @@
 @import url(fonts/clear-sans.css);
+.restore-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.5);
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; 
+}
 .save-game {
-    display: inline-block;
+  display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
   padding: 0 20px;
@@ -18,6 +35,37 @@
 .lower-hide {
      display: block;
      margin-top: 59px; 
+}
+@media screen and (max-width: 520px) {
+  .restore-hide {
+    margin-top: 30px !important; 
+     }
+}
+.restore-hide {
+     display: block;
+     margin-top: 59px; 
+}
+.continue-button {
+    display: none;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    margin-left: 9px;
+}
+.start-new-button {
+    display: none;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    margin-left: 9px;
 }
 .paused-button {
     display: none;
