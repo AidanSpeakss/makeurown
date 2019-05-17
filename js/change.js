@@ -39,7 +39,7 @@ function getGame() {
     console.log(ls);
 }
 
-document.getElementsByClassName("save-game")[0].addEventListener("click", saveGame());
+document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
 window.onload = function() {
     if (firebase.auth().currentUser.uid) {
