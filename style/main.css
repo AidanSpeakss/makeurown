@@ -16,7 +16,7 @@
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; 
 }
-.save-game {
+.save-button {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
