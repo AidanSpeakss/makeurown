@@ -75,19 +75,19 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
 });
 
 var modkey = false;
-window.addEventListener("keydown", function key3(event) {
+document.addEventListener("keydown", function key3(event) {
     if (event.key == "Control" || event.key == "Alt" || event.key == "Shift") {
         modkey = true;
     }
 });
-window.addEventListener("keyup", function key2(event) {
+document.addEventListener("keyup", function key2(event) {
     if (event.key == "Control" || event.key == "Alt" || event.key == "Shift") {
         modkey = false;
     }
 });
-window.addEventListener("keydown", function key(event) {
+document.addEventListener("keydown", function key(event) {
     var modkey = false;
-    var inputval = window.activeElement.value;
+    var inputval = document.activeElement.value;
     if (!event.ctrlKey || !event.altKey || !event.metaKey || !event.shiftKey) {
         if (modkey == false) {
             if (event.key == "a") {
@@ -102,43 +102,43 @@ $(function() {
 
   simulateKeyPress("a");
 });
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "a";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "a";
                 }
             }
             if (event.key == "w") {
-                if (window.activeElement.tagName === "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "w";
+                if (document.activeElement.tagName === "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "w";
                 }
             }
             if (event.key == "s") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "s";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "s";
                 }
             }
             if (event.key == "d") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "d";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "d";
                 }
             }
             if (event.key == "r") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "r";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "r";
                 }
             }
             if (event.key == "h") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "h";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "h";
                 }
             }
             if (event.key == "j") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "j";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "j";
                 }
             }
             if (event.key == "l") {
-                if (window.activeElement.tagName == "TEXTAREA" || window.activeElement.tagName == "INPUT") {
-                    window.activeElement.value = inputval + "l";
+                if (document.activeElement.tagName == "TEXTAREA" || document.activeElement.tagName == "INPUT") {
+                    document.activeElement.value = inputval + "l";
                 }
             }
         }
