@@ -1,7 +1,8 @@
 if (firebase.auth().currentUser) {
-var user = firebase.auth().currentUser;
+    var user = firebase.auth().currentUser;
 }
 var gS, bS, uuid, uDS, gameStat, bestScor;
+
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
         document.getElementsByClassName(str2)[0].remove();
@@ -25,55 +26,60 @@ function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
 if (localStorage.getItem('gameState')) {
-gameStat = localStorage.getItem('gameState');
+    gameStat = localStorage.getItem('gameState');
 }
 if (localStorage.getItem('bestScore')) {
-bestScor = localStorage.getItem('bestScore');
+    bestScor = localStorage.getItem('bestScore');
 }
 // Subsequent queries will use persistence, if it was enabled successfully
 function saveGame() {
-    if(user) {
-    uuid = user.uid;
-    db.collection("users").doc(uuid).set({
-        gameState: gameStat
-        bestScore: bestScor
-    });
+    if (user) {
+        uuid = user.uid;
+        db.collection("users").doc(uuid).set({
+            gameState: gameStat
+            bestScore: bestScor
+        });
     }
 }
-function continue(gS) {
-localStorage.setItem("gameState", gS)
-location.reload();
+
+function
+continue (gS) {
+    localStorage.setItem("gameState", gS)
+    location.reload();
 }
-function startNew(){ 
-localStorage.removeItem("gameState");
+
+function startNew() {
+    localStorage.removeItem("gameState");
     uDS = true;
 }
-        if(uDS == true) {
-            if(user) {
-    uuid = user.uid;
-    db.collection("users").doc(uuid).set({
-        gameState: gameStat
-    });
+if (uDS == true) {
+    if (user) {
+        uuid = user.uid;
+        db.collection("users").doc(uuid).set({
+            gameState: gameStat
+        });
     }
-                                         }
+}
+
 function getGame() {
     if (db.collection("users").doc(uuid).getString("gameState")) {
-    gS = db.collection("users").doc(uuid).getString("gameState");
-    if (!db.collection("users").doc(uuid).getString("gameState") == gameStat) {
-    document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
-    document.getElementsByClassName("start-new-button").addEventListener("click", continue(gS));
-    addStyleString('  .start-new-button {display: inline-block;} ');
-    addStyleString('  .restore-message {display: inline-block;} ');
-    addStyleString('  .restore-hide {display: inline-block;} ');
-    addStyleString('  .continue-button {display: inline-block;} ');
-    }
+        gS = db.collection("users").doc(uuid).getString("gameState");
+        if (!db.collection("users").doc(uuid).getString("gameState") == gameStat) {
+            document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
+            document.getElementsByClassName("start-new-button").addEventListener("click",
+                continue (gS));
+            addStyleString('  .start-new-button {display: inline-block;} ');
+            addStyleString('  .restore-message {display: inline-block;} ');
+            addStyleString('  .restore-hide {display: inline-block;} ');
+            addStyleString('  .continue-button {display: inline-block;} ');
+        }
     }
     if (db.collection("users").doc(uuid).getString("bestScore")) {
-    var bS = db.collection("users").doc(uuid).getString("bestScore");
-    getElementsByClassName("best-container")[0].innerHTML = bS;
+        var bS = db.collection("users").doc(uuid).getString("bestScore");
+        getElementsByClassName("best-container")[0].innerHTML = bS;
     }
     console.log(ls);
- }
+}
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
@@ -293,8 +299,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-window.onload = setTimeout(function(){    
+window.onload = setTimeout(function() {
     if (firebase.auth().currentUser.uid) {
         getGame();
-    } 
+    }
 }, 1000);
