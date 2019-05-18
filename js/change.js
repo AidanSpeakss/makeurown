@@ -36,7 +36,7 @@ if (localStorage.getItem('bestScore')) {
 function saveGame() {
     if (user) {
         uuid = user.uid;
-        userDB.doc(uuid).set({
+        .doc(uuid).set({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -55,14 +55,14 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        userDB.doc(uuid).set({
+        db.collection("user").doc(uuid).set({
             gameState: gameStat
         });
     }
 }
 
 function getGame() {
-    if (userDB.doc(uuid)) {
+    if (db.collection("user").doc(uuid)) {
         if (firebase.database().ref('/users/' + userId).once('gameState')) {
             gS = firebase.database().ref('/users/' + userId).once('gameState');
             if (!firebase.database().ref('/users/' + userId).once('gameState') == gameStat) {
@@ -81,7 +81,7 @@ function getGame() {
         console.log(gS);
         console.log(bS);
     } else {
-        userDB.doc(uuid).add({
+        db.collection("user").doc(uuid).add({
             gameState: gameStat,
             bestScore: bestScor
         });
