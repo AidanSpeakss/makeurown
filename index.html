@@ -258,21 +258,22 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
             ui.start('#firebaseui-auth-container', uiConfig);
         </script>
         <script>
-              var config2 = {
+            irebase.initializeApp(config);
+            firebase.initializeApp({
     apiKey: "AIzaSyAUwZv6XXMjz3pH-RCpvrmS4zsVY2yRVTk",
     authDomain: "github-thing-85048.firebaseapp.com",
     databaseURL: "https://github-thing-85048.firebaseio.com/",
     storageBucket: "github-thing-85048.appspot.com"
-  }, "database2");
-              firebase.initializeApp(config2);
-                        var database = firebase.database();
+            }, "rt-database");
+            
+            var rtdb = firebase.database();
 
   firebase.initializeApp(config);
             firebase.initializeApp({
                 apiKey: 'AIzaSyAUwZv6XXMjz3pH-RCpvrmS4zsVY2yRVTk',
                 authDomain: 'github-thing-85048.firebaseapp.com',
                 projectId: 'github-thing-85048',
-            }, "database");
+            }, "firestore");
 
             var db = firebase.firestore();
         </script>
