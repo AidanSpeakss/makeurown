@@ -62,7 +62,7 @@ if (uDS == true) {
 }
 
 function getGame() {
-    if (db.collection("user").doc(uuid)) {
+    if (firebase.database().ref('/users/' + userId)) {
         if (firebase.database().ref('/users/' + userId).once('gameState')) {
             gS = firebase.database().ref('/users/' + userId).once('gameState');
             if (!firebase.database().ref('/users/' + userId).once('gameState') == gameStat) {
@@ -73,19 +73,20 @@ function getGame() {
                 addStyleString('  .restore-hide {display: inline-block;} ');
                 addStyleString('  .continue-button {display: inline-block;} ');
             }
-        } else {}
+        }
         if (firebase.database().ref('/users/' + userId).once('bestScore')) {
             bS = firebase.database().ref('/users/' + userId).once('bestScore');
             getElementsByClassName("best-container")[0].innerHTML = bS;
         }
-        console.log(gS);
-        console.log(bS);
     } else {
         db.collection("user").doc(uuid).add({
             gameState: gameStat,
             bestScore: bestScor
         });
     }
+    console.log(gS);
+    console.log(bS);
+
 }
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
