@@ -1,7 +1,8 @@
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB;
 if (firebase.auth().currentUser) {
-    var user = firebase.auth().currentUser;
+    user = firebase.auth().currentUser;
+    userDB = db.collection("users");
 }
-var gS, bS, uuid, uDS, gameStat, bestScor;
 
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
@@ -35,7 +36,7 @@ if (localStorage.getItem('bestScore')) {
 function saveGame() {
     if (user) {
         uuid = user.uid;
-        db.collection("users").doc(uuid).set({
+        userDB.doc(uuid).set({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -54,16 +55,16 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        db.collection("users").doc(uuid).set({
+        userDB.doc(uuid).set({
             gameState: gameStat
         });
     }
 }
 
 function getGame() {
-    if (db.collection("users").doc(uuid).getString("gameState")) {
-        gS = db.collection("users").doc(uuid).getString("gameState");
-        if (!db.collection("users").doc(uuid).getString("gameState") == gameStat) {
+    if (.doc(uuid).getString("gameState")) {
+        gS = userDB.doc(uuid).getString("gameState");
+        if (!userDB.doc(uuid).getString("gameState") == gameStat) {
             document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
             document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
             addStyleString('  .start-new-button {display: inline-block;} ');
@@ -72,8 +73,8 @@ function getGame() {
             addStyleString('  .continue-button {display: inline-block;} ');
         }
     }
-    if (db.collection("users").doc(uuid).getString("bestScore")) {
-        var bS = db.collection("users").doc(uuid).getString("bestScore");
+    if (userDB.doc(uuid).getString("bestScore")) {
+        var bS = userDB.doc(uuid).getString("bestScore");
         getElementsByClassName("best-container")[0].innerHTML = bS;
     }
     console.log(ls);
