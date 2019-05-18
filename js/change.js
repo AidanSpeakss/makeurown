@@ -36,7 +36,7 @@ if (localStorage.getItem('bestScore')) {
 function saveGame() {
     if (user) {
         uuid = user.uid;
-        .doc(uuid).set({
+        db.collection("user").doc(uuid).set({
             gameState: gameStat,
             bestScore: bestScor
         });
