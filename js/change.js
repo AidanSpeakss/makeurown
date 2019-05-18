@@ -62,7 +62,7 @@ if (uDS == true) {
 }
 
 function getGame() {
-    if (.doc(uuid).getString("gameState")) {
+    if (userDB.doc(uuid).getString("gameState")) {
         gS = userDB.doc(uuid).getString("gameState");
         if (!userDB.doc(uuid).getString("gameState") == gameStat) {
             document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
