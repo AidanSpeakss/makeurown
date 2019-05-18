@@ -36,7 +36,7 @@ function saveGame() {
     if (user) {
         uuid = user.uid;
         db.collection("users").doc(uuid).set({
-            gameState: gameStat
+            gameState: gameStat,
             bestScore: bestScor
         });
     }
