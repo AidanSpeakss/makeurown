@@ -293,8 +293,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-window.onload = function() {
+window.onload = setTimeout(function(){    
     if (firebase.auth().currentUser.uid) {
         getGame();
-    }
-}
+    } 
+}, 1000);
