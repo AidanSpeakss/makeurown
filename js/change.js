@@ -1,7 +1,7 @@
 var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
-    userDB = db.collection("users");
+    var userId = firebase.auth().currentUser.uid;
 }
 
 function addStyleString2(str, str2) {
@@ -55,16 +55,17 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        userDB.doc(uuid).set({
-            gameState: gameStat
-        });
+            userDB.doc(uuid).set({
+                gameState: gameStat
+            });
     }
 }
 
 function getGame() {
-    if (userDB.doc(uuid).getString("gameState")) {
-        gS = userDB.doc(uuid).getString("gameState");
-        if (!userDB.doc(uuid).getString("gameState") == gameStat) {
+if (userDB.doc(uuid)) { 
+    if (firebase.database().ref('/users/' + userId).once('gameState'))) {
+        gS = firebase.database().ref('/users/' + userId).once('gameState'));
+        if (!firebase.database().ref('/users/' + userId).once('gameState')) == gameStat) {
             document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
             document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
             addStyleString('  .start-new-button {display: inline-block;} ');
@@ -72,12 +73,20 @@ function getGame() {
             addStyleString('  .restore-hide {display: inline-block;} ');
             addStyleString('  .continue-button {display: inline-block;} ');
         }
-    }
-    if (userDB.doc(uuid).getString("bestScore")) {
-        var bS = userDB.doc(uuid).getString("bestScore");
+    } else {}
+    if (firebase.database().ref('/users/' + userId).once('bestScore'))) {
+        bS = firebase.database().ref('/users/' + userId).once('bestScore'));
         getElementsByClassName("best-container")[0].innerHTML = bS;
     }
-    console.log(ls);
+    console.log(gS);
+    console.log(bS);
+}
+    else {
+    userDB.doc(uuid).add({
+                gameState: gameStat,
+                bestScore: bestScor
+            });
+    }
 }
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
