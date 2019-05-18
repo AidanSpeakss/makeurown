@@ -6,7 +6,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(238, 228, 218, 0.5);
+    background: rgba(238, 228, 218, 0.85);
     z-index: 100;
     text-align: center;
     -webkit-animation: fade-in 800ms ease 1200ms;
@@ -20,9 +20,10 @@
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
-  padding: 0 20px;
+  padding: 5px 20px;
   text-decoration: none;
   color: #f9f6f2;
+  margin: 9px 9px 9px 9px;
   height: 40px;
   line-height: 42px;
   text-align: center;
@@ -49,34 +50,34 @@
     display: none;
     background: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 5px 20px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
     line-height: 42px;
-    margin-left: 9px;
+    margin: 9px 9px 9px 9px;
 }
 .start-new-button {
     display: none;
     background: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 5px 20px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
     line-height: 42px;
-    margin-left: 9px;
+    margin: 9px 9px 9px 9px;
 }
 .paused-button {
     display: none;
     background: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 5px 20px;
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
     line-height: 42px;
-    margin-left: 9px;
+    margin: 9px 9px 9px 9px;
 }
 .login-hide {
     display: none;
@@ -121,6 +122,7 @@
   flex: 1; 
 }
 .restart-button3 {
+  margin: 9px 9px 9px 9px;
   display: none;
   background: #8f7a66;
   border-radius: 3px;
@@ -167,6 +169,7 @@ display: none;
   background: #8f7a66;
   border-radius: 3px;
   padding: 0 20px;
+  margin: 9px 9px 9px 9px;
   text-align: center;
   text-decoration: none;
   color: #f9f6f2;
