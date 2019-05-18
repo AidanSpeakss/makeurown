@@ -42,8 +42,7 @@ function saveGame() {
     }
 }
 
-function
-continue (gS) {
+function continu(gS) {
     localStorage.setItem("gameState", gS)
     location.reload();
 }
@@ -66,8 +65,7 @@ function getGame() {
         gS = db.collection("users").doc(uuid).getString("gameState");
         if (!db.collection("users").doc(uuid).getString("gameState") == gameStat) {
             document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
-            document.getElementsByClassName("start-new-button").addEventListener("click",
-                continue (gS));
+            document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
             addStyleString('  .start-new-button {display: inline-block;} ');
             addStyleString('  .restore-message {display: inline-block;} ');
             addStyleString('  .restore-hide {display: inline-block;} ');
