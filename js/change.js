@@ -1,4 +1,4 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, check1, check2, userId;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
 }
@@ -70,14 +70,14 @@ function getGame() {
         firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
             if (!snapshot.val().gameState === gameStat) {
                 gS = snapshot.val().gameState;
-                check1 = true;
+                chec1 = true;
             } else {
                 console.log(snapshot.val().gameState);
                 console.log(gameStat);
-                check1 = false;
-            }
+                chec1 = false;
+            } console.log(chec1);
         });
-        if (check1 == true) {
+        if (chec1 == true) {
             document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
             document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
             addStyleString('  .start-new-button {display: inline-block;} ');
