@@ -528,16 +528,16 @@ function loadSaves() {
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
                     db.collection("users").doc(userId).get().then(function(doc) {
-                        var ne1024 = gameNumberAdd + "no1024";
-                        var ne512 = gameNumberAdd + "no512";
-                        var ne256 = gameNumberAdd + "no256";
-                        var ne128 = gameNumberAdd + "no128";
-                        var ne64 = gameNumberAdd + "no64";
-                        var ne32 = gameNumberAdd + "no32";
-                        var ne16 = gameNumberAdd + "no16";
-                        var ne8 = gameNumberAdd + "no8";
-                        var ne4 = gameNumberAdd + "no4";
-                        var ne2 = gameNumberAdd + "no2";
+                        var ne1024 = "no" + gameNumberAdd + "no1024";
+                        var ne512 = "no" + gameNumberAdd + "no512";
+                        var ne256 = "no" + gameNumberAdd + "no256";
+                        var ne128 = "no" + gameNumberAdd + "no128";
+                        var ne64 = "no" + gameNumberAdd + "no64";
+                        var ne32 = "no" + gameNumberAdd + "no32";
+                        var ne16 = "no" + gameNumberAdd + "no16";
+                        var ne8 = "no" + gameNumberAdd + "no8";
+                        var ne4 = "no" + gameNumberAdd + "no4";
+                        var ne2 = "no" + gameNumberAdd + "no2";
                         var thing2 = doc.data().ne2;
                         var thing4 = doc.data().ne4;
                         var thing8 = doc.data().ne8;
