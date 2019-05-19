@@ -1,4 +1,4 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
 }
@@ -42,8 +42,10 @@ function saveGame() {
 }
 
 function continu(gS) {
+    if (added = true) {
     localStorage.setItem("gameState", gS)
     location.reload();
+}
 }
 
 function startNew() {
@@ -60,11 +62,12 @@ if (uDS == true) {
 }
 
 function getGame() {
+    check0 = null;
+    chec1 = null;
+    check2 = null;
     userId = firebase.auth().currentUser.uid;
     if (firebase.database().ref('/users/' + userId)) {
         check0 = true;
-        console.log(check0);
-        console.log("check = set to true");
     }
     if (check0 == true) {
         firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
@@ -72,18 +75,17 @@ function getGame() {
                 gS = snapshot.val().gameState;
                 chec1 = true;
             } else {
-                console.log(snapshot.val().gameState);
-                console.log(gameStat);
                 chec1 = false;
-            } console.log(chec1);
+            }
         });
         if (chec1 == true) {
-            document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
-            document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
             addStyleString('  .start-new-button {display: inline-block;} ');
             addStyleString('  .restore-message {display: inline-block;} ');
             addStyleString('  .restore-hide {display: inline-block;} ');
             addStyleString('  .continue-button {display: inline-block;} ');
+            document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
+            document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
+            added =  true;
         }
         firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
             if (snapshot.val().bestScore) {
@@ -103,8 +105,6 @@ function getGame() {
             bestScore: bestScor
         });
     }
-    console.log(gS);
-    console.log(bS);
 }
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
