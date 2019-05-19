@@ -366,7 +366,7 @@ function saveCloud() {
     });
 }
 
-function saveCloud() {
+function loadSaves() {
     firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
         while (snapshot.val().gameNumber > 0, gameNumber--) {
             var add = document.createElement("p");
