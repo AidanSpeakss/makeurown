@@ -380,7 +380,7 @@ function saveCloud() {
                 });
             } else {
                 db.collection("users").doc(userId).get().then(function(doc) {
-                    db.collection("users").doc(userId).set({
+                    db.collection("users").doc(userId).update({
                         gameNumber: 0
                     });
                 });
