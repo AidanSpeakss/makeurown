@@ -1,4 +1,5 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added, gameNumberAdd;
+var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
 }
@@ -251,17 +252,17 @@ document.addEventListener("keydown", function key(event) {
 });
 window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
-        var game2input = document.getElementsByClassName("input2")[0].value;
-        var game4input = document.getElementsByClassName("input4")[0].value;
-        var game8input = document.getElementsByClassName("input8")[0].value;
-        var game16input = document.getElementsByClassName("input16")[0].value;
-        var game32input = document.getElementsByClassName("input32")[0].value;
-        var game64input = document.getElementsByClassName("input64")[0].value;
-        var game128input = document.getElementsByClassName("input128")[0].value;
-        var game256input = document.getElementsByClassName("input256")[0].value;
-        var game512input = document.getElementsByClassName("input512")[0].value;
-        var game1024input = document.getElementsByClassName("input1024")[0].value;
-        var game2048input = document.getElementsByClassName("input2048")[0].value;
+        game2input = document.getElementsByClassName("input2")[0].value;
+        game4input = document.getElementsByClassName("input4")[0].value;
+        game8input = document.getElementsByClassName("input8")[0].value;
+        game16input = document.getElementsByClassName("input16")[0].value;
+        game32input = document.getElementsByClassName("input32")[0].value;
+        game64input = document.getElementsByClassName("input64")[0].value;
+        game128input = document.getElementsByClassName("input128")[0].value;
+        game256input = document.getElementsByClassName("input256")[0].value;
+        game512input = document.getElementsByClassName("input512")[0].value;
+        game1024input = document.getElementsByClassName("input1024")[0].value;
+        game2048input = document.getElementsByClassName("input2048")[0].value;
         document.cookie = 'game2=' + game2input + '"';
         document.cookie = 'game4=' + game4input + '"';
         document.cookie = 'game8=' + game8input + '"';
@@ -274,6 +275,7 @@ window.onload = function() {
         document.cookie = 'game1024=' + game1024input + '"';
         document.cookie = 'game2048=' + game2048input + '"';
         document.cookie = 'images_changed=true';
+        saveCloud();
     })
 };
 
@@ -330,3 +332,86 @@ window.onload = setTimeout(function() {
         getGame();
     }
 }, 1000);
+
+function saveCloud() {
+firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+            var gameNumberSet = snapshot.val().gameNumber;
+    gameNumberAdd = gameNumberSet++;
+});
+var new2048 = gameNumberAdd + "no2048";
+var new1024 = gameNumberAdd + "no1024";
+var new512 = gameNumberAdd + "no512";
+var new256 = gameNumberAdd + "no256";
+var new128 = gameNumberAdd + "no128";
+var new64 = gameNumberAdd + "no64";
+var new32 = gameNumberAdd + "no32";
+var new16 = gameNumberAdd + "no16";
+var new8 = gameNumberAdd + "no8";
+var new4 = gameNumberAdd + "no4";
+var new2 = gameNumberAdd + "no2";
+
+firebase.database().ref('/users/' + userId).set({
+            gameNumber: gameNumberAdd,
+            new2048: game2048input,
+            new1024: game1024input,
+            new512: game512input,
+            new256: game256input,
+            new128: game128input,
+            new64: game64input,
+            new32: game32input,
+            new16: game16input,
+            new8: game8input,
+            new4: game4input,
+            new2: game2input
+        });
+}
+
+function saveCloud() {
+firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+            while(snapshot.val().gameNumber > 0, gameNumber--) {
+            var add = document.createElement("p");
+        add.innerHTML = "Saved Game #" + gameNumber;
+        add.className = "game-button " + "game" + gameNumber;
+    document.getElementsByClassName("saved-games")[0].appendChild(add);
+    document.getElementsByClassName("game" + gameNumber)[0].addEventListener("click", function() {
+      firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+            var ne2048 = gameNumberAdd + "no2048";
+            var ne1024 = gameNumberAdd + "no1024";
+            var ne512 = gameNumberAdd + "no512";
+            var ne256 = gameNumberAdd + "no256";
+            var ne128 = gameNumberAdd + "no128";
+            var ne64 = gameNumberAdd + "no64";
+            var ne32 = gameNumberAdd + "no32";
+            var ne16 = gameNumberAdd + "no16";
+            var ne8 = gameNumberAdd + "no8";
+            var ne4 = gameNumberAdd + "no4";
+            var ne2 = gameNumberAdd + "no2";
+            var thing2 = snapshot.val().ne2;
+            var thing4 = snapshot.val().ne4;
+            var thing8 = snapshot.val().ne8;
+            var thing16  = snapshot.val().ne16;
+            var thing32 = snapshot.val().ne32;
+            var thing64 = snapshot.val().ne64;
+            var thing128 = snapshot.val().ne128;
+            var thing256 = snapshot.val().ne256;
+            var thing512 = snapshot.val().ne512;
+            var thing1024 = snapshot.val().ne1024;
+            var thing2048 = snapshot.val().ne2048;
+        });
+        document.cookie = 'game2=' + thing2 + '"';
+        document.cookie = 'game4=' + thing4 + '"';
+        document.cookie = 'game8=' + thing8 + '"';
+        document.cookie = 'game16=' + thing16 + '"';
+        document.cookie = 'game32=' + thing32 + '"';
+        document.cookie = 'game64=' + thing64 + '"';
+        document.cookie = 'game128=' + thing128 + '"';
+        document.cookie = 'game256=' + thing256 + '"';
+        document.cookie = 'game512=' + thing512 + '"';
+        document.cookie = 'game1024=' + thing1024 + '"';
+        document.cookie = 'game2048=' + thing2048 + '"';
+        document.cookie = 'images_changed=true';
+    });
+}
+}
+});
+}
