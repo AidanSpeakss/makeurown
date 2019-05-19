@@ -34,8 +34,9 @@ if (localStorage.getItem('bestScore')) {
 }
 // Subsequent queries will use persistence, if it was enabled successfully
 function saveGame() {
+
     if (user) {
-        firebase.database().ref('/users/' + userId).set({
+        db.collection("users").doc(userId).add({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -56,8 +57,14 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        firebase.database().ref('/users/' + userId).set({
-            gameState: gameStat
+        db.collection("users").doc(userId).get().then(function(doc) {
+            if (doc.exists) {
+                db.collection("users").doc(userId).set({
+                    gameState: gameStat
+                });
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
         });
     }
 }
@@ -67,16 +74,22 @@ function getGame() {
     chec1 = null;
     check2 = null;
     userId = firebase.auth().currentUser.uid;
-    if (firebase.database().ref('/users/' + userId)) {
+    if (db.collection("users").doc(userId).get().then(function(doc) {
+            if (doc.exists) {
+                return true;
+            }
+        })) {
         check0 = true;
     }
     if (check0 == true) {
-        firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-            if (snapshot.val().gameState !== gameStat) {
-                gS = snapshot.val().gameState;
-                chec1 = true;
-            } else {
-                chec1 = false;
+        db.collection("users").doc(userId).get().then(function(doc) {
+            if (doc.data().gameState) {
+                if (doc.data().gameState !== gameStat) {
+                    gS = doc.data().gameState;
+                    chec1 = true;
+                } else {
+                    chec1 = false;
+                }
             }
         });
         if (chec1 == true) {
@@ -88,20 +101,21 @@ function getGame() {
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
             added = true;
         }
-        firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-            if (snapshot.val().bestScore) {
-                bS = snapshot.val().bestScore;
-                check2 = true;
-            } else {
-                check2 = false;
+        db.collection("users").doc(userId).get().then(function(doc) {
+            if (doc.data().bestScore) {
+                if (doc.data().bestScore !== bestScor) {
+                    bS = doc.data().bestScore;
+                    check2 = true;
+                } else {
+                    check2 = false;
+                }
             }
         });
-
         if (check2 == true) {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        firebase.database().ref('/users/' + userId).set({
+        db.collection("users").doc(userId).set({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -250,32 +264,32 @@ document.addEventListener("keydown", function key(event) {
         }
     }
 });
-    document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
-        game2input = document.getElementsByClassName("input2")[0].value;
-        game4input = document.getElementsByClassName("input4")[0].value;
-        game8input = document.getElementsByClassName("input8")[0].value;
-        game16input = document.getElementsByClassName("input16")[0].value;
-        game32input = document.getElementsByClassName("input32")[0].value;
-        game64input = document.getElementsByClassName("input64")[0].value;
-        game128input = document.getElementsByClassName("input128")[0].value;
-        game256input = document.getElementsByClassName("input256")[0].value;
-        game512input = document.getElementsByClassName("input512")[0].value;
-        game1024input = document.getElementsByClassName("input1024")[0].value;
-        game2048input = document.getElementsByClassName("input2048")[0].value;
-        document.cookie = "game2=" + game2input;
-        document.cookie = "game4=" + game4input;
-        document.cookie = "game8=" + game8input;
-        document.cookie = "game16=" + game16input;
-        document.cookie = "game32=" + game32input;
-        document.cookie = "game64=" + game64input;
-        document.cookie = "game128=" + game128input;
-        document.cookie = "game256=" + game256input;
-        document.cookie = "game512=" + game512input;
-        document.cookie = "game1024=" + game1024input;
-        document.cookie = "game2048=" + game2048input;
-        document.cookie = 'images_changed=true';
-        saveCloud();
-    })
+document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
+    game2input = document.getElementsByClassName("input2")[0].value;
+    game4input = document.getElementsByClassName("input4")[0].value;
+    game8input = document.getElementsByClassName("input8")[0].value;
+    game16input = document.getElementsByClassName("input16")[0].value;
+    game32input = document.getElementsByClassName("input32")[0].value;
+    game64input = document.getElementsByClassName("input64")[0].value;
+    game128input = document.getElementsByClassName("input128")[0].value;
+    game256input = document.getElementsByClassName("input256")[0].value;
+    game512input = document.getElementsByClassName("input512")[0].value;
+    game1024input = document.getElementsByClassName("input1024")[0].value;
+    game2048input = document.getElementsByClassName("input2048")[0].value;
+    document.cookie = "game2=" + game2input;
+    document.cookie = "game4=" + game4input;
+    document.cookie = "game8=" + game8input;
+    document.cookie = "game16=" + game16input;
+    document.cookie = "game32=" + game32input;
+    document.cookie = "game64=" + game64input;
+    document.cookie = "game128=" + game128input;
+    document.cookie = "game256=" + game256input;
+    document.cookie = "game512=" + game512input;
+    document.cookie = "game1024=" + game1024input;
+    document.cookie = "game2048=" + game2048input;
+    document.cookie = 'images_changed=true';
+    saveCloud();
+})
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("Get redirect result function succesfully called.");
@@ -332,16 +346,17 @@ window.onload = setTimeout(function() {
 }, 1000);
 
 function saveCloud() {
-    firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-        if (snapshot.val().gameNumber) {
-        var gameNumberSet = snapshot.val().gameNumber;
-        gameNumberAdd = gameNumberSet++;
-        }
-        else {
-        firebase.database().ref('/users/' + userId).set({
-            gameNumber: 0
-        });
-        saveCloud();
+    db.collection("users").doc(userId).get().then(function(doc) {
+        if (doc.exists) {
+            if (doc.data().gameNumber) {
+                var gameNumberSet = doc.data().gameNumber;
+                gameNumberAdd = gameNumberSet++;
+            } else {
+                db.collection("users").doc(userId).set({
+                    gameNumber: 0
+                });
+                saveCloud();
+            }
         }
     });
     var new2048 = gameNumberAdd + "no2048";
@@ -356,7 +371,7 @@ function saveCloud() {
     var new4 = gameNumberAdd + "no4";
     var new2 = gameNumberAdd + "no2";
 
-    firebase.database().ref('/users/' + userId).set({
+    db.collection("users").doc(userId).set({
         gameNumber: gameNumberAdd,
         new2048: game2048input,
         new1024: game1024input,
@@ -373,15 +388,14 @@ function saveCloud() {
 }
 
 function loadSaves() {
-    firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-        while (snapshot.val().gameNumber > 0, gameNumber--) {
+    db.collection("users").doc(userId).get().then(function(doc) {
+        while (doc.data().gameNumber > 0, gameNumberAdd--) {
             var add = document.createElement("p");
-            add.innerHTML = "Saved Game #" + gameNumber;
-            add.className = "game-button " + "game" + gameNumber;
+            add.innerHTML = "Saved Game #" + gameNumberAdd;
+            add.className = "game-button " + "game" + gameNumberAdd;
             document.getElementsByClassName("saved-games")[0].appendChild(add);
-            document.getElementsByClassName("game" + gameNumber)[0].addEventListener("click", function() {
-                firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-                    var ne2048 = gameNumberAdd + "no2048";
+            document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
+                db.collection("users").doc(userId).get().then(function(doc) {
                     var ne1024 = gameNumberAdd + "no1024";
                     var ne512 = gameNumberAdd + "no512";
                     var ne256 = gameNumberAdd + "no256";
@@ -392,17 +406,17 @@ function loadSaves() {
                     var ne8 = gameNumberAdd + "no8";
                     var ne4 = gameNumberAdd + "no4";
                     var ne2 = gameNumberAdd + "no2";
-                    var thing2 = snapshot.val().ne2;
-                    var thing4 = snapshot.val().ne4;
-                    var thing8 = snapshot.val().ne8;
-                    var thing16 = snapshot.val().ne16;
-                    var thing32 = snapshot.val().ne32;
-                    var thing64 = snapshot.val().ne64;
-                    var thing128 = snapshot.val().ne128;
-                    var thing256 = snapshot.val().ne256;
-                    var thing512 = snapshot.val().ne512;
-                    var thing1024 = snapshot.val().ne1024;
-                    var thing2048 = snapshot.val().ne2048;
+                    var thing2 = doc.data().ne2;
+                    var thing4 = doc.data().ne4;
+                    var thing8 = doc.data().ne8;
+                    var thing16 = doc.data().ne16;
+                    var thing32 = doc.data().ne32;
+                    var thing64 = doc.data().ne64;
+                    var thing128 = doc.data().ne128;
+                    var thing256 = doc.data().ne256;
+                    var thing512 = doc.data().ne512;
+                    var thing1024 = doc.data().ne1024;
+                    var thing2048 = doc.data().ne2048;
                 });
                 document.cookie = "game2=" + thing2;
                 document.cookie = "game4=" + thing4;
