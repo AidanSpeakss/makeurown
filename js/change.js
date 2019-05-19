@@ -72,6 +72,8 @@ function getGame() {
                 gS = snapshot.val().gameState;
                 check1 = true;
             } else {
+                console.log(snapshot.val().gameState);
+                console.log(gameStat);
                 check1 = false;
             }
         });
