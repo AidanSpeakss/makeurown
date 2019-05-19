@@ -352,43 +352,175 @@ function saveCloud() {
                 var gameNumberSet = doc.data().gameNumber;
                 gameNumberAdd = gameNumberSet++;
             } else {
-                db.collection("users").doc(userId).update({
+                db.collection("users").doc(userId).get().then(function(doc) {
+                db.collection("users").doc(userId).set({
                     gameNumber: 0
-                });
+                }); 
+                }
                 saveCloud();
             }
+        else {
+db.collection("users").doc(userId).set({
+        saves.no1no2: null,
+        saves.no1no1024: null,
+        saves.no1no512: null,
+        saves.no1no256: null,
+        saves.no1no128: null,
+        saves.no1no64: null,
+        saves.no1no32: null,
+        saves.no1no16: null,
+        saves.no1no8: null,
+        saves.no1no4: null,
+        saves.no1no2: null,
+        saves.no2no2: null,
+        saves.no2no1024: null,
+        saves.no2no512: null,
+        saves.no2no256: null,
+        saves.no2no128: null,
+        saves.no2no64: null,
+        saves.no2no32: null,
+        saves.no2no16: null,
+        saves.no2no8: null,
+        saves.no2no4: null,
+        saves.no2no2: null,
+        saves.no3no2: null,
+        saves.no3no1024: null,
+        saves.no3no512: null,
+        saves.no3no256: null,
+        saves.no3no128: null,
+        saves.no3no64: null,
+        saves.no3no32: null,
+        saves.no3no16: null,
+        saves.no3no8: null,
+        saves.no3no4: null,
+        saves.no3no2: null,
+        saves.no4no2: null,
+        saves.no4no1024: null,
+        saves.no4no512: null,
+        saves.no4no256: null,
+        saves.no4no128: null,
+        saves.no4no64: null,
+        saves.no4no32: null,
+        saves.no4no16: null,
+        saves.no4no8: null,
+        saves.no4no4: null,
+        saves.no4no2: null,
+        saves.no5no2: null,
+        saves.no5no1024: null,
+        saves.no5no512: null,
+        saves.no5no256: null,
+        saves.no5no128: null,
+        saves.no5no64: null,
+        saves.no5no32: null,
+        saves.no5no16: null,
+        saves.no5no8: null,
+        saves.no5no4: null,
+        saves.no5no2: null,
+        saves.no6no2: null,
+        saves.no6no1024: null,
+        saves.no6no512: null,
+        saves.no6no256: null,
+        saves.no6no128: null,
+        saves.no6no64: null,
+        saves.no6no32: null,
+        saves.no6no16: null,
+        saves.no6no8: null,
+        saves.no6no4: null,
+        saves.no6no2: null,
+        saves.no7no2: null,
+        saves.no7no1024: null,
+        saves.no7no512: null,
+        saves.no7no256: null,
+        saves.no7no128: null,
+        saves.no7no64: null,
+        saves.no7no32: null,
+        saves.no7no16: null,
+        saves.no7no8: null,
+        saves.no7no4: null,
+        saves.no7no2: null,
+        saves.no8no2: null,
+        saves.no8no1024: null,
+        saves.no8no512: null,
+        saves.no8no256: null,
+        saves.no8no128: null,
+        saves.no8no64: null,
+        saves.no8no32: null,
+        saves.no8no16: null,
+        saves.no8no8: null,
+        saves.no8no4: null,
+        saves.no8no2: null,
+        saves.no9no2: null,
+        saves.no9no1024: null,
+        saves.no9no512: null,
+        saves.no9no256: null,
+        saves.no9no128: null,
+        saves.no9no64: null,
+        saves.no9no32: null,
+        saves.no9no16: null,
+        saves.no9no8: null,
+        saves.no9no4: null,
+        saves.no9no2: null,
+        saves.no10no2: null,
+        saves.no10no1024: null,
+        saves.no10no512: null,
+        saves.no10no256: null,
+        saves.no10no128: null,
+        saves.no10no64: null,
+        saves.no10no32: null,
+        saves.no10no16: null,
+        saves.no10no8: null,
+        saves.no10no4: null,
+        saves.no10no2: null,
+        saves.no11no2: null,
+        saves.no11no1024: null,
+        saves.no11no512: null,
+        saves.no11no256: null,
+        saves.no11no128: null,
+        saves.no11no64: null,
+        saves.no11no32: null,
+        saves.no11no16: null,
+        saves.no11no8: null,
+        saves.no11no4: null,
+        saves.no11no2: null,
+
+    gameNumber: null,
+                    bestScore: null,
+                    gameState: null,
+                    saves: null,
+                });
         }
     });
-    var new2048 = gameNumberAdd + "no2048";
-    var new1024 = gameNumberAdd + "no1024";
-    var new512 = gameNumberAdd + "no512";
-    var new256 = gameNumberAdd + "no256";
-    var new128 = gameNumberAdd + "no128";
-    var new64 = gameNumberAdd + "no64";
-    var new32 = gameNumberAdd + "no32";
-    var new16 = gameNumberAdd + "no16";
-    var new8 = gameNumberAdd + "no8";
-    var new4 = gameNumberAdd + "no4";
-    var new2 = gameNumberAdd + "no2";
+    var new2048 = "no" + gameNumberAdd + "no2048";
+    var new1024 = "no" + gameNumberAdd + "no1024";
+    var new512 = "no" + gameNumberAdd + "no512";
+    var new256 = "no" + gameNumberAdd + "no256";
+    var new128 = "no" + gameNumberAdd + "no128";
+    var new64 = "no" + gameNumberAdd + "no64";
+    var new32 = "no" + gameNumberAdd + "no32";
+    var new16 = "no" + gameNumberAdd + "no16";
+    var new8 = "no" + gameNumberAdd + "no8";
+    var new4 = "no" + gameNumberAdd + "no4";
+    var new2 = "no" + gameNumberAdd + "no2";
 
     db.collection("users").doc(userId).update({
         gameNumber: gameNumberAdd,
-        new2048: game2048input,
-        new1024: game1024input,
-        new512: game512input,
-        new256: game256input,
-        new128: game128input,
-        new64: game64input,
-        new32: game32input,
-        new16: game16input,
-        new8: game8input,
-        new4: game4input,
-        new2: game2input
+        saves.new2048: game2048input,
+        saves.new1024: game1024input,
+        saves.new512: game512input,
+        saves.new256: game256input,
+        saves.new128: game128input,
+        saves.new64: game64input,
+        saves.new32: game32input,
+        saves.new16: game16input,
+        saves.new8: game8input,
+        saves.new4: game4input,
+        saves.new2: game2input
     });
 }
 
 function loadSaves() {
     db.collection("users").doc(userId).get().then(function(doc) {
+        if (!doc.data().gameNumber > 11) {
         while (doc.data().gameNumber > 0, gameNumberAdd--) {
             var add = document.createElement("p");
             add.innerHTML = "Saved Game #" + gameNumberAdd;
@@ -431,6 +563,10 @@ function loadSaves() {
                 document.cookie = "game2048=" + thing2048;
                 document.cookie = "images_changed=true";
             });
+        }
+                                }
+        else {
+            window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
         }
     });
 }
