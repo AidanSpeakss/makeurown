@@ -353,7 +353,7 @@ function saveCloud() {
                 gameNumberAdd = gameNumberSet++;
             } else {
                 db.collection("users").doc(userId).set({
-                    gameNumber: 0
+                    gameNumber: '0'
                 });
                 saveCloud();
             }
