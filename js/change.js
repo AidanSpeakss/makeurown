@@ -1,4 +1,4 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, stateCheck, check0, check1, check2, check3;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, check1, check2;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
     var userId = firebase.auth().currentUser.uid;
@@ -35,8 +35,7 @@ if (localStorage.getItem('bestScore')) {
 // Subsequent queries will use persistence, if it was enabled successfully
 function saveGame() {
     if (user) {
-        uuid = user.uid;
-        db.collection("user").doc(uuid).set({
+        firebase.database().ref('/users/' + userId).set({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -55,7 +54,7 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        db.collection("user").doc(uuid).set({
+        firebase.database().ref('/users/' + userId).set({
             gameState: gameStat
         });
     }
@@ -63,62 +62,45 @@ if (uDS == true) {
 
 function getGame() {
     if (firebase.database().ref('/users/' + userId)) {
-        firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
-            if (snapshot.val) {
-                check0 = true;
+        check0 == true;
+    }
+    if (check0 == true) {
+        firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+            if (!snapshot.val().gameState == gameStat) {
+                gS = snapshot.val().gameState;
+                check1 = true;
             } else {
-                check0 = false;
+                check1 = false;
             }
         });
-        if (check0 == true) {
-            firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
-                if (snapshot.val == gameStat) {
-                    check1 = true;
-                } else {
-                    check1 = false;
-                }
-            });
-            if (check1 == true) {
-                document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
-                document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
-                addStyleString('  .start-new-button {display: inline-block;} ');
-                addStyleString('  .restore-message {display: inline-block;} ');
-                addStyleString('  .restore-hide {display: inline-block;} ');
-                addStyleString('  .continue-button {display: inline-block;} ');
-            }
+        if (check1 == true) {
+            document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
+            document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
+            addStyleString('  .start-new-button {display: inline-block;} ');
+            addStyleString('  .restore-message {display: inline-block;} ');
+            addStyleString('  .restore-hide {display: inline-block;} ');
+            addStyleString('  .continue-button {display: inline-block;} ');
         }
-        firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
-            if (snapshot.val) {
+        firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+            if (snapshot.val().bestScore) {
+                bS = snapshot.val().bestScore;
                 check2 = true;
             } else {
                 check2 = false;
             }
         });
+
         if (check2 == true) {
-            firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
-                bS = snapshot.val;
-            });
-            firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
-                if (snapshot.val == bestScor) {
-                    check3 = true;
-                } else {
-                    check3 = false;
-                }
-            });
-            if (check3 == true) {
-                bS = firebase.database().ref('/users/' + userId).once('bestScore');
-                getElementsByClassName("best-container")[0].innerHTML = bS;
-            }
+            getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        db.collection("user").doc(uuid).add({
+        firebase.database().ref('/users/' + userId).set({
             gameState: gameStat,
             bestScore: bestScor
         });
     }
     console.log(gS);
     console.log(bS);
-
 }
 
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
