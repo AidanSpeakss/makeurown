@@ -250,7 +250,6 @@ document.addEventListener("keydown", function key(event) {
         }
     }
 });
-window.onload = function() {
     document.body.getElementsByClassName("go")[0].addEventListener("click", function cookkies() {
         game2input = document.getElementsByClassName("input2")[0].value;
         game4input = document.getElementsByClassName("input4")[0].value;
@@ -277,7 +276,6 @@ window.onload = function() {
         document.cookie = 'images_changed=true';
         saveCloud();
     })
-};
 
 firebase.auth().onAuthStateChanged(function(user) {
     console.log("Get redirect result function succesfully called.");
@@ -335,8 +333,16 @@ window.onload = setTimeout(function() {
 
 function saveCloud() {
     firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+        if (snapshot.val().gameNumber) {
         var gameNumberSet = snapshot.val().gameNumber;
         gameNumberAdd = gameNumberSet++;
+        }
+        else {
+        firebase.database().ref('/users/' + userId).set({
+            gameNumber: 0
+        });
+        saveCloud();
+        }
     });
     var new2048 = gameNumberAdd + "no2048";
     var new1024 = gameNumberAdd + "no1024";
