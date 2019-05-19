@@ -3,9 +3,6 @@ if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
     var userId = firebase.auth().currentUser.uid;
 }
-stateCheck = firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
-    stateCheckValue = snapshot.val;
-});
 
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
