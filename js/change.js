@@ -95,7 +95,7 @@ function getGame() {
         });
 
         if (check2 == true) {
-            getElementsByClassName("best-container")[0].innerHTML = bS;
+            document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
         firebase.database().ref('/users/' + userId).set({
