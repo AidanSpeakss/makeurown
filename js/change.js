@@ -68,7 +68,7 @@ function getGame() {
     }
     if (check0 == true) {
         firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-            if (!snapshot.val().gameState === gameStat) {
+            if (snapshot.val().gameState !== gameStat) {
                 gS = snapshot.val().gameState;
                 chec1 = true;
             } else {
