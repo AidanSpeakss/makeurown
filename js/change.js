@@ -59,7 +59,7 @@ if (uDS == true) {
         uuid = user.uid;
         db.collection("users").doc(userId).get().then(function(doc) {
             if (doc.exists) {
-                db.collection("users").doc(userId).set({
+                db.collection("users").doc(userId).update({
                     gameState: gameStat
                 });
             }
@@ -115,7 +115,7 @@ function getGame() {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        db.collection("users").doc(userId).set({
+        db.collection("users").doc(userId).update({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -352,8 +352,8 @@ function saveCloud() {
                 var gameNumberSet = doc.data().gameNumber;
                 gameNumberAdd = gameNumberSet++;
             } else {
-                db.collection("users").doc(userId).set({
-                    gameNumber: '0'
+                db.collection("users").doc(userId).update({
+                    gameNumber: 0
                 });
                 saveCloud();
             }
@@ -371,7 +371,7 @@ function saveCloud() {
     var new4 = gameNumberAdd + "no4";
     var new2 = gameNumberAdd + "no2";
 
-    db.collection("users").doc(userId).set({
+    db.collection("users").doc(userId).update({
         gameNumber: gameNumberAdd,
         new2048: game2048input,
         new1024: game1024input,
