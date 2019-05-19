@@ -1,7 +1,6 @@
 var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, check1, check2, userId;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
-    userId = firebase.auth().currentUser.uid;
 }
 
 function addStyleString2(str, str2) {
@@ -61,6 +60,7 @@ if (uDS == true) {
 }
 
 function getGame() {
+    userId = firebase.auth().currentUser.uid;
     if (firebase.database().ref('/users/' + userId)) {
         check0 == true;
     }
