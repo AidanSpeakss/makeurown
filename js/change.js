@@ -62,7 +62,9 @@ if (uDS == true) {
 function getGame() {
     userId = firebase.auth().currentUser.uid;
     if (firebase.database().ref('/users/' + userId)) {
-        check0 == true;
+        check0 = true;
+        console.log(check0);
+        console.log("check = set to true");
     }
     if (check0 == true) {
         firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
