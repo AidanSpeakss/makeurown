@@ -353,141 +353,141 @@ function saveCloud() {
                 gameNumberAdd = gameNumberSet++;
             } else {
                 db.collection("users").doc(userId).get().then(function(doc) {
-                db.collection("users").doc(userId).set({
-                    gameNumber: 0
-                }); 
-                }
+                    db.collection("users").doc(userId).set({
+                        gameNumber: 0
+                    });
+                });
                 saveCloud();
             }
-        else {
-db.collection("users").doc(userId).set({
-        saves.no1no2: null,
-        saves.no1no1024: null,
-        saves.no1no512: null,
-        saves.no1no256: null,
-        saves.no1no128: null,
-        saves.no1no64: null,
-        saves.no1no32: null,
-        saves.no1no16: null,
-        saves.no1no8: null,
-        saves.no1no4: null,
-        saves.no1no2: null,
-        saves.no2no2: null,
-        saves.no2no1024: null,
-        saves.no2no512: null,
-        saves.no2no256: null,
-        saves.no2no128: null,
-        saves.no2no64: null,
-        saves.no2no32: null,
-        saves.no2no16: null,
-        saves.no2no8: null,
-        saves.no2no4: null,
-        saves.no2no2: null,
-        saves.no3no2: null,
-        saves.no3no1024: null,
-        saves.no3no512: null,
-        saves.no3no256: null,
-        saves.no3no128: null,
-        saves.no3no64: null,
-        saves.no3no32: null,
-        saves.no3no16: null,
-        saves.no3no8: null,
-        saves.no3no4: null,
-        saves.no3no2: null,
-        saves.no4no2: null,
-        saves.no4no1024: null,
-        saves.no4no512: null,
-        saves.no4no256: null,
-        saves.no4no128: null,
-        saves.no4no64: null,
-        saves.no4no32: null,
-        saves.no4no16: null,
-        saves.no4no8: null,
-        saves.no4no4: null,
-        saves.no4no2: null,
-        saves.no5no2: null,
-        saves.no5no1024: null,
-        saves.no5no512: null,
-        saves.no5no256: null,
-        saves.no5no128: null,
-        saves.no5no64: null,
-        saves.no5no32: null,
-        saves.no5no16: null,
-        saves.no5no8: null,
-        saves.no5no4: null,
-        saves.no5no2: null,
-        saves.no6no2: null,
-        saves.no6no1024: null,
-        saves.no6no512: null,
-        saves.no6no256: null,
-        saves.no6no128: null,
-        saves.no6no64: null,
-        saves.no6no32: null,
-        saves.no6no16: null,
-        saves.no6no8: null,
-        saves.no6no4: null,
-        saves.no6no2: null,
-        saves.no7no2: null,
-        saves.no7no1024: null,
-        saves.no7no512: null,
-        saves.no7no256: null,
-        saves.no7no128: null,
-        saves.no7no64: null,
-        saves.no7no32: null,
-        saves.no7no16: null,
-        saves.no7no8: null,
-        saves.no7no4: null,
-        saves.no7no2: null,
-        saves.no8no2: null,
-        saves.no8no1024: null,
-        saves.no8no512: null,
-        saves.no8no256: null,
-        saves.no8no128: null,
-        saves.no8no64: null,
-        saves.no8no32: null,
-        saves.no8no16: null,
-        saves.no8no8: null,
-        saves.no8no4: null,
-        saves.no8no2: null,
-        saves.no9no2: null,
-        saves.no9no1024: null,
-        saves.no9no512: null,
-        saves.no9no256: null,
-        saves.no9no128: null,
-        saves.no9no64: null,
-        saves.no9no32: null,
-        saves.no9no16: null,
-        saves.no9no8: null,
-        saves.no9no4: null,
-        saves.no9no2: null,
-        saves.no10no2: null,
-        saves.no10no1024: null,
-        saves.no10no512: null,
-        saves.no10no256: null,
-        saves.no10no128: null,
-        saves.no10no64: null,
-        saves.no10no32: null,
-        saves.no10no16: null,
-        saves.no10no8: null,
-        saves.no10no4: null,
-        saves.no10no2: null,
-        saves.no11no2: null,
-        saves.no11no1024: null,
-        saves.no11no512: null,
-        saves.no11no256: null,
-        saves.no11no128: null,
-        saves.no11no64: null,
-        saves.no11no32: null,
-        saves.no11no16: null,
-        saves.no11no8: null,
-        saves.no11no4: null,
-        saves.no11no2: null,
+        } else {
+            db.collection("users").doc(userId).set({
+                saves.no1no2: null,
+                saves.no1no1024: null,
+                saves.no1no512: null,
+                saves.no1no256: null,
+                saves.no1no128: null,
+                saves.no1no64: null,
+                saves.no1no32: null,
+                saves.no1no16: null,
+                saves.no1no8: null,
+                saves.no1no4: null,
+                saves.no1no2: null,
+                saves.no2no2: null,
+                saves.no2no1024: null,
+                saves.no2no512: null,
+                saves.no2no256: null,
+                saves.no2no128: null,
+                saves.no2no64: null,
+                saves.no2no32: null,
+                saves.no2no16: null,
+                saves.no2no8: null,
+                saves.no2no4: null,
+                saves.no2no2: null,
+                saves.no3no2: null,
+                saves.no3no1024: null,
+                saves.no3no512: null,
+                saves.no3no256: null,
+                saves.no3no128: null,
+                saves.no3no64: null,
+                saves.no3no32: null,
+                saves.no3no16: null,
+                saves.no3no8: null,
+                saves.no3no4: null,
+                saves.no3no2: null,
+                saves.no4no2: null,
+                saves.no4no1024: null,
+                saves.no4no512: null,
+                saves.no4no256: null,
+                saves.no4no128: null,
+                saves.no4no64: null,
+                saves.no4no32: null,
+                saves.no4no16: null,
+                saves.no4no8: null,
+                saves.no4no4: null,
+                saves.no4no2: null,
+                saves.no5no2: null,
+                saves.no5no1024: null,
+                saves.no5no512: null,
+                saves.no5no256: null,
+                saves.no5no128: null,
+                saves.no5no64: null,
+                saves.no5no32: null,
+                saves.no5no16: null,
+                saves.no5no8: null,
+                saves.no5no4: null,
+                saves.no5no2: null,
+                saves.no6no2: null,
+                saves.no6no1024: null,
+                saves.no6no512: null,
+                saves.no6no256: null,
+                saves.no6no128: null,
+                saves.no6no64: null,
+                saves.no6no32: null,
+                saves.no6no16: null,
+                saves.no6no8: null,
+                saves.no6no4: null,
+                saves.no6no2: null,
+                saves.no7no2: null,
+                saves.no7no1024: null,
+                saves.no7no512: null,
+                saves.no7no256: null,
+                saves.no7no128: null,
+                saves.no7no64: null,
+                saves.no7no32: null,
+                saves.no7no16: null,
+                saves.no7no8: null,
+                saves.no7no4: null,
+                saves.no7no2: null,
+                saves.no8no2: null,
+                saves.no8no1024: null,
+                saves.no8no512: null,
+                saves.no8no256: null,
+                saves.no8no128: null,
+                saves.no8no64: null,
+                saves.no8no32: null,
+                saves.no8no16: null,
+                saves.no8no8: null,
+                saves.no8no4: null,
+                saves.no8no2: null,
+                saves.no9no2: null,
+                saves.no9no1024: null,
+                saves.no9no512: null,
+                saves.no9no256: null,
+                saves.no9no128: null,
+                saves.no9no64: null,
+                saves.no9no32: null,
+                saves.no9no16: null,
+                saves.no9no8: null,
+                saves.no9no4: null,
+                saves.no9no2: null,
+                saves.no10no2: null,
+                saves.no10no1024: null,
+                saves.no10no512: null,
+                saves.no10no256: null,
+                saves.no10no128: null,
+                saves.no10no64: null,
+                saves.no10no32: null,
+                saves.no10no16: null,
+                saves.no10no8: null,
+                saves.no10no4: null,
+                saves.no10no2: null,
+                saves.no11no2: null,
+                saves.no11no1024: null,
+                saves.no11no512: null,
+                saves.no11no256: null,
+                saves.no11no128: null,
+                saves.no11no64: null,
+                saves.no11no32: null,
+                saves.no11no16: null,
+                saves.no11no8: null,
+                saves.no11no4: null,
+                saves.no11no2: null,
 
-    gameNumber: null,
-                    bestScore: null,
-                    gameState: null,
-                    saves: null,
-                });
+                gameNumber: null,
+                bestScore: null,
+                gameState: null,
+                saves: null,
+            });
         }
     });
     var new2048 = "no" + gameNumberAdd + "no2048";
@@ -521,51 +521,50 @@ db.collection("users").doc(userId).set({
 function loadSaves() {
     db.collection("users").doc(userId).get().then(function(doc) {
         if (!doc.data().gameNumber > 11) {
-        while (doc.data().gameNumber > 0, gameNumberAdd--) {
-            var add = document.createElement("p");
-            add.innerHTML = "Saved Game #" + gameNumberAdd;
-            add.className = "game-button " + "game" + gameNumberAdd;
-            document.getElementsByClassName("saved-games")[0].appendChild(add);
-            document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
-                db.collection("users").doc(userId).get().then(function(doc) {
-                    var ne1024 = gameNumberAdd + "no1024";
-                    var ne512 = gameNumberAdd + "no512";
-                    var ne256 = gameNumberAdd + "no256";
-                    var ne128 = gameNumberAdd + "no128";
-                    var ne64 = gameNumberAdd + "no64";
-                    var ne32 = gameNumberAdd + "no32";
-                    var ne16 = gameNumberAdd + "no16";
-                    var ne8 = gameNumberAdd + "no8";
-                    var ne4 = gameNumberAdd + "no4";
-                    var ne2 = gameNumberAdd + "no2";
-                    var thing2 = doc.data().ne2;
-                    var thing4 = doc.data().ne4;
-                    var thing8 = doc.data().ne8;
-                    var thing16 = doc.data().ne16;
-                    var thing32 = doc.data().ne32;
-                    var thing64 = doc.data().ne64;
-                    var thing128 = doc.data().ne128;
-                    var thing256 = doc.data().ne256;
-                    var thing512 = doc.data().ne512;
-                    var thing1024 = doc.data().ne1024;
-                    var thing2048 = doc.data().ne2048;
+            while (doc.data().gameNumber > 0, gameNumberAdd--) {
+                var add = document.createElement("p");
+                add.innerHTML = "Saved Game #" + gameNumberAdd;
+                add.className = "game-button " + "game" + gameNumberAdd;
+                document.getElementsByClassName("saved-games")[0].appendChild(add);
+                document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
+                    db.collection("users").doc(userId).get().then(function(doc) {
+                        var ne1024 = gameNumberAdd + "no1024";
+                        var ne512 = gameNumberAdd + "no512";
+                        var ne256 = gameNumberAdd + "no256";
+                        var ne128 = gameNumberAdd + "no128";
+                        var ne64 = gameNumberAdd + "no64";
+                        var ne32 = gameNumberAdd + "no32";
+                        var ne16 = gameNumberAdd + "no16";
+                        var ne8 = gameNumberAdd + "no8";
+                        var ne4 = gameNumberAdd + "no4";
+                        var ne2 = gameNumberAdd + "no2";
+                        var thing2 = doc.data().ne2;
+                        var thing4 = doc.data().ne4;
+                        var thing8 = doc.data().ne8;
+                        var thing16 = doc.data().ne16;
+                        var thing32 = doc.data().ne32;
+                        var thing64 = doc.data().ne64;
+                        var thing128 = doc.data().ne128;
+                        var thing256 = doc.data().ne256;
+                        var thing512 = doc.data().ne512;
+                        var thing1024 = doc.data().ne1024;
+                        var thing2048 = doc.data().ne2048;
+                    });
+                    document.cookie = "game2=" + thing2;
+                    document.cookie = "game4=" + thing4;
+                    document.cookie = "game8=" + thing8;
+                    document.cookie = "game16=" + thing16;
+                    document.cookie = "game32=" + thing32;
+                    document.cookie = "game64=" + thing64;
+                    document.cookie = "game128=" + thing128;
+                    document.cookie = "game256=" + thing256;
+                    document.cookie = "game512=" + thing512;
+                    document.cookie = "game1024=" + thing1024;
+                    document.cookie = "game2048=" + thing2048;
+                    document.cookie = "images_changed=true";
                 });
-                document.cookie = "game2=" + thing2;
-                document.cookie = "game4=" + thing4;
-                document.cookie = "game8=" + thing8;
-                document.cookie = "game16=" + thing16;
-                document.cookie = "game32=" + thing32;
-                document.cookie = "game64=" + thing64;
-                document.cookie = "game128=" + thing128;
-                document.cookie = "game256=" + thing256;
-                document.cookie = "game512=" + thing512;
-                document.cookie = "game1024=" + thing1024;
-                document.cookie = "game2048=" + thing2048;
-                document.cookie = "images_changed=true";
-            });
-        }
-                                }
-        else {
+            }
+        } else {
             window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
         }
     });
