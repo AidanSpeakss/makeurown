@@ -1,7 +1,7 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, check1, check2;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, check1, check2, userId;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
-    var userId = firebase.auth().currentUser.uid;
+    userId = firebase.auth().currentUser.uid;
 }
 
 function addStyleString2(str, str2) {
