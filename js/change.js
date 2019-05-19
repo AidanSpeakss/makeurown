@@ -1,8 +1,11 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, stateCheck, check0, check1, check2, check3;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
     var userId = firebase.auth().currentUser.uid;
 }
+stateCheck = firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
+    stateCheckValue = snapshot.val;
+});
 
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
@@ -63,9 +66,22 @@ if (uDS == true) {
 
 function getGame() {
     if (firebase.database().ref('/users/' + userId)) {
-        if (firebase.database().ref('/users/' + userId).once('gameState')) {
-            gS = firebase.database().ref('/users/' + userId).once('gameState');
-            if (!firebase.database().ref('/users/' + userId).once('gameState') == gameStat) {
+        firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
+            if (snapshot.val) {
+                check0 = true;
+            } else {
+                check0 = false;
+            }
+        });
+        if (check0 == true) {
+            firebase.database().ref('/users/' + userId).once('gameState').then(function(dataSnapshot) {
+                if (snapshot.val == gameStat) {
+                    check1 = true;
+                } else {
+                    check1 = false;
+                }
+            });
+            if (check1 == true) {
                 document.getElementsByClassName("start-new-button").addEventListener("click", startNew());
                 document.getElementsByClassName("start-new-button").addEventListener("click", continu(gS));
                 addStyleString('  .start-new-button {display: inline-block;} ');
@@ -74,9 +90,28 @@ function getGame() {
                 addStyleString('  .continue-button {display: inline-block;} ');
             }
         }
-        if (firebase.database().ref('/users/' + userId).once('bestScore')) {
-            bS = firebase.database().ref('/users/' + userId).once('bestScore');
-            getElementsByClassName("best-container")[0].innerHTML = bS;
+        firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
+            if (snapshot.val) {
+                check2 = true;
+            } else {
+                check2 = false;
+            }
+        });
+        if (check2 == true) {
+            firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
+                bS = snapshot.val;
+            });
+            firebase.database().ref('/users/' + userId).once('bestScore').then(function(dataSnapshot) {
+                if (snapshot.val == bestScor) {
+                    check3 = true;
+                } else {
+                    check3 = false;
+                }
+            });
+            if (check3 == true) {
+                bS = firebase.database().ref('/users/' + userId).once('bestScore');
+                getElementsByClassName("best-container")[0].innerHTML = bS;
+            }
         }
     } else {
         db.collection("user").doc(uuid).add({
