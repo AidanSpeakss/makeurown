@@ -478,7 +478,7 @@ window.onload = setTimeout(function() {
         getGame();
         loadSaves();
     }
-}, 2000);
+}, 5000);
 
 function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
