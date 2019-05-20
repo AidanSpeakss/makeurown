@@ -3,11 +3,10 @@ var game2048input, game1024input, game512input, game256input, game128input, game
 version = db.collection("users").doc("version").get().then(function(doc) {
             if (doc.exists) {
                 doc.data().version = version;
-                });
-            }
+                }
+            });
         }).catch(function(error) {
             console.log("Error getting version:", error);
-        }); 
         }); 
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser + version;
