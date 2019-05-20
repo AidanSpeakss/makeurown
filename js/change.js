@@ -17,7 +17,7 @@ if (firebase.auth().currentUser) {
     setTimeout(function() {
 
         console.log("userid exists");
-                db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+                db.collection("users").doc("test").get().then(function(doc) {
                                 if (!doc.exists) {
                                     console.log("test");
                                 }
