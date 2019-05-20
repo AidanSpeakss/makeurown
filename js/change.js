@@ -1,7 +1,16 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added, gameNumberAdd,gameNumberAdd2;
+var gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, added, gameNumberAdd,gameNumberAdd2, no;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
+version = db.collection("users").doc("version").get().then(function(doc) {
+            if (doc.exists) {
+                doc.data().version = version;
+                });
+            }
+        }).catch(function(error) {
+            console.log("Error getting version:", error);
+        }); 
+        }); 
 if (firebase.auth().currentUser) {
-    user = firebase.auth().currentUser;
+    user = firebase.auth().currentUser + version;
     userId = firebase.auth().currentUser.uid;
 }
 
@@ -42,7 +51,7 @@ if (localStorage.getItem('bestScore')) {
 function saveGame() {
 
     if (user) {
-        db.collection("users").doc(firebase.auth().currentUser.uid).add({
+        db.collection("users").doc(user).add({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -62,10 +71,9 @@ function startNew() {
 }
 if (uDS == true) {
     if (user) {
-        uuid = user.uid;
-        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+        db.collection("users").doc(user).get().then(function(doc) {
             if (doc.exists) {
-                db.collection("users").doc(firebase.auth().currentUser.uid).update({
+                db.collection("users").doc(user).update({
                     gameState: gameStat
                 });
             }
@@ -77,10 +85,9 @@ if (uDS == true) {
 
 function getGame() {
     check0 = null;
-    chec1 = null;
-    check2 = null;
-    userId = firebase.auth().currentUser.uid;
-    if (db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+    gscheck = null;
+    bscheck = null;
+    if (db.collection("users").doc(user).get().then(function(doc) {
             if (doc.exists) {
                 return true;
             }
@@ -88,47 +95,44 @@ function getGame() {
         check0 = true;
     }
     if (check0 == true) {
-        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+        db.collection("users").doc(user).get().then(function(doc) {
             if (doc.data().gameState) {
                 if (doc.data().gameState !== gameStat) {
                     gS = doc.data().gameState;
-                    chec1 = true;
+                    gscheck = true;
                 } else {
-                    chec1 = false;
+                    gscheck = false;
                 }
             }
         });
-        if (chec1 == true) {
+        if (gscheck == true) {
             addStyleString('  .start-new-button {display: inline-block;} ');
             addStyleString('  .restore-message {display: inline-block;} ');
             addStyleString('  .restore-hide {display: inline-block;} ');
             addStyleString('  .continue-button {display: inline-block;} ');
             document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
-            added = true;
         }
-        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+        db.collection("users").doc(user).get().then(function(doc) {
             if (doc.data().bestScore) {
                 if (doc.data().bestScore !== bestScor) {
                     bS = doc.data().bestScore;
-                    check2 = true;
+                    bscheck = true;
                 } else {
-                    check2 = false;
+                    bscheck = false;
                 }
             }
         });
-        if (check2 == true) {
+        if (bscheck == true) {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        db.collection("users").doc(firebase.auth().currentUser.uid).update({
+        db.collection("users").doc(user).update({
             gameState: gameStat,
             bestScore: bestScor
         });
     }
 }
-
-document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
 if (getCookie("images_changed") == "true") {
     var no2 = getCookie("game2");
@@ -340,134 +344,136 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 window.onload = setTimeout(function() {
-    if (firebase.auth().currentUser.uid) {
-db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+    document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
+
+    if (userId) {
+db.collection("users").doc(user).get().then(function(doc) {
     if (!doc.exists) {
-        db.collection("users").doc(firebase.auth().currentUser.uid).set({
-            no1no2: null,
-            no1no1024: null,
-            no1no512: null,
-            no1no256: null,
-            no1no128: null,
-            no1no64: null,
-            no1no32: null,
-            no1no16: null,
-            no1no8: null,
-            no1no4: null,
-            no1no2: null,
-            no2no2: null,
-            no2no1024: null,
-            no2no512: null,
-            no2no256: null,
-            no2no128: null,
-            no2no64: null,
-            no2no32: null,
-            no2no16: null,
-            no2no8: null,
-            no2no4: null,
-            no2no2: null,
-            no3no2: null,
-            no3no1024: null,
-            no3no512: null,
-            no3no256: null,
-            no3no128: null,
-            no3no64: null,
-            no3no32: null,
-            no3no16: null,
-            no3no8: null,
-            no3no4: null,
-            no3no2: null,
-            no4no2: null,
-            no4no1024: null,
-            no4no512: null,
-            no4no256: null,
-            no4no128: null,
-            no4no64: null,
-            no4no32: null,
-            no4no16: null,
-            no4no8: null,
-            no4no4: null,
-            no4no2: null,
-            no5no2: null,
-            no5no1024: null,
-            no5no512: null,
-            no5no256: null,
-            no5no128: null,
-            no5no64: null,
-            no5no32: null,
-            no5no16: null,
-            no5no8: null,
-            no5no4: null,
-            no5no2: null,
-            no6no2: null,
-            no6no1024: null,
-            no6no512: null,
-            no6no256: null,
-            no6no128: null,
-            no6no64: null,
-            no6no32: null,
-            no6no16: null,
-            no6no8: null,
-            no6no4: null,
-            no6no2: null,
-            no7no2: null,
-            no7no1024: null,
-            no7no512: null,
-            no7no256: null,
-            no7no128: null,
-            no7no64: null,
-            no7no32: null,
-            no7no16: null,
-            no7no8: null,
-            no7no4: null,
-            no7no2: null,
-            no8no2: null,
-            no8no1024: null,
-            no8no512: null,
-            no8no256: null,
-            no8no128: null,
-            no8no64: null,
-            no8no32: null,
-            no8no16: null,
-            no8no8: null,
-            no8no4: null,
-            no8no2: null,
-            no9no2: null,
-            no9no1024: null,
-            no9no512: null,
-            no9no256: null,
-            no9no128: null,
-            no9no64: null,
-            no9no32: null,
-            no9no16: null,
-            no9no8: null,
-            no9no4: null,
-            no9no2: null,
-            no10no2: null,
-            no10no1024: null,
-            no10no512: null,
-            no10no256: null,
-            no10no128: null,
-            no10no64: null,
-            no10no32: null,
-            no10no16: null,
-            no10no8: null,
-            no10no4: null,
-            no10no2: null,
-            no11no2: null,
-            no11no1024: null,
-            no11no512: null,
-            no11no256: null,
-            no11no128: null,
-            no11no64: null,
-            no11no32: null,
-            no11no16: null,
-            no11no8: null,
-            no11no4: null,
-            no11no2: null,
+        db.collection("users").doc(user).set({
+            1a: null,
+            1b: null,
+            1c: null,
+            1d: null,
+            1e: null,
+            1f: null,
+            1g: null,
+            1h: null,
+            1i: null,
+            1j: null,
+            1k: null,
+            2a: null,
+            2b: null,
+            2c: null,
+            2d: null,
+            2e: null,
+            2f: null,
+            2g: null,
+            2h: null,
+            2i: null,
+            2j: null,
+            2k: null,     
+            3a: null,
+            3b: null,
+            3c: null,
+            3d: null,
+            3e: null,
+            3f: null,
+            3g: null,
+            3h: null,
+            3i: null,
+            3j: null,
+            3k: null,    
+            4a: null,
+            4b: null,
+            4c: null,
+            4d: null,
+            4e: null,
+            4f: null,
+            4g: null,
+            4h: null,
+            4i: null,
+            4j: null,
+            4k: null,
+            5a: null,
+            5b: null,
+            5c: null,
+            5d: null,
+            5e: null,
+            5f: null,
+            5g: null,
+            5h: null,
+            5i: null,
+            5j: null,
+            5k: null,   
+            6a: null,
+            6b: null,
+            6c: null,
+            6d: null,
+            6e: null,
+            6f: null,
+            6g: null,
+            6h: null,
+            6i: null,
+            6j: null,
+            6k: null,
+            7a: null,
+            7b: null,
+            7c: null,
+            7d: null,
+            7e: null,
+            7f: null,
+            7g: null,
+            7h: null,
+            7i: null,
+            7j: null,
+            7k: null,
+            8a: null,
+            8b: null,
+            8c: null,
+            8d: null,
+            8e: null,
+            8f: null,
+            8g: null,
+            8h: null,
+            8i: null,
+            8j: null,
+            8k: null,
+            9a: null,
+            9b: null,
+            9c: null,
+            9d: null,
+            9e: null,
+            9f: null,
+            9g: null,
+            9h: null,
+            9i: null,
+            9j: null,
+            9k: null,
+            10a: null,
+            10b: null,
+            10c: null,
+            10d: null,
+            10e: null,
+            10f: null,
+            10g: null,
+            10h: null,
+            10i: null,
+            10j: null,
+            10k: null,
+            11a: null,
+            11b: null,
+            11c: null,
+            11d: null,
+            11e: null,
+            11f: null,
+            11g: null,
+            11h: null,
+            11i: null,
+            11j: null,
+            11k: null,
             gameNumber: 1,
             bestScore: null,
-            gameState: null,
+            gameState: null
         });
     }
 });
@@ -501,18 +507,28 @@ function saveCloud() {
                 gameNumberAdd2 = gameNumberAdd++;
                 while (no < 11, no++) {
                 if (gameNumberAdd == no) {
+                        var ne1024 = "k" + gameNumberAdd;
+                        var ne512 = "i" + gameNumberAdd;
+                        var ne256 = "h" + gameNumberAdd;
+                        var ne128 = "g" + gameNumberAdd;
+                        var ne64 = "f" + gameNumberAdd;
+                        var ne32 = "e" + gameNumberAdd;
+                        var ne16 = "d" + gameNumberAdd;
+                        var ne8 = "c" + gameNumberAdd;
+                        var ne4 = "b" + gameNumberAdd;
+                        var ne2 = "a" + gameNumberAdd;
                     db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        "k" + no: game2048input,
-                        "j" + no: game1024input,
-                        "i" + no: game512input,
-                        "h" + no: game256input,
-                        "g" + no: game128input,
-                        "f" + no: game64input,
-                        "e" + no: game32input,
-                        "d" + no: game16input,
-                        "c" + no: game8input,
-                        "b" + no: game4input,
-                        "a" + no: game2input,
+                        ne2: game2048input,
+                        ne4: game1024input,
+                        ne8: game512input,
+                        ne16: game256input,
+                        ne32: game128input,
+                        ne64: game64input,
+                        ne128: game32input,
+                        ne256: game16input,
+                        ne512: game8input,
+                        ne1024: game4input,
+                        ne2048: game2input,
                         gn: gameNumberAdd2
                     });
                 }
@@ -534,16 +550,16 @@ function loadSaves() {
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
                     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
-                        var ne1024 = gameNumberAdd + "a";
-                        var ne512 = gameNumberAdd + "b";
-                        var ne256 = gameNumberAdd + "c";
-                        var ne128 = gameNumberAdd + "d";
-                        var ne64 = gameNumberAdd + "e";
-                        var ne32 = gameNumberAdd + "f";
-                        var ne16 = gameNumberAdd + "g";
-                        var ne8 = gameNumberAdd + "h";
-                        var ne4 = gameNumberAdd + "i";
-                        var ne2 = gameNumberAdd + "j";
+                        var ne1024 = "k" + gameNumberAdd;
+                        var ne512 = "i" + gameNumberAdd;
+                        var ne256 = "h" + gameNumberAdd;
+                        var ne128 = "g" + gameNumberAdd;
+                        var ne64 = "f" + gameNumberAdd;
+                        var ne32 = "e" + gameNumberAdd;
+                        var ne16 = "d" + gameNumberAdd;
+                        var ne8 = "c" + gameNumberAdd;
+                        var ne4 = "b" + gameNumberAdd;
+                        var ne2 = "a" + gameNumberAdd;
                         var thing2 = doc.data().ne2;
                         var thing4 = doc.data().ne4;
                         var thing8 = doc.data().ne8;
