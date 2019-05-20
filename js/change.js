@@ -153,7 +153,6 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-512 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"); }');
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"); }');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"); }');
-    reLoad("900");
 }
 
 var saveGame = null;
@@ -726,6 +725,7 @@ function loadSaves() {
                     document.cookie = "game1024=" + thing1024;
                     document.cookie = "game2048=" + thing2048;
                     document.cookie = "images_changed=true";
+                        reLoad("900");
                 });
             }
         } else {
