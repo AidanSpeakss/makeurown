@@ -345,8 +345,8 @@ window.onload = setTimeout(function() {
         getGame();
     }
 }, 1000);
-db.collection("users").doc(userId).get().then(function(doc) {
-    userId = firebase.auth().currentUser.uid;
+
+db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
     if (!doc.exists) {
         db.collection("users").doc(userId).set({
             no1no2: null,
