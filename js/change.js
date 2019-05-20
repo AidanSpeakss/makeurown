@@ -45,9 +45,9 @@ if (localStorage.getItem('bestScore')) {
     bestScor = localStorage.getItem('bestScore');
 }
 // Subsequent queries will use persistence, if it was enabled successfully
+    document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 function saveGame() {
-
-    if (user) {
+    if (userId) {
         db.collection("users").doc(user).add({
             gameState: gameStat,
             bestScore: bestScor
@@ -67,7 +67,7 @@ function startNew() {
     uDS = true;
 }
 if (uDS == true) {
-    if (user) {
+    if (userId) {
         db.collection("users").doc(user).get().then(function(doc) {
             if (doc.exists) {
                 db.collection("users").doc(user).update({
@@ -336,13 +336,11 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
     } else {
         // No user is signed in.
-        console.log("No user detected. Else Statement");
+        console.log("No user detected.");
     }
 });
 
 window.onload = setTimeout(function() {
-    document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
-
     if (userId) {
         db.collection("users").doc(user).get().then(function(doc) {
             if (!doc.exists) {
@@ -503,7 +501,7 @@ function saveCloud() {
                         var ne8 = gameNumberAdd + "c";
                         var ne4 = gameNumberAdd + "b";
                         var ne2 = gameNumberAdd + "a";
-                        db.collection("users").doc(firebase.auth().currentUser.uid).update({
+                        db.collection("users").doc(user).update({
                             ne2: game2048input,
                             ne4: game1024input,
                             ne8: game512input,
