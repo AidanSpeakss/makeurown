@@ -499,181 +499,24 @@ function saveCloud() {
                 var new4 = "no" + gameNumberAdd + "no4";
                 var new2 = "no" + gameNumberAdd + "no2";
                 gameNumberAdd2 = gameNumberAdd++;
-                if (gameNumberAdd == 1) {
+                while (no < 11, no++) {
+                if (gameNumberAdd == no) {
                     db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no1no2048: game2048input,
-                        no1no1024: game1024input,
-                        no1no512: game512input,
-                        no1no256: game256input,
-                        no1no128: game128input,
-                        no1no64: game64input,
-                        no1no32: game32input,
-                        no1no16: game16input,
-                        no1no8: game8input,
-                        no1no4: game4input,
-                        no1no2: game2input,
-                        gameNumber: gameNumberAdd2
+                        "k" + no: game2048input,
+                        "j" + no: game1024input,
+                        "i" + no: game512input,
+                        "h" + no: game256input,
+                        "g" + no: game128input,
+                        "f" + no: game64input,
+                        "e" + no: game32input,
+                        "d" + no: game16input,
+                        "c" + no: game8input,
+                        "b" + no: game4input,
+                        "a" + no: game2input,
+                        gn: gameNumberAdd2
                     });
                 }
-                if (gameNumberAdd == 2) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no2no2048: game2048input,
-                        no2no1024: game1024input,
-                        no2no512: game512input,
-                        no2no256: game256input,
-                        no2no128: game128input,
-                        no2no64: game64input,
-                        no2no32: game32input,
-                        no2no16: game16input,
-                        no2no8: game8input,
-                        no2no4: game4input,
-                        no2no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
                 }
-                if (gameNumberAdd == 3) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no3no2048: game2048input,
-                        no3no1024: game1024input,
-                        no3no512: game512input,
-                        no3no256: game256input,
-                        no3no128: game128input,
-                        no3no64: game64input,
-                        no3no32: game32input,
-                        no3no16: game16input,
-                        no3no8: game8input,
-                        no3no4: game4input,
-                        no3no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 4) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no4no2048: game2048input,
-                        no4no1024: game1024input,
-                        no4no512: game512input,
-                        no4no256: game256input,
-                        no4no128: game128input,
-                        no4no64: game64input,
-                        no4no32: game32input,
-                        no4no16: game16input,
-                        no4no8: game8input,
-                        no4no4: game4input,
-                        no4no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 5) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no5no2048: game2048input,
-                        no5no1024: game1024input,
-                        no5no512: game512input,
-                        no5no256: game256input,
-                        no5no128: game128input,
-                        no5no64: game64input,
-                        no5no32: game32input,
-                        no5no16: game16input,
-                        no5no8: game8input,
-                        no5no3: game4input,
-                        no5no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 6) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no6no2048: game2048input,
-                        no6no1024: game1024input,
-                        no6no512: game512input,
-                        no6no256: game256input,
-                        no6no128: game128input,
-                        no6no64: game64input,
-                        no6no32: game32input,
-                        no6no16: game16input,
-                        no6no8: game8input,
-                        no6no4: game4input,
-                        no6no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 7) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no7no2048: game2048input,
-                        no7no1024: game1024input,
-                        no7no512: game512input,
-                        no7no256: game256input,
-                        no7no128: game128input,
-                        no7no64: game64input,
-                        no7no32: game32input,
-                        no7no16: game16input,
-                        no7no8: game8input,
-                        no7no4: game4input,
-                        no7no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 8) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no8no2048: game2048input,
-                        no8no1024: game1024input,
-                        no8no512: game512input,
-                        no8no256: game256input,
-                        no8no128: game128input,
-                        no8no64: game64input,
-                        no8no32: game32input,
-                        no8no16: game16input,
-                        no8no8: game8input,
-                        no8no4: game4input,
-                        no8no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 9) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no9no2048: game2048input,
-                        no9no1024: game1024input,
-                        no9no512: game512input,
-                        no9no256: game256input,
-                        no9no128: game128input,
-                        no9no64: game64input,
-                        no9no32: game32input,
-                        no9no16: game16input,
-                        no9no9: game8input,
-                        no9no4: game4input,
-                        no9no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 10) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no10no2048: game2048input,
-                        no10no1024: game1024input,
-                        no10no512: game512input,
-                        no10no256: game256input,
-                        no10no128: game128input,
-                        no10no64: game64input,
-                        no10no32: game32input,
-                        no10no16: game16input,
-                        no10no8: game8input,
-                        no10no4: game4input,
-                        no10no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
-                }
-                if (gameNumberAdd == 11) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        no11no2048: game2048input,
-                        no11no1024: game1024input,
-                        no11no512: game512input,
-                        no11no256: game256input,
-                        no11no128: game128input,
-                        no11no64: game64input,
-                        no11no32: game32input,
-                        no11no16: game16input,
-                        no11no8: game8input,
-                        no11no4: game4input,
-                        no11no2: game2input,
-                        gameNumber: gameNumberAdd2
-                    });
                 }
             location.reload;
             }
@@ -691,16 +534,16 @@ function loadSaves() {
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
                     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
-                        var ne1024 = "no" + gameNumberAdd + "no1024";
-                        var ne512 = "no" + gameNumberAdd + "no512";
-                        var ne256 = "no" + gameNumberAdd + "no256";
-                        var ne128 = "no" + gameNumberAdd + "no128";
-                        var ne64 = "no" + gameNumberAdd + "no64";
-                        var ne32 = "no" + gameNumberAdd + "no32";
-                        var ne16 = "no" + gameNumberAdd + "no16";
-                        var ne8 = "no" + gameNumberAdd + "no8";
-                        var ne4 = "no" + gameNumberAdd + "no4";
-                        var ne2 = "no" + gameNumberAdd + "no2";
+                        var ne1024 = gameNumberAdd + "a";
+                        var ne512 = gameNumberAdd + "b";
+                        var ne256 = gameNumberAdd + "c";
+                        var ne128 = gameNumberAdd + "d";
+                        var ne64 = gameNumberAdd + "e";
+                        var ne32 = gameNumberAdd + "f";
+                        var ne16 = gameNumberAdd + "g";
+                        var ne8 = gameNumberAdd + "h";
+                        var ne4 = gameNumberAdd + "i";
+                        var ne2 = gameNumberAdd + "j";
                         var thing2 = doc.data().ne2;
                         var thing4 = doc.data().ne4;
                         var thing8 = doc.data().ne8;
