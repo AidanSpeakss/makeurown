@@ -1,15 +1,15 @@
 var gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 if (firebase.auth().currentUser) {
-    user = firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});;
+    user = firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});
     userId = firebase.auth().currentUser.uid;
-    console.log(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}}););
+    console.log(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}}));
     console.log("userid exists");
-    db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).get().then(function(doc) {
+    db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).get().then(function(doc) {
         console.log("get worked!");
         if (!doc.exists) {
             console.log("Doc does not exist!");
-            db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).set({
+            db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).set({
                 a1: null,
                 b1: null,
                 c1: null,
@@ -178,7 +178,7 @@ document.getElementsByClassName("save-button")[0].addEventListener("click", save
 
 function saveGame() {
     if (userId) {
-        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).add({
+        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).add({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -198,9 +198,9 @@ function startNew() {
 }
 if (uDS == true) {
     if (userId) {
-        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).get().then(function(doc) {
             if (doc.exists) {
-                db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).update({
+                db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).update({
                     gameState: gameStat
                 });
             }
@@ -214,7 +214,7 @@ function getGame() {
     check0 = null;
     gscheck = null;
     bscheck = null;
-    if (db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).get().then(function(doc) {
+    if (db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).get().then(function(doc) {
             if (doc.exists) {
                 return true;
             }
@@ -222,7 +222,7 @@ function getGame() {
         check0 = true;
     }
     if (check0 == true) {
-        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).get().then(function(doc) {
             if (doc.data().gameState) {
                 if (doc.data().gameState !== gameStat) {
                     gS = doc.data().gameState;
@@ -240,7 +240,7 @@ function getGame() {
             document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
         }
-        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).get().then(function(doc) {
             if (doc.data().bestScore) {
                 if (doc.data().bestScore !== bestScor) {
                     bS = doc.data().bestScore;
@@ -254,7 +254,7 @@ function getGame() {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).update({
+        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).update({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -501,7 +501,7 @@ function saveCloud() {
                         var ne8 = gameNumberAdd + "c";
                         var ne4 = gameNumberAdd + "b";
                         var ne2 = gameNumberAdd + "a";
-                        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}});).update({
+                        db.collection("users").doc(firebase.auth().currentUser.uid + db.collection("users").doc("version").get().then(function(doc) {if (doc.exists) {return doc.data().version;}})).update({
                             ne2: game2048input,
                             ne4: game1024input,
                             ne8: game512input,
