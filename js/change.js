@@ -345,7 +345,7 @@ window.onload = setTimeout(function() {
     if (userId) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (!doc.exists) {
-                console.log(doc);
+                console.log("Doc does not exist!");
                 db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
                     a1: null,
                     b1: null,
