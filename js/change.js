@@ -5,7 +5,6 @@ db.collection("users").doc("version").get().then(function(doc) {
         version = doc.data().version;
     }
 });
-if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
     console.log(firebase.auth().currentUser.uid + version);
@@ -14,6 +13,7 @@ if (firebase.auth().currentUser) {
         version = doc.data().version;
     }
 });
+
     setTimeout(function() {
 
         console.log("userid exists");
@@ -155,7 +155,6 @@ if (firebase.auth().currentUser) {
             }
         });
     }, 5000);
-}
 
 function reLoad(time) {
     setTimeout(function(time) {
