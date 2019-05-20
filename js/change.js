@@ -481,10 +481,13 @@ db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(
 function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
         if (doc.exists) {
+            console.log(doc.data().gameNumber);
             if (doc.data().gameNumber) {
+                            console.log(doc.data().gameNumber);
                 var gameNumberSet = doc.data().gameNumber;
+                console.log(gameNumberSet);
                 gameNumberAdd = gameNumberSet++;
-
+                console.log(gameNumberAdd);
                 var new2048 = "no" + gameNumberAdd + "no2048";
                 var new1024 = "no" + gameNumberAdd + "no1024";
                 var new512 = "no" + gameNumberAdd + "no512";
