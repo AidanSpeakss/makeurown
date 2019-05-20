@@ -342,8 +342,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 window.onload = setTimeout(function() {
+                    console.log("func called!");
     if (userId) {
+                        console.log("userid exists");
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+                            console.log("get worked!");
             if (!doc.exists) {
                 console.log("Doc does not exist!");
                 db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
