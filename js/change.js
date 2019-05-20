@@ -346,6 +346,7 @@ window.onload = setTimeout(function() {
     }
 }, 1000);
 db.collection("users").doc(userId).get().then(function(doc) {
+    userId = firebase.auth().currentUser.uid;
     if (!doc.exists) {
         db.collection("users").doc(userId).set({
             no1no2: null,
