@@ -342,10 +342,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 window.onload = setTimeout(function() {
     if (firebase.auth().currentUser.uid) {
-        getGame();
-    }
-}, 1000);
-
+        
 db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
     if (!doc.exists) {
         db.collection("users").doc(firebase.auth().currentUser.uid).set({
@@ -476,6 +473,10 @@ db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(
         });
     }
 });
+
+        getGame();
+    }
+}, 1000);
 
 function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
