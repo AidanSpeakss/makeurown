@@ -17,6 +17,11 @@ if (firebase.auth().currentUser) {
     setTimeout(function() {
 
         console.log("userid exists");
+                db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+                                if (!doc.exists) {
+                                    console.log("test");
+                                }
+                });
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             console.log("get worked!");
             if (!doc.exists) {
