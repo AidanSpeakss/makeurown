@@ -342,7 +342,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 window.onload = setTimeout(function() {
     if (firebase.auth().currentUser.uid) {
-        
 db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
     if (!doc.exists) {
         db.collection("users").doc(firebase.auth().currentUser.uid).set({
@@ -475,8 +474,9 @@ db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(
 });
 
         getGame();
+        loadSaves();
     }
-}, 1000);
+}, 2000);
 
 function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
@@ -664,6 +664,7 @@ function saveCloud() {
                         no11no2: game2input
                     });
                 }
+            location.reload;
             }
         }
     });
