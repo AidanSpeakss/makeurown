@@ -8,6 +8,7 @@ db.collection("users").doc("version").get().then(function(doc) {
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser + version;
     userId = firebase.auth().currentUser.uid;
+    console.log(user);
 }
 
 function reLoad(time) {
@@ -344,6 +345,7 @@ window.onload = setTimeout(function() {
     if (userId) {
         db.collection("users").doc(user).get().then(function(doc) {
             if (!doc.exists) {
+                console.log(doc);
                 db.collection("users").doc(user).set({
                     a1: null,
                     b1: null,
