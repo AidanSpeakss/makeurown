@@ -489,30 +489,19 @@ function saveCloud() {
                 console.log(gameNumberSet);
                 gameNumberAdd = gameNumberSet++;
                 console.log(gameNumberAdd);
-                var new2048 = "no" + gameNumberAdd + "no2048";
-                var new1024 = "no" + gameNumberAdd + "no1024";
-                var new512 = "no" + gameNumberAdd + "no512";
-                var new256 = "no" + gameNumberAdd + "no256";
-                var new128 = "no" + gameNumberAdd + "no128";
-                var new64 = "no" + gameNumberAdd + "no64";
-                var new32 = "no" + gameNumberAdd + "no32";
-                var new16 = "no" + gameNumberAdd + "no16";
-                var new8 = "no" + gameNumberAdd + "no8";
-                var new4 = "no" + gameNumberAdd + "no4";
-                var new2 = "no" + gameNumberAdd + "no2";
                 gameNumberAdd2 = gameNumberAdd++;
                 while (no < 11, no++) {
                 if (gameNumberAdd == no) {
-                        var ne1024 = "k" + gameNumberAdd;
-                        var ne512 = "i" + gameNumberAdd;
-                        var ne256 = "h" + gameNumberAdd;
-                        var ne128 = "g" + gameNumberAdd;
-                        var ne64 = "f" + gameNumberAdd;
-                        var ne32 = "e" + gameNumberAdd;
-                        var ne16 = "d" + gameNumberAdd;
-                        var ne8 = "c" + gameNumberAdd;
-                        var ne4 = "b" + gameNumberAdd;
-                        var ne2 = "a" + gameNumberAdd;
+                        var ne1024 = gameNumberAdd + "k";
+                        var ne512 = gameNumberAdd + "i";
+                        var ne256 = gameNumberAdd + "h";
+                        var ne128 = gameNumberAdd + "g";
+                        var ne64 = gameNumberAdd + "f";
+                        var ne32 = gameNumberAdd + "e";
+                        var ne16 = gameNumberAdd + "d";
+                        var ne8 = gameNumberAdd + "c";
+                        var ne4 = gameNumberAdd + "b";
+                        var ne2 = gameNumberAdd + "a";
                     db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         ne2: game2048input,
                         ne4: game1024input,
