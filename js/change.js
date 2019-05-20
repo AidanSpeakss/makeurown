@@ -5,6 +5,8 @@ db.collection("users").doc("version").get().then(function(doc) {
         version = doc.data().version;
     }
 });
+setTimeout(function() {
+if(firebase.auth().currentUser) {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
     console.log(firebase.auth().currentUser.uid + version);
@@ -154,7 +156,9 @@ db.collection("users").doc("version").get().then(function(doc) {
                 });
             }
         });
-    }, 5000);
+    }, 1000);
+}
+        }, 3000);
 
 function reLoad(time) {
     setTimeout(function(time) {
