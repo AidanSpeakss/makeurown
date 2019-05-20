@@ -1,4 +1,4 @@
-var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added, gameNumberAdd;
+var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, userId, added, gameNumberAdd,gameNumberAdd2;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
@@ -499,6 +499,7 @@ function saveCloud() {
                 var new8 = "no" + gameNumberAdd + "no8";
                 var new4 = "no" + gameNumberAdd + "no4";
                 var new2 = "no" + gameNumberAdd + "no2";
+                gameNumberAdd2 = gameNumberAdd++;
                 if (gameNumberAdd == 1) {
                     db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no1no2048: game2048input,
@@ -511,7 +512,8 @@ function saveCloud() {
                         no1no16: game16input,
                         no1no8: game8input,
                         no1no4: game4input,
-                        no1no2: game2input
+                        no1no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 2) {
@@ -526,7 +528,8 @@ function saveCloud() {
                         no2no16: game16input,
                         no2no8: game8input,
                         no2no4: game4input,
-                        no2no2: game2input
+                        no2no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 3) {
@@ -541,7 +544,8 @@ function saveCloud() {
                         no3no16: game16input,
                         no3no8: game8input,
                         no3no4: game4input,
-                        no3no2: game2input
+                        no3no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 4) {
@@ -556,7 +560,8 @@ function saveCloud() {
                         no4no16: game16input,
                         no4no8: game8input,
                         no4no4: game4input,
-                        no4no2: game2input
+                        no4no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 5) {
@@ -571,7 +576,8 @@ function saveCloud() {
                         no5no16: game16input,
                         no5no8: game8input,
                         no5no3: game4input,
-                        no5no2: game2input
+                        no5no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 6) {
@@ -586,7 +592,8 @@ function saveCloud() {
                         no6no16: game16input,
                         no6no8: game8input,
                         no6no4: game4input,
-                        no6no2: game2input
+                        no6no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 7) {
@@ -601,7 +608,8 @@ function saveCloud() {
                         no7no16: game16input,
                         no7no8: game8input,
                         no7no4: game4input,
-                        no7no2: game2input
+                        no7no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 8) {
@@ -616,7 +624,8 @@ function saveCloud() {
                         no8no16: game16input,
                         no8no8: game8input,
                         no8no4: game4input,
-                        no8no2: game2input
+                        no8no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 9) {
@@ -631,7 +640,8 @@ function saveCloud() {
                         no9no16: game16input,
                         no9no9: game8input,
                         no9no4: game4input,
-                        no9no2: game2input
+                        no9no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 10) {
@@ -646,7 +656,8 @@ function saveCloud() {
                         no10no16: game16input,
                         no10no8: game8input,
                         no10no4: game4input,
-                        no10no2: game2input
+                        no10no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
                 if (gameNumberAdd == 11) {
@@ -661,7 +672,8 @@ function saveCloud() {
                         no11no16: game16input,
                         no11no8: game8input,
                         no11no4: game4input,
-                        no11no2: game2input
+                        no11no2: game2input,
+                        gameNumber: gameNumberAdd2
                     });
                 }
             location.reload;
@@ -672,7 +684,7 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
-        if (!doc.data().gameNumber > 11) {
+        if (doc.data().gameNumber !> 11) {
             while (doc.data().gameNumber > 1 || doc.data().gameNumber = 1, gameNumberAdd--) {
                 var add = document.createElement("p");
                 add.innerHTML = "Saved Game #" + gameNumberAdd;
