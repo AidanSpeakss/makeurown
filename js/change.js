@@ -1,8 +1,8 @@
-var gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, added, gameNumberAdd, gameNumberAdd2, no;
+var gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
-version = db.collection("users").doc("version").get().then(function(doc) {
+db.collection("users").doc("version").get().then(function(doc) {
     if (doc.exists) {
-        doc.data().version = version;
+        version = doc.data().version;
     }
 });
 if (firebase.auth().currentUser) {
