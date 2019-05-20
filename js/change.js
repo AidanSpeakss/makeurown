@@ -37,7 +37,7 @@ if (localStorage.getItem('bestScore')) {
 function saveGame() {
 
     if (user) {
-        db.collection("users").doc(userId).add({
+        db.collection("users").doc(firebase.auth().currentUser.uid).add({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -58,9 +58,9 @@ function startNew() {
 if (uDS == true) {
     if (user) {
         uuid = user.uid;
-        db.collection("users").doc(userId).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
             if (doc.exists) {
-                db.collection("users").doc(userId).update({
+                db.collection("users").doc(firebase.auth().currentUser.uid).update({
                     gameState: gameStat
                 });
             }
@@ -75,7 +75,7 @@ function getGame() {
     chec1 = null;
     check2 = null;
     userId = firebase.auth().currentUser.uid;
-    if (db.collection("users").doc(userId).get().then(function(doc) {
+    if (db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
             if (doc.exists) {
                 return true;
             }
@@ -83,7 +83,7 @@ function getGame() {
         check0 = true;
     }
     if (check0 == true) {
-        db.collection("users").doc(userId).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
             if (doc.data().gameState) {
                 if (doc.data().gameState !== gameStat) {
                     gS = doc.data().gameState;
@@ -102,7 +102,7 @@ function getGame() {
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
             added = true;
         }
-        db.collection("users").doc(userId).get().then(function(doc) {
+        db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
             if (doc.data().bestScore) {
                 if (doc.data().bestScore !== bestScor) {
                     bS = doc.data().bestScore;
@@ -116,7 +116,7 @@ function getGame() {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
         }
     } else {
-        db.collection("users").doc(userId).update({
+        db.collection("users").doc(firebase.auth().currentUser.uid).update({
             gameState: gameStat,
             bestScore: bestScor
         });
@@ -348,7 +348,7 @@ window.onload = setTimeout(function() {
 
 db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
     if (!doc.exists) {
-        db.collection("users").doc(userId).set({
+        db.collection("users").doc(firebase.auth().currentUser.uid).set({
             no1no2: null,
             no1no1024: null,
             no1no512: null,
@@ -478,7 +478,7 @@ db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(
 });
 
 function saveCloud() {
-    db.collection("users").doc(userId).get().then(function(doc) {
+    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
         if (doc.exists) {
             if (doc.data().gameNumber) {
                 var gameNumberSet = doc.data().gameNumber;
@@ -496,7 +496,7 @@ function saveCloud() {
                 var new4 = "no" + gameNumberAdd + "no4";
                 var new2 = "no" + gameNumberAdd + "no2";
                 if (gameNumberAdd == 1) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no1no2048: game2048input,
                         no1no1024: game1024input,
                         no1no512: game512input,
@@ -511,7 +511,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 2) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no2no2048: game2048input,
                         no2no1024: game1024input,
                         no2no512: game512input,
@@ -526,7 +526,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 3) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no3no2048: game2048input,
                         no3no1024: game1024input,
                         no3no512: game512input,
@@ -541,7 +541,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 4) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no4no2048: game2048input,
                         no4no1024: game1024input,
                         no4no512: game512input,
@@ -556,7 +556,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 5) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no5no2048: game2048input,
                         no5no1024: game1024input,
                         no5no512: game512input,
@@ -571,7 +571,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 6) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no6no2048: game2048input,
                         no6no1024: game1024input,
                         no6no512: game512input,
@@ -586,7 +586,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 7) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no7no2048: game2048input,
                         no7no1024: game1024input,
                         no7no512: game512input,
@@ -601,7 +601,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 8) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no8no2048: game2048input,
                         no8no1024: game1024input,
                         no8no512: game512input,
@@ -616,7 +616,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 9) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no9no2048: game2048input,
                         no9no1024: game1024input,
                         no9no512: game512input,
@@ -631,7 +631,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 10) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no10no2048: game2048input,
                         no10no1024: game1024input,
                         no10no512: game512input,
@@ -646,7 +646,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 11) {
-                    db.collection("users").doc(userId).update({
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         no11no2048: game2048input,
                         no11no1024: game1024input,
                         no11no512: game512input,
@@ -661,8 +661,8 @@ function saveCloud() {
                     });
                 }
             } else {
-                db.collection("users").doc(userId).get().then(function(doc) {
-                    db.collection("users").doc(userId).update({
+                db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
                         gameNumber: 0
                     });
                 });
@@ -673,7 +673,7 @@ function saveCloud() {
 }
 
 function loadSaves() {
-    db.collection("users").doc(userId).get().then(function(doc) {
+    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
         if (!doc.data().gameNumber > 11) {
             while (doc.data().gameNumber > 0, gameNumberAdd--) {
                 var add = document.createElement("p");
@@ -681,7 +681,7 @@ function loadSaves() {
                 add.className = "game-button " + "game" + gameNumberAdd;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
-                    db.collection("users").doc(userId).get().then(function(doc) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
                         var ne1024 = "no" + gameNumberAdd + "no1024";
                         var ne512 = "no" + gameNumberAdd + "no512";
                         var ne256 = "no" + gameNumberAdd + "no256";
