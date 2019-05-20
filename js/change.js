@@ -5,6 +5,11 @@ if (firebase.auth().currentUser) {
     userId = firebase.auth().currentUser.uid;
 }
 
+function reLoad(time) {
+    setTimeout(function(time) {
+        location.reload();
+}, time);
+}
 function addStyleString2(str, str2) {
     if (document.getElementsByClassName(str2)[0]) {
         document.getElementsByClassName(str2)[0].remove();
@@ -153,12 +158,6 @@ if (getCookie("images_changed") == "true") {
 
 var saveGame = null;
 var value1 = "false";
-
-function reLoad(time) {
-    setTimeout(function() {
-        location.reload();
-}, time);
-}
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
         addStyleString2('  #firebaseui-auth-container { display: inline-block; } ', 'class1');
