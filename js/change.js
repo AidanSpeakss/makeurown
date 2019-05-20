@@ -467,7 +467,7 @@ db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(
             no11no8: null,
             no11no4: null,
             no11no2: null,
-            gameNumber: null,
+            gameNumber: 0,
             bestScore: null,
             gameState: null,
         });
@@ -664,13 +664,6 @@ function saveCloud() {
                         no11no2: game2input
                     });
                 }
-            } else {
-                db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).update({
-                        gameNumber: 0
-                    });
-                });
-                saveCloud();
             }
         }
     });
