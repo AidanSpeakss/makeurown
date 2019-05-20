@@ -148,7 +148,7 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-512 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"); }');
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"); }');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"); }');
-    reLoad(900);
+    reLoad("900");
 }
 
 var saveGame = null;
@@ -180,7 +180,7 @@ document.getElementById("container-above-game2").getElementsByClassName("restart
             addStyleString('  .login-hide {display: none;} ');
             addStyleString('  .paused-button {display: none;} ');
             addStyleString('  .lower-hide {display: none;} ');
-            reLoad(500);
+            reLoad("500");
             value1 = "false";
 
         }
@@ -197,7 +197,7 @@ document.getElementsByClassName("unpause")[0].addEventListener("click", function
         addStyleString('  .login-hide {display: none;} ');
         addStyleString('  .paused-button {display: none;} ');
         addStyleString('  .lower-hide {display: none;} ');
-        reLoad(500);
+        reLoad("500");
         value1 = "false";
     }
 });
