@@ -500,7 +500,7 @@ window.onload = setTimeout(function() {
 }, 5000);
 
 function saveCloud() {
-    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+    db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (doc.exists) {
             console.log(doc.data().gameNumber);
             if (doc.data().gameNumber) {
