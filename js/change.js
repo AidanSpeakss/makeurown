@@ -2,6 +2,7 @@ var gS, bS, uuid, uDS, gameStat, bestScor, user, userDB, check0, chec1, check2, 
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 if (firebase.auth().currentUser) {
     user = firebase.auth().currentUser;
+    userId = firebase.auth().currentUser.uid;
 }
 
 function addStyleString2(str, str2) {
