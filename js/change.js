@@ -157,6 +157,7 @@ var value1 = "false";
 function reLoad(time) {
     setTimeout(function() {
         location.reload();
+}, time);
 }
 document.getElementById("container-above-game2").getElementsByClassName("restart-button2")[0].addEventListener("click", function() {
     if (value1 == "false") {
@@ -684,8 +685,8 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
-        if (doc.data().gameNumber !> 11) {
-            while (doc.data().gameNumber > 1 || doc.data().gameNumber = 1, gameNumberAdd--) {
+        if (!doc.data().gameNumber > 11) {
+            while (doc.data().gameNumber >= 1, gameNumberAdd--) {
                 var add = document.createElement("p");
                 add.innerHTML = "Saved Game #" + gameNumberAdd;
                 add.className = "game-button " + "game" + gameNumberAdd;
