@@ -512,16 +512,16 @@ function saveCloud() {
                 gameNumberAdd2 = gameNumberAdd++;
                 while (no < 11, no++) {
                     if (gameNumberAdd == no) {
-                        var ne1024 = gameNumberAdd + "k";
-                        var ne512 = gameNumberAdd + "i";
-                        var ne256 = gameNumberAdd + "h";
-                        var ne128 = gameNumberAdd + "g";
-                        var ne64 = gameNumberAdd + "f";
-                        var ne32 = gameNumberAdd + "e";
-                        var ne16 = gameNumberAdd + "d";
-                        var ne8 = gameNumberAdd + "c";
-                        var ne4 = gameNumberAdd + "b";
-                        var ne2 = gameNumberAdd + "a";
+                        var ne1024 = "k" + gameNumberAdd;
+                        var ne512 = "i" + gameNumberAdd;
+                        var ne256 = "h" + gameNumberAdd;
+                        var ne128 = "g" + gameNumberAdd;
+                        var ne64 = "f" + gameNumberAdd;
+                        var ne32 = "e" + gameNumberAdd;
+                        var ne16 = "d" + gameNumberAdd;
+                        var ne8 = "c" + gameNumberAdd;
+                        var ne4 = "b" + gameNumberAdd;
+                        var ne2 = "a" + gameNumberAdd;
                         db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                             ne2: game2048input,
                             ne4: game1024input,
