@@ -493,21 +493,171 @@ function saveCloud() {
                 var new8 = "no" + gameNumberAdd + "no8";
                 var new4 = "no" + gameNumberAdd + "no4";
                 var new2 = "no" + gameNumberAdd + "no2";
-
-                db.collection("users").doc(userId).update({
-                    gameNumber: gameNumberAdd,
-                    new2048: game2048input,
-                    new1024: game1024input,
-                    new512: game512input,
-                    new256: game256input,
-                    new128: game128input,
-                    new64: game64input,
-                    new32: game32input,
-                    new16: game16input,
-                    new8: game8input,
-                    new4: game4input,
-                    new2: game2input
-                });
+                if (gameNumberAdd == 1) {
+                    db.collection("users").doc(userId).update({
+                        no1no2048: game2048input,
+                        no1no1024: game1024input,
+                        no1no512: game512input,
+                        no1no256: game256input,
+                        no1no128: game128input,
+                        no1no64: game64input,
+                        no1no32: game32input,
+                        no1no16: game16input,
+                        no1no8: game8input,
+                        no1no4: game4input,
+                        no1no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 2) {
+                    db.collection("users").doc(userId).update({
+                        no2no2048: game2048input,
+                        no2no1024: game1024input,
+                        no2no512: game512input,
+                        no2no256: game256input,
+                        no2no128: game128input,
+                        no2no64: game64input,
+                        no2no32: game32input,
+                        no2no16: game16input,
+                        no2no8: game8input,
+                        no2no4: game4input,
+                        no2no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 3) {
+                    db.collection("users").doc(userId).update({
+                        no3no2048: game2048input,
+                        no3no1024: game1024input,
+                        no3no512: game512input,
+                        no3no256: game256input,
+                        no3no128: game128input,
+                        no3no64: game64input,
+                        no3no32: game32input,
+                        no3no16: game16input,
+                        no3no8: game8input,
+                        no3no4: game4input,
+                        no3no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 4) {
+                    db.collection("users").doc(userId).update({
+                        no4no2048: game2048input,
+                        no4no1024: game1024input,
+                        no4no512: game512input,
+                        no4no256: game256input,
+                        no4no128: game128input,
+                        no4no64: game64input,
+                        no4no32: game32input,
+                        no4no16: game16input,
+                        no4no8: game8input,
+                        no4no4: game4input,
+                        no4no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 5) {
+                    db.collection("users").doc(userId).update({
+                        no5no2048: game2048input,
+                        no5no1024: game1024input,
+                        no5no512: game512input,
+                        no5no256: game256input,
+                        no5no128: game128input,
+                        no5no64: game64input,
+                        no5no32: game32input,
+                        no5no16: game16input,
+                        no5no8: game8input,
+                        no5no3: game4input,
+                        no5no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 6) {
+                    db.collection("users").doc(userId).update({
+                        no6no2048: game2048input,
+                        no6no1024: game1024input,
+                        no6no512: game512input,
+                        no6no256: game256input,
+                        no6no128: game128input,
+                        no6no64: game64input,
+                        no6no32: game32input,
+                        no6no16: game16input,
+                        no6no8: game8input,
+                        no6no4: game4input,
+                        no6no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 7) {
+                    db.collection("users").doc(userId).update({
+                        no7no2048: game2048input,
+                        no7no1024: game1024input,
+                        no7no512: game512input,
+                        no7no256: game256input,
+                        no7no128: game128input,
+                        no7no64: game64input,
+                        no7no32: game32input,
+                        no7no16: game16input,
+                        no7no8: game8input,
+                        no7no4: game4input,
+                        no7no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 8) {
+                    db.collection("users").doc(userId).update({
+                        no8no2048: game2048input,
+                        no8no1024: game1024input,
+                        no8no512: game512input,
+                        no8no256: game256input,
+                        no8no128: game128input,
+                        no8no64: game64input,
+                        no8no32: game32input,
+                        no8no16: game16input,
+                        no8no8: game8input,
+                        no8no4: game4input,
+                        no8no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 9) {
+                    db.collection("users").doc(userId).update({
+                        no9no2048: game2048input,
+                        no9no1024: game1024input,
+                        no9no512: game512input,
+                        no9no256: game256input,
+                        no9no128: game128input,
+                        no9no64: game64input,
+                        no9no32: game32input,
+                        no9no16: game16input,
+                        no9no9: game8input,
+                        no9no4: game4input,
+                        no9no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 10) {
+                    db.collection("users").doc(userId).update({
+                        no10no2048: game2048input,
+                        no10no1024: game1024input,
+                        no10no512: game512input,
+                        no10no256: game256input,
+                        no10no128: game128input,
+                        no10no64: game64input,
+                        no10no32: game32input,
+                        no10no16: game16input,
+                        no10no8: game8input,
+                        no10no4: game4input,
+                        no10no2: game2input
+                    });
+                }
+                if (gameNumberAdd == 11) {
+                    db.collection("users").doc(userId).update({
+                        no11no2048: game2048input,
+                        no11no1024: game1024input,
+                        no11no512: game512input,
+                        no11no256: game256input,
+                        no11no128: game128input,
+                        no11no64: game64input,
+                        no11no32: game32input,
+                        no11no16: game16input,
+                        no11no8: game8input,
+                        no11no4: game4input,
+                        no11no2: game2input
+                    });
+                }
             } else {
                 db.collection("users").doc(userId).get().then(function(doc) {
                     db.collection("users").doc(userId).update({
