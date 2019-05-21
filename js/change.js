@@ -150,7 +150,7 @@ setTimeout(function() {
                         i11: null,
                         j11: null,
                         k11: null,
-                        gn: 1,
+                        gn: 0,
                         bestScore: null,
                         gameState: null
                     });
@@ -705,8 +705,8 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-        if (doc.data().gameNumber < 11) {
-            while (doc.data().gameNumber >= 1, gameNumberAdd--) {
+        if (doc.data().gn < 11) {
+            while (doc.data().gn >= 1, gameNumberAdd--) {
                 var add = document.createElement("p");
                 add.innerHTML = "Saved Game #" + gameNumberAdd;
                 add.className = "game-button " + "game" + gameNumberAdd;
