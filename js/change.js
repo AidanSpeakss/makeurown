@@ -6,159 +6,159 @@ db.collection("users").doc("version").get().then(function(doc) {
     }
 });
 setTimeout(function() {
-if(firebase.auth().currentUser) {
-    user = firebase.auth().currentUser.uid + version;
-    userId = firebase.auth().currentUser.uid;
-    console.log(firebase.auth().currentUser.uid + version);
-    db.collection("users").doc("version").get().then(function(doc) {
-    if (doc.exists) {
-        version = doc.data().version;
-    }
-});
-
-    setTimeout(function() {
-
-        console.log("userid exists");
-                db.collection("users").doc("test").get().then(function(doc) {
-                                if (!doc.exists) {
-                                    console.log("test");
-                                }
-                });
-        db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-            console.log("get worked!");
-            if (!doc.exists) {
-                console.log("Doc does not exist!");
-                db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
-                    a1: null,
-                    b1: null,
-                    c1: null,
-                    d1: null,
-                    e1: null,
-                    f1: null,
-                    g1: null,
-                    h1: null,
-                    i1: null,
-                    j1: null,
-                    k1: null,
-                    a2: null,
-                    b2: null,
-                    c2: null,
-                    d2: null,
-                    e2: null,
-                    f2: null,
-                    g2: null,
-                    h2: null,
-                    i2: null,
-                    j2: null,
-                    k2: null,
-                    a3: null,
-                    b3: null,
-                    c3: null,
-                    d3: null,
-                    e3: null,
-                    f3: null,
-                    g3: null,
-                    h3: null,
-                    i3: null,
-                    j3: null,
-                    k3: null,
-                    a4: null,
-                    b4: null,
-                    c4: null,
-                    d4: null,
-                    e4: null,
-                    f4: null,
-                    g4: null,
-                    h4: null,
-                    i4: null,
-                    j4: null,
-                    k4: null,
-                    a5: null,
-                    b5: null,
-                    c5: null,
-                    d5: null,
-                    e5: null,
-                    f5: null,
-                    g5: null,
-                    h5: null,
-                    i5: null,
-                    j5: null,
-                    k5: null,
-                    a6: null,
-                    b6: null,
-                    c6: null,
-                    d6: null,
-                    e6: null,
-                    f6: null,
-                    g6: null,
-                    h6: null,
-                    i6: null,
-                    j6: null,
-                    k6: null,
-                    a7: null,
-                    b7: null,
-                    c7: null,
-                    d7: null,
-                    e7: null,
-                    f7: null,
-                    g7: null,
-                    h7: null,
-                    i7: null,
-                    j7: null,
-                    k7: null,
-                    a8: null,
-                    b8: null,
-                    c8: null,
-                    d8: null,
-                    e8: null,
-                    f8: null,
-                    g8: null,
-                    h8: null,
-                    i8: null,
-                    j8: null,
-                    k8: null,
-                    a9: null,
-                    b9: null,
-                    c9: null,
-                    d9: null,
-                    e9: null,
-                    f9: null,
-                    g9: null,
-                    h9: null,
-                    i9: null,
-                    j9: null,
-                    k9: null,
-                    a10: null,
-                    b10: null,
-                    c10: null,
-                    d10: null,
-                    e10: null,
-                    f10: null,
-                    g10: null,
-                    h10: null,
-                    i10: null,
-                    j10: null,
-                    k10: null,
-                    a11: null,
-                    b11: null,
-                    c11: null,
-                    d11: null,
-                    e11: null,
-                    f11: null,
-                    g11: null,
-                    h11: null,
-                    i11: null,
-                    j11: null,
-                    k11: null,
-                    gameNumber: 1,
-                    bestScore: null,
-                    gameState: null
-                });
+    if (firebase.auth().currentUser) {
+        user = firebase.auth().currentUser.uid + version;
+        userId = firebase.auth().currentUser.uid;
+        console.log(firebase.auth().currentUser.uid + version);
+        db.collection("users").doc("version").get().then(function(doc) {
+            if (doc.exists) {
+                version = doc.data().version;
             }
         });
-    }, 1000);
-}
-        }, 3000);
+
+        setTimeout(function() {
+
+            console.log("userid exists");
+            db.collection("users").doc("test").get().then(function(doc) {
+                if (!doc.exists) {
+                    console.log("test");
+                }
+            });
+            db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+                console.log("get worked!");
+                if (!doc.exists) {
+                    console.log("Doc does not exist!");
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
+                        a1: null,
+                        b1: null,
+                        c1: null,
+                        d1: null,
+                        e1: null,
+                        f1: null,
+                        g1: null,
+                        h1: null,
+                        i1: null,
+                        j1: null,
+                        k1: null,
+                        a2: null,
+                        b2: null,
+                        c2: null,
+                        d2: null,
+                        e2: null,
+                        f2: null,
+                        g2: null,
+                        h2: null,
+                        i2: null,
+                        j2: null,
+                        k2: null,
+                        a3: null,
+                        b3: null,
+                        c3: null,
+                        d3: null,
+                        e3: null,
+                        f3: null,
+                        g3: null,
+                        h3: null,
+                        i3: null,
+                        j3: null,
+                        k3: null,
+                        a4: null,
+                        b4: null,
+                        c4: null,
+                        d4: null,
+                        e4: null,
+                        f4: null,
+                        g4: null,
+                        h4: null,
+                        i4: null,
+                        j4: null,
+                        k4: null,
+                        a5: null,
+                        b5: null,
+                        c5: null,
+                        d5: null,
+                        e5: null,
+                        f5: null,
+                        g5: null,
+                        h5: null,
+                        i5: null,
+                        j5: null,
+                        k5: null,
+                        a6: null,
+                        b6: null,
+                        c6: null,
+                        d6: null,
+                        e6: null,
+                        f6: null,
+                        g6: null,
+                        h6: null,
+                        i6: null,
+                        j6: null,
+                        k6: null,
+                        a7: null,
+                        b7: null,
+                        c7: null,
+                        d7: null,
+                        e7: null,
+                        f7: null,
+                        g7: null,
+                        h7: null,
+                        i7: null,
+                        j7: null,
+                        k7: null,
+                        a8: null,
+                        b8: null,
+                        c8: null,
+                        d8: null,
+                        e8: null,
+                        f8: null,
+                        g8: null,
+                        h8: null,
+                        i8: null,
+                        j8: null,
+                        k8: null,
+                        a9: null,
+                        b9: null,
+                        c9: null,
+                        d9: null,
+                        e9: null,
+                        f9: null,
+                        g9: null,
+                        h9: null,
+                        i9: null,
+                        j9: null,
+                        k9: null,
+                        a10: null,
+                        b10: null,
+                        c10: null,
+                        d10: null,
+                        e10: null,
+                        f10: null,
+                        g10: null,
+                        h10: null,
+                        i10: null,
+                        j10: null,
+                        k10: null,
+                        a11: null,
+                        b11: null,
+                        c11: null,
+                        d11: null,
+                        e11: null,
+                        f11: null,
+                        g11: null,
+                        h11: null,
+                        i11: null,
+                        j11: null,
+                        k11: null,
+                        gameNumber: 1,
+                        bestScore: null,
+                        gameState: null
+                    });
+                }
+            });
+        }, 1000);
+    }
+}, 3000);
 
 function reLoad(time) {
     setTimeout(function(time) {
@@ -510,37 +510,195 @@ function saveCloud() {
                 gameNumberAdd = gameNumberSet++;
                 console.log(gameNumberAdd);
                 gameNumberAdd2 = gameNumberAdd++;
-                while (no < 11, no++) {
-                    if (gameNumberAdd == no) {
-                        var ne1024 = "k" + gameNumberAdd;
-                        var ne512 = "i" + gameNumberAdd;
-                        var ne256 = "h" + gameNumberAdd;
-                        var ne128 = "g" + gameNumberAdd;
-                        var ne64 = "f" + gameNumberAdd;
-                        var ne32 = "e" + gameNumberAdd;
-                        var ne16 = "d" + gameNumberAdd;
-                        var ne8 = "c" + gameNumberAdd;
-                        var ne4 = "b" + gameNumberAdd;
-                        var ne2 = "a" + gameNumberAdd;
-                        db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                            ne2: game2048input,
-                            ne4: game1024input,
-                            ne8: game512input,
-                            ne16: game256input,
-                            ne32: game128input,
-                            ne64: game64input,
-                            ne128: game32input,
-                            ne256: game16input,
-                            ne512: game8input,
-                            ne1024: game4input,
-                            ne2048: game2input,
-                            gn: gameNumberAdd2
-                        });
-                    }
+                if (gameNumberAdd == 1) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a1: null,
+                        b1: null,
+                        c1: null,
+                        d1: null,
+                        e1: null,
+                        f1: null,
+                        g1: null,
+                        h1: null,
+                        i1: null,
+                        j1: null,
+                        k1: null,
+                        gn: gameNumberAdd2
+
+                    });
                 }
-                location.reload;
+                if (gameNumberAdd == 2) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a2: null,
+                        b2: null,
+                        c2: null,
+                        d2: null,
+                        e2: null,
+                        f2: null,
+                        g2: null,
+                        h2: null,
+                        i2: null,
+                        j2: null,
+                        k2: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 3) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a3: null,
+                        b3: null,
+                        c3: null,
+                        d3: null,
+                        e3: null,
+                        f3: null,
+                        g3: null,
+                        h3: null,
+                        i3: null,
+                        j3: null,
+                        k3: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 4) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a4: null,
+                        b4: null,
+                        c4: null,
+                        d4: null,
+                        e4: null,
+                        f4: null,
+                        g4: null,
+                        h4: null,
+                        i4: null,
+                        j4: null,
+                        k4: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 5) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a5: null,
+                        b5: null,
+                        c5: null,
+                        d5: null,
+                        e5: null,
+                        f5: null,
+                        g5: null,
+                        h5: null,
+                        i5: null,
+                        j5: null,
+                        k5: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 6) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a6: null,
+                        b6: null,
+                        c6: null,
+                        d6: null,
+                        e6: null,
+                        f6: null,
+                        g6: null,
+                        h6: null,
+                        i6: null,
+                        j6: null,
+                        k6: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 7) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a7: null,
+                        b7: null,
+                        c7: null,
+                        d7: null,
+                        e7: null,
+                        f7: null,
+                        g7: null,
+                        h7: null,
+                        i7: null,
+                        j7: null,
+                        k7: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 8) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a8: null,
+                        b8: null,
+                        c8: null,
+                        d8: null,
+                        e8: null,
+                        f8: null,
+                        g8: null,
+                        h8: null,
+                        i8: null,
+                        j8: null,
+                        k8: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 9) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a9: null,
+                        b9: null,
+                        c9: null,
+                        d9: null,
+                        e9: null,
+                        f9: null,
+                        g9: null,
+                        h9: null,
+                        i9: null,
+                        j9: null,
+                        k9: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 10) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a10: null,
+                        b10: null,
+                        c10: null,
+                        d10: null,
+                        e10: null,
+                        f10: null,
+                        g10: null,
+                        h10: null,
+                        i10: null,
+                        j10: null,
+                        k10: null,
+                        gn: gameNumberAdd2
+
+                    });
+                }
+                if (gameNumberAdd == 11) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
+                        a11: null,
+                        b11: null,
+                        c11: null,
+                        d11: null,
+                        e11: null,
+                        f11: null,
+                        g11: null,
+                        h11: null,
+                        i11: null,
+                        j11: null,
+                        k11: null,
+                        gn: gameNumberAdd2
+                    });
+                }
             }
         }
+        location.reload;
     });
 }
 
@@ -554,7 +712,7 @@ function loadSaves() {
                 add.className = "game-button " + "game" + gameNumberAdd;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd)[0].addEventListener("click", function() {
-                    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+                    db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         var ne1024 = "k" + gameNumberAdd;
                         var ne512 = "i" + gameNumberAdd;
                         var ne256 = "h" + gameNumberAdd;
