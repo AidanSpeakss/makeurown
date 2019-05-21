@@ -6,14 +6,9 @@ db.collection("users").doc("version").get().then(function(doc) {
         version = doc.data().version;
     }
 });
-while (i = 0, i == 0, i + 0) {
     if (firebase.auth().currentUser) {
         ready = true;
-        break;
-    } else {
-        ready = false;
     }
-}
 if (ready == true) {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
