@@ -523,7 +523,7 @@ function saveCloud() {
                         i1: game512input,
                         j1: game1024input,
                         k1: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -540,7 +540,7 @@ function saveCloud() {
                         i2: game512input,
                         j2: game1024input,
                         k2: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -557,7 +557,7 @@ function saveCloud() {
                         i3: game512input,
                         j3: game1024input,
                         k3: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -574,7 +574,7 @@ function saveCloud() {
                         i4: game512input,
                         j4: game1024input,
                         k4: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -591,7 +591,7 @@ function saveCloud() {
                         i5: game512input,
                         j5: game1024input,
                         k5: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -608,7 +608,7 @@ function saveCloud() {
                         i6: game512input,
                         j6: game1024input,
                         k6: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -625,7 +625,7 @@ function saveCloud() {
                         i7: game512input,
                         j7: game1024input,
                         k7: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -642,7 +642,7 @@ function saveCloud() {
                         i8: game512input,
                         j8: game1024input,
                         k8: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -659,8 +659,7 @@ function saveCloud() {
                         i9: game512input,
                         j9: game1024input,
                         k9: game2048input,
-                        gn: gameNumberAdd2
-
+                        gn: firebase.firestore.FieldValue.increment(1)
                     });
                 }
                 if (gameNumberAdd == 10) {
@@ -676,7 +675,7 @@ function saveCloud() {
                         i10: game512input,
                         j10: game1024input,
                         k10: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
 
                     });
                 }
@@ -693,7 +692,7 @@ function saveCloud() {
                         i11: game512input,
                         j11: game1024input,
                         k11: game2048input,
-                        gn: gameNumberAdd2
+                        gn: firebase.firestore.FieldValue.increment(1)
                     });
                 }
             }
