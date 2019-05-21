@@ -1,33 +1,31 @@
-var gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
+var ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
+var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
 db.collection("users").doc("version").get().then(function(doc) {
     if (doc.exists) {
         version = doc.data().version;
     }
 });
-setTimeout(function() {
-    if (firebase.auth().currentUser) {
+while (var i = 0, i == 0, i + 0) {
+if (firebase.auth().currentUser) {
+    ready = true;
+    break;
+}
+    else {
+        ready = false;
+    }
+}
+    if (ready == true) {
         user = firebase.auth().currentUser.uid + version;
         userId = firebase.auth().currentUser.uid;
-        console.log(firebase.auth().currentUser.uid + version);
         db.collection("users").doc("version").get().then(function(doc) {
             if (doc.exists) {
                 version = doc.data().version;
             }
         });
-
-        setTimeout(function() {
-
-            console.log("userid exists");
-            db.collection("users").doc("test").get().then(function(doc) {
-                if (!doc.exists) {
-                    console.log("test");
-                }
-            });
             db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                 console.log("get worked!");
                 if (!doc.exists) {
-                    console.log("Doc does not exist!");
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
                         a1: null,
                         b1: null,
@@ -156,9 +154,7 @@ setTimeout(function() {
                     });
                 }
             });
-        }, 1000);
     }
-}, 3000);
 
 function reLoad(time) {
     setTimeout(function(time) {
@@ -198,7 +194,7 @@ if (localStorage.getItem('bestScore')) {
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
 function saveGame() {
-    if (userId) {
+    if (ready == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).add({
             gameState: gameStat,
             bestScore: bestScor
@@ -218,7 +214,7 @@ function startNew() {
     uDS = true;
 }
 if (uDS == true) {
-    if (userId) {
+    if (ready == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.exists) {
                 db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -232,6 +228,7 @@ if (uDS == true) {
 }
 
 function getGame() {
+    if (ready == true) {
     check0 = null;
     gscheck = null;
     bscheck = null;
@@ -279,6 +276,7 @@ function getGame() {
             gameState: gameStat,
             bestScore: bestScor
         });
+    }
     }
 }
 
@@ -490,16 +488,13 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log("No user detected.");
     }
 });
-
-window.onload = setTimeout(function() {
-    console.log("func called!");
-    if (userId) {
+if (ready == true) {
         getGame();
         loadSaves();
-    }
-}, 5000);
+}
 
 function saveCloud() {
+    if (ready == true) {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (doc.exists) {
             console.log(doc.data().gn);
@@ -526,6 +521,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 2) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -543,6 +540,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 3) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -560,6 +559,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 4) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -577,6 +578,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 5) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -594,6 +597,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 6) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -611,6 +616,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 7) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -628,6 +635,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 8) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -645,6 +654,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                     location.reload;
+
                 }
                 if (gameNumberAdd == 9) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -661,6 +672,8 @@ function saveCloud() {
                         k9: game2048input,
                         gn: firebase.firestore.FieldValue.increment(1)
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 10) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -678,6 +691,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                                        location.reload;
+
                 }
                 if (gameNumberAdd == 11) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -694,15 +709,17 @@ function saveCloud() {
                         k11: game2048input,
                         gn: firebase.firestore.FieldValue.increment(1)
                     });
+                    location.reload;
                 }
             }
         }
-        location.reload;
     });
+}
 }
 
 
 function loadSaves() {
+    if (ready == true) {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (doc.data().gn < 11) {
             while (doc.data().gn >= 1) {
@@ -722,17 +739,17 @@ function loadSaves() {
                         var ne8 = "c" + gameNumberAdd;
                         var ne4 = "b" + gameNumberAdd;
                         var ne2 = "a" + gameNumberAdd;
-                        var thing2 = doc.data().ne2;
-                        var thing4 = doc.data().ne4;
-                        var thing8 = doc.data().ne8;
-                        var thing16 = doc.data().ne16;
-                        var thing32 = doc.data().ne32;
-                        var thing64 = doc.data().ne64;
-                        var thing128 = doc.data().ne128;
-                        var thing256 = doc.data().ne256;
-                        var thing512 = doc.data().ne512;
-                        var thing1024 = doc.data().ne1024;
-                        var thing2048 = doc.data().ne2048;
+                        thing2 = doc.data().ne2;
+                        thing4 = doc.data().ne4;
+                        thing8 = doc.data().ne8;
+                        thing16 = doc.data().ne16;
+                        thing32 = doc.data().ne32;
+                        thing64 = doc.data().ne64;
+                        thing128 = doc.data().ne128;
+                        thing256 = doc.data().ne256;
+                        thing512 = doc.data().ne512;
+                        thing1024 = doc.data().ne1024;
+                        thing2048 = doc.data().ne2048;
                     });
                     document.cookie = "game2=" + thing2;
                     document.cookie = "game4=" + thing4;
@@ -754,4 +771,5 @@ function loadSaves() {
             window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
         }
     });
+    }
 }
