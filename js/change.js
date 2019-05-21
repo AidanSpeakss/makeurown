@@ -503,7 +503,7 @@ function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (doc.exists) {
             console.log(doc.data().gn);
-            if (doc.data().gn) {
+            if (doc.data().gn || doc.data().gn == 0) {
                 console.log(doc.data().gn);
                 var gameNumberSet = doc.data().gn;
                 console.log(gameNumberSet);
