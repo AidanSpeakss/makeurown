@@ -1,7 +1,7 @@
 var ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
-firebase.auth().onAuthStateChanged(function() {
+function startUp() {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
     db.collection("users").doc("version").get().then(function(doc) {
@@ -143,7 +143,7 @@ firebase.auth().onAuthStateChanged(function() {
             });
         }
     });
-});
+}
 
 function reLoad(time) {
     setTimeout(function(time) {
@@ -468,6 +468,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
+        startUp();
     } else {
         // No user is signed in.
         console.log("No user detected.");
