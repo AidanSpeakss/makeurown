@@ -150,7 +150,7 @@ setTimeout(function() {
                         i11: null,
                         j11: null,
                         k11: null,
-                        gameNumber: 1,
+                        gn: 1,
                         bestScore: null,
                         gameState: null
                     });
@@ -502,197 +502,197 @@ window.onload = setTimeout(function() {
 function saveCloud() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (doc.exists) {
-            console.log(doc.data().gameNumber);
-            if (doc.data().gameNumber) {
-                console.log(doc.data().gameNumber);
-                var gameNumberSet = doc.data().gameNumber;
+            console.log(doc.data().gn);
+            if (doc.data().gn) {
+                console.log(doc.data().gn);
+                var gameNumberSet = doc.data().gn;
                 console.log(gameNumberSet);
                 gameNumberAdd = gameNumberSet++;
                 console.log(gameNumberAdd);
                 gameNumberAdd2 = gameNumberAdd++;
                 if (gameNumberAdd == 1) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a1: null,
-                        b1: null,
-                        c1: null,
-                        d1: null,
-                        e1: null,
-                        f1: null,
-                        g1: null,
-                        h1: null,
-                        i1: null,
-                        j1: null,
-                        k1: null,
+                        a1: game2input,
+                        b1: game4input,
+                        c1: game8input,
+                        d1: game16input,
+                        e1: game32input,
+                        f1: game64input,
+                        g1: game128input,
+                        h1: game256input,
+                        i1: game512input,
+                        j1: game1024input,
+                        k1: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 2) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a2: null,
-                        b2: null,
-                        c2: null,
-                        d2: null,
-                        e2: null,
-                        f2: null,
-                        g2: null,
-                        h2: null,
-                        i2: null,
-                        j2: null,
-                        k2: null,
+                        a2: game2input,
+                        b2: game4input,
+                        c2: game8input,
+                        d2: game16input,
+                        e2: game32input,
+                        f2: game64input,
+                        g2: game128input,
+                        h2: game256input,
+                        i2: game512input,
+                        j2: game1024input,
+                        k2: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 3) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a3: null,
-                        b3: null,
-                        c3: null,
-                        d3: null,
-                        e3: null,
-                        f3: null,
-                        g3: null,
-                        h3: null,
-                        i3: null,
-                        j3: null,
-                        k3: null,
+                        a3: game2input,
+                        b3: game4input,
+                        c3: game8input,
+                        d3: game16input,
+                        e3: game32input,
+                        f3: game64input,
+                        g3: game128input,
+                        h3: game256input,
+                        i3: game512input,
+                        j3: game1024input,
+                        k3: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 4) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a4: null,
-                        b4: null,
-                        c4: null,
-                        d4: null,
-                        e4: null,
-                        f4: null,
-                        g4: null,
-                        h4: null,
-                        i4: null,
-                        j4: null,
-                        k4: null,
+                        a4: game2input,
+                        b4: game4input,
+                        c4: game8input,
+                        d4: game16input,
+                        e4: game32input,
+                        f4: game64input,
+                        g4: game128input,
+                        h4: game256input,
+                        i4: game512input,
+                        j4: game1024input,
+                        k4: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 5) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a5: null,
-                        b5: null,
-                        c5: null,
-                        d5: null,
-                        e5: null,
-                        f5: null,
-                        g5: null,
-                        h5: null,
-                        i5: null,
-                        j5: null,
-                        k5: null,
+                        a5: game2input,
+                        b5: game4input,
+                        c5: game8input,
+                        d5: game16input,
+                        e5: game32input,
+                        f5: game64input,
+                        g5: game128input,
+                        h5: game256input,
+                        i5: game512input,
+                        j5: game1024input,
+                        k5: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 6) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a6: null,
-                        b6: null,
-                        c6: null,
-                        d6: null,
-                        e6: null,
-                        f6: null,
-                        g6: null,
-                        h6: null,
-                        i6: null,
-                        j6: null,
-                        k6: null,
+                        a6: game2input,
+                        b6: game4input,
+                        c6: game8input,
+                        d6: game16input,
+                        e6: game32input,
+                        f6: game64input,
+                        g6: game128input,
+                        h6: game256input,
+                        i6: game512input,
+                        j6: game1024input,
+                        k6: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 7) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a7: null,
-                        b7: null,
-                        c7: null,
-                        d7: null,
-                        e7: null,
-                        f7: null,
-                        g7: null,
-                        h7: null,
-                        i7: null,
-                        j7: null,
-                        k7: null,
+                        a7: game2input,
+                        b7: game4input,
+                        c7: game8input,
+                        d7: game16input,
+                        e7: game32input,
+                        f7: game64input,
+                        g7: game128input,
+                        h7: game256input,
+                        i7: game512input,
+                        j7: game1024input,
+                        k7: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 8) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a8: null,
-                        b8: null,
-                        c8: null,
-                        d8: null,
-                        e8: null,
-                        f8: null,
-                        g8: null,
-                        h8: null,
-                        i8: null,
-                        j8: null,
-                        k8: null,
+                        a8: game2input,
+                        b8: game4input,
+                        c8: game8input,
+                        d8: game16input,
+                        e8: game32input,
+                        f8: game64input,
+                        g8: game128input,
+                        h8: game256input,
+                        i8: game512input,
+                        j8: game1024input,
+                        k8: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 9) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a9: null,
-                        b9: null,
-                        c9: null,
-                        d9: null,
-                        e9: null,
-                        f9: null,
-                        g9: null,
-                        h9: null,
-                        i9: null,
-                        j9: null,
-                        k9: null,
+                        a9: game2input,
+                        b9: game4input,
+                        c9: game8input,
+                        d9: game16input,
+                        e9: game32input,
+                        f9: game64input,
+                        g9: game128input,
+                        h9: game256input,
+                        i9: game512input,
+                        j9: game1024input,
+                        k9: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 10) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a10: null,
-                        b10: null,
-                        c10: null,
-                        d10: null,
-                        e10: null,
-                        f10: null,
-                        g10: null,
-                        h10: null,
-                        i10: null,
-                        j10: null,
-                        k10: null,
+                        a10: game2input,
+                        b10: game4input,
+                        c10: game8input,
+                        d10: game16input,
+                        e10: game32input,
+                        f10: game64input,
+                        g10: game128input,
+                        h10: game256input,
+                        i10: game512input,
+                        j10: game1024input,
+                        k10: game2048input,
                         gn: gameNumberAdd2
 
                     });
                 }
                 if (gameNumberAdd == 11) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a11: null,
-                        b11: null,
-                        c11: null,
-                        d11: null,
-                        e11: null,
-                        f11: null,
-                        g11: null,
-                        h11: null,
-                        i11: null,
-                        j11: null,
-                        k11: null,
+                        a11: game2input,
+                        b11: game4input,
+                        c11: game8input,
+                        d11: game16input,
+                        e11: game32input,
+                        f11: game64input,
+                        g11: game128input,
+                        h11: game256input,
+                        i11: game512input,
+                        j11: game1024input,
+                        k11: game2048input,
                         gn: gameNumberAdd2
                     });
                 }
