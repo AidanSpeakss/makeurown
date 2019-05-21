@@ -547,7 +547,7 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-        if (!doc.data().gameNumber > 11) {
+        if (doc.data().gameNumber < 11) {
             while (doc.data().gameNumber >= 1, gameNumberAdd--) {
                 var add = document.createElement("p");
                 add.innerHTML = "Saved Game #" + gameNumberAdd;
