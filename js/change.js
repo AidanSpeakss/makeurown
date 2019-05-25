@@ -9,8 +9,6 @@ function startUp() {
             version = doc.data().version;
         }
     });
-    getGame();
-    loadSaves();
     ready = true;
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         console.log("get worked!");
@@ -427,6 +425,8 @@ document.body.getElementsByClassName("go")[0].addEventListener("click", function
 })
 
 firebase.auth().onAuthStateChanged(function(user) {
+    getGame();
+    loadSaves();
     console.log("Get redirect result function succesfully called.");
     if (firebase.auth().currentUser) {
         console.log(firebase.auth().currentUser);
