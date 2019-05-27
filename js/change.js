@@ -5,20 +5,18 @@ var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing1
 function readyCheck2() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (!doc.exists) {
-                        return readyCheck();
+            return readyCheck();
         }
         if (doc.exists) {
             if (!doc.data()) {
-                        return readyCheck();
+                return readyCheck();
             }
             if (doc.data()) {
                 if (doc.data().test == "true") {
-                    startUp();
                     getGame();
                     loadSaves();
-                }
-                else {
-                        return readyCheck();
+                } else {
+                    return readyCheck();
                 }
             }
         }
@@ -181,7 +179,9 @@ function startUp() {
                 gameState: null,
                 test: true
             });
-        reLoad("200");
+            reLoad("200");
+        } else {
+            readyCheck();
         }
     });
 }
@@ -514,7 +514,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
-        readyCheck();
+        startUp();
     } else {
         // No user is signed in.
         console.log("No user detected.");
@@ -717,7 +717,7 @@ function saveCloud() {
                     });
                 }
                 reLoad("100");
-            }            
+            }
         }
     });
 }
