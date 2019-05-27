@@ -20,7 +20,7 @@
   line-height: 42px;
   text-align: center;
 }
-.restart-button:active, .restart-button2:active, .save-button:active, .game-button:active, .continue-button:active, .start-new-button:active, .paused-button: active, .restart-button3:active {
+.restart-button:active, .restart-button2:active, .save-button:active, .game-button:active, .continue-button:active, .start-new-button:active, .paused-button:active, .restart-button3:active {
 transform: scale(1.1,1.1);
 }
 .game-button:hover {
