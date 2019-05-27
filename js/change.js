@@ -223,19 +223,16 @@ if (localStorage.getItem('bestScore')) {
 document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
 function saveGame() {
-    if (ready == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).add({
             gameState: gameStat,
             bestScore: bestScor
         });
-    }
+        window.alert("Game Saved");
 }
 
 function continu(gS) {
-    if (added = true) {
         localStorage.setItem("gameState", gS)
         location.reload();
-    }
 }
 
 function startNew() {
@@ -286,7 +283,6 @@ function getGame() {
             addStyleString('  .continue-button {display: inline-block;} ');
             document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
-            gscheck = false;
         }
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.data().bestScore) {
@@ -300,7 +296,6 @@ function getGame() {
         });
         if (bscheck == true) {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
-            bscheck = false;
         }
     } else {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
