@@ -1,4 +1,13 @@
 @import url(fonts/clear-sans.css);
+.gameName {
+  margin: 0;
+  padding: 0;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 200;
+}
 .go {
   display: inline-block;
   background: #8f7a66;
