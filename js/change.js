@@ -510,7 +510,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             });
             window.alert("Game Saved");
         }, {
-            once: true
+            once: false
         });
         readyCheck();
     } else {
@@ -917,7 +917,7 @@ function loadSaves() {
                     document.cookie = "gameName=" + thingName;
                     document.cookie = "images_changed=true";
                     reLoad("900");
-                });
+                }, {once: false});
                 gameNumberAdd3--;
                 gameNumberAdd4--;
             }
