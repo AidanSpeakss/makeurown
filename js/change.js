@@ -786,7 +786,7 @@ function loadSaves() {
                     reLoad("900");
                 });
                 gameNumberAdd3--;
-                gameNumberAdd4--
+                gameNumberAdd4--;
             }
         } else {
             window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
