@@ -1,6 +1,6 @@
 var gameNumberAdd3, gameNumberAdd4, ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
-var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
+var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2, thingName;
 
 function readyCheck2() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
