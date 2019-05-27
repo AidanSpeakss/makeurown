@@ -233,12 +233,13 @@ function getGame() {
     gscheck = null;
     bscheck = null;
  if (db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-            if (doc.exists) {console.log(doc.data());
+            if (doc.exists) {
                 return true;
             }
         })) {
         check0 = true;
-    }
+ console.log(doc.data());   
+ }
     if (check0 == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.data().gameState) {
