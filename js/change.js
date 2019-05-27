@@ -1,4 +1,4 @@
-var gameNumberAdd3, ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
+var gameNumberAdd3, gameNumberAdd4, ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
 
@@ -728,7 +728,8 @@ function loadSaves() {
             gameNumberAdd3 = doc.data().gn;
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
-                add.innerHTML = "Saved Game #" + gameNumberAdd3;
+                gameNumberAdd4 = gameNumberAdd3 - 1;
+                add.innerHTML = "Saved Game #" + gameNumberAdd4;
                 add.className = "game-button " + "game" + gameNumberAdd3;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd3)[0].addEventListener("click", function() {
@@ -770,6 +771,7 @@ function loadSaves() {
                     reLoad("900");
                 });
                 gameNumberAdd3--;
+                gameNumberAdd4--
             }
         } else {
             window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
