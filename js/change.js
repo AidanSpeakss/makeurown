@@ -257,6 +257,7 @@ function getGame() {
             addStyleString('  .continue-button {display: inline-block;} ');
             document.getElementsByClassName("start-new-button")[0].addEventListener("click", startNew());
             document.getElementsByClassName("continue-button")[0].addEventListener("click", continu(gS));
+            gscheck = false;
         }
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.data().bestScore) {
@@ -270,6 +271,7 @@ function getGame() {
         });
         if (bscheck == true) {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
+                bscheck = false;
         }
     } else {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
