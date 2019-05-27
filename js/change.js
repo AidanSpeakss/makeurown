@@ -758,8 +758,8 @@ function loadSaves() {
                 add.setAttribute("data-yes", "yes");
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.body.addEventListener("click", function(event) {
-                    if (event.currentTarget.getAttribute("data-yes") == "yes") {
-                        ngameNumberAdd3 = event.currentTarget.getAttribute("data-thing");
+                    if (event.target.getAttribute("data-yes") == "yes") {
+                        ngameNumberAdd3 = event.target.getAttribute("data-thing");
                         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             if (ngameNumberAdd3 == 2) {
                                 thing2 = doc.data().a2;
