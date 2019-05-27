@@ -11,6 +11,11 @@ db.collection("users").doc(firebase.auth().currentUser.uid + "ready").get().then
             db.collection("users").doc(firebase.auth().currentUser.uid + "ready").set({
             placeholder: 0
             });
+                               db.collection("users").doc("version").get().then(function(doc) {
+        if (doc.exists) {
+            version = doc.data().version;
+        }
+    });
                    startUp();
                    getGame();
                    loadSaves();
@@ -20,11 +25,6 @@ db.collection("users").doc(firebase.auth().currentUser.uid + "ready").get().then
 function startUp() {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
-        db.collection("users").doc("version").get().then(function(doc) {
-        if (doc.exists) {
-            version = doc.data().version;
-        }
-    });
     ready = true;
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         console.log("get worked!");
