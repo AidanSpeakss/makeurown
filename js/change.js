@@ -18,7 +18,7 @@ function readyCheck2() {
                     loadSaves();
                 }
                 else {
-                        return readyCheck2();
+                        return readyCheck();
                 }
             }
         }
