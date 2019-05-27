@@ -5,11 +5,11 @@ var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing1
 function readyCheck2() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (!doc.exists) {
-                        return readyCheck2();
+                        return readyCheck();
         }
         if (doc.exists) {
             if (!doc.data()) {
-                        return readyCheck2();
+                        return readyCheck();
             }
             if (doc.data()) {
                 if (doc.data().bestScore && doc.data().gameState && doc.data().gn && doc.data().k9) {
