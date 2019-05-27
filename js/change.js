@@ -221,13 +221,6 @@ if (localStorage.getItem('bestScore')) {
 }
 // Subsequent queries will use persistence, if it was enabled successfully
 
-function saveGame() {
-        db.collection("users").doc(firebase.auth().currentUser.uid + version).add({
-            gameState: gameStat,
-            bestScore: bestScor
-        });
-        window.alert("Game Saved");
-}
 
 function continu(gS) {
         localStorage.setItem("gameState", gS)
@@ -507,7 +500,13 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
-        document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
+        document.getElementsByClassName("save-button")[0].addEventListener("click", function saveGame() {
+        db.collection("users").doc(firebase.auth().currentUser.uid + version).add({
+            gameState: gameStat,
+            bestScore: bestScor
+        });
+        window.alert("Game Saved");
+}, once);
         readyCheck();
     } else {
         // No user is signed in.
