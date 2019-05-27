@@ -1,10 +1,26 @@
 var ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
+function readyCheck() {   
+db.collection("users").doc(firebase.auth().currentUser.uid + "ready").get().then(function(doc) {
+        if (doc.exists) {
+            db.collection("users").doc(firebase.auth().currentUser.uid + "ready").delete()
+            readyCheck();
+        }
+               if (!doc.exists) {
+            db.collection("users").doc(firebase.auth().currentUser.uid + "ready").set({
+            placeholder: 0
+            });
+                   startUp();
+                   getGame();
+                   loadSaves();
+        }
+    });
+}
 function startUp() {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
-    db.collection("users").doc("version").get().then(function(doc) {
+        db.collection("users").doc("version").get().then(function(doc) {
         if (doc.exists) {
             version = doc.data().version;
         }
@@ -425,8 +441,6 @@ document.body.getElementsByClassName("go")[0].addEventListener("click", function
 })
 
 firebase.auth().onAuthStateChanged(function(user) {
-    getGame();
-    loadSaves();
     console.log("Get redirect result function succesfully called.");
     if (firebase.auth().currentUser) {
         console.log(firebase.auth().currentUser);
@@ -468,7 +482,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
-        startUp();
+        readyCheck();
     } else {
         // No user is signed in.
         console.log("No user detected.");
