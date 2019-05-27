@@ -723,7 +723,7 @@ function loadSaves() {
                 var add = document.createElement("p");
                 gameNumberAdd4 = gameNumberAdd3 - 1;
 
-                if (doc.data().gn == 2) {
+                if (gameNumberAdd3 == 2) {
                     add.innerHTML = doc.data().n2
                 }
                 if (gameNumberAdd3 == 3) {
