@@ -238,7 +238,9 @@ function getGame() {
             }
         })) {
         check0 = true;
+         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
  console.log(doc.data());   
+        });
  }
     if (check0 == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
