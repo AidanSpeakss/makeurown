@@ -12,7 +12,7 @@ function readyCheck2() {
                 return readyCheck();
             }
             if (doc.data()) {
-                if (doc.data().test == "true") {
+                if (doc.data().test == true) {
                     getGame();
                     loadSaves();
                 } else {
