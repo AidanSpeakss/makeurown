@@ -35,6 +35,7 @@ function readyCheck() {
             if (doc.data()) {
                 if (doc.data().version) {
                     version = doc.data().version;
+                    startUp();
                     readyCheck2();
                 }
                 if (!doc.data().version) {
@@ -180,8 +181,6 @@ function startUp() {
                 test: true
             });
             reLoad("200");
-        } else {
-            readyCheck();
         }
     });
 }
@@ -514,7 +513,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
-        startUp();
+        readyCheck();
     } else {
         // No user is signed in.
         console.log("No user detected.");
