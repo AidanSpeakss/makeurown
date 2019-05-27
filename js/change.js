@@ -1,6 +1,6 @@
 var gameNumberAdd3, gameNumberAdd4, ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
-var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2, thingName;
+var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2, thingName, ngameNumberAdd3;
 
 function readyCheck2() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
@@ -758,151 +758,151 @@ function loadSaves() {
                 add.setAttribute("data-yes", "yes");
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.body.addEventListener("click", function(event) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (event.target.getAttribute("data-yes") == "yes") {
-                        ngameNumberAdd3 = event.target.getAttribute("data-thing");
-                        if (ngameNumberAdd3 == 2) {
-                            thing2 = doc.data().a2;
-                            thing4 = doc.data().b2;
-                            thing8 = doc.data().c2;
-                            thing16 = doc.data().d2;
-                            thing32 = doc.data().e2;
-                            thing64 = doc.data().f2;
-                            thing128 = doc.data().g2;
-                            thing256 = doc.data().h2;
-                            thing512 = doc.data().i2;
-                            thing1024 = doc.data().j2;
-                            thing2048 = doc.data().k2;
-                            thingName = doc.data().n2;
-                        }
-                        if (ngameNumberAdd3 == 3) {
-                            thing2 = doc.data().a3;
-                            thing4 = doc.data().b3;
-                            thing8 = doc.data().c3;
-                            thing16 = doc.data().d3;
-                            thing32 = doc.data().e3;
-                            thing64 = doc.data().f3;
-                            thing128 = doc.data().g3;
-                            thing256 = doc.data().h3;
-                            thing512 = doc.data().i3;
-                            thing1024 = doc.data().j3;
-                            thing2048 = doc.data().k3;
-                            thingName = doc.data().n3;
-                        }
-                        if (ngameNumberAdd3 == 4) {
-                            thing2 = doc.data().a4;
-                            thing4 = doc.data().b4;
-                            thing8 = doc.data().c4;
-                            thing16 = doc.data().d4;
-                            thing32 = doc.data().e4;
-                            thing64 = doc.data().f4;
-                            thing128 = doc.data().g4;
-                            thing256 = doc.data().h4;
-                            thing512 = doc.data().i4;
-                            thing1024 = doc.data().j4;
-                            thing2048 = doc.data().k4;
-                            thingName = doc.data().n4;
-                        }
-                        if (ngameNumberAdd3 == 5) {
-                            thing2 = doc.data().a5;
-                            thing4 = doc.data().b5;
-                            thing8 = doc.data().c5;
-                            thing16 = doc.data().d5;
-                            thing32 = doc.data().e5;
-                            thing64 = doc.data().f5;
-                            thing128 = doc.data().g5;
-                            thing256 = doc.data().h5;
-                            thing512 = doc.data().i5;
-                            thing1024 = doc.data().j5;
-                            thing2048 = doc.data().k5;
-                            thingName = doc.data().n5;
-                        }
-                        if (ngameNumberAdd3 == 6) {
-                            thing2 = doc.data().a6;
-                            thing4 = doc.data().b6;
-                            thing8 = doc.data().c6;
-                            thing16 = doc.data().d6;
-                            thing32 = doc.data().e6;
-                            thing64 = doc.data().f6;
-                            thing128 = doc.data().g6;
-                            thing256 = doc.data().h6;
-                            thing512 = doc.data().i6;
-                            thing1024 = doc.data().j6;
-                            thing2048 = doc.data().k6;
-                            thingName = doc.data().n6;
-                        }
-                        if (ngameNumberAdd3 == 7) {
-                            thing2 = doc.data().a7;
-                            thing4 = doc.data().b7;
-                            thing8 = doc.data().c7;
-                            thing16 = doc.data().d7;
-                            thing32 = doc.data().e7;
-                            thing64 = doc.data().f7;
-                            thing128 = doc.data().g7;
-                            thing256 = doc.data().h7;
-                            thing512 = doc.data().i7;
-                            thing1024 = doc.data().j7;
-                            thing2048 = doc.data().k7;
-                            thingName = doc.data().n7;
-                        }
-                        if (ngameNumberAdd3 == 8) {
-                            thing2 = doc.data().a8;
-                            thing4 = doc.data().b8;
-                            thing8 = doc.data().c8;
-                            thing16 = doc.data().d8;
-                            thing32 = doc.data().e8;
-                            thing64 = doc.data().f8;
-                            thing128 = doc.data().g8;
-                            thing256 = doc.data().h8;
-                            thing512 = doc.data().i8;
-                            thing1024 = doc.data().j8;
-                            thing2048 = doc.data().k8;
-                            thingName = doc.data().n8;
-                        }
-                        if (ngameNumberAdd3 == 9) {
-                            thing2 = doc.data().a9;
-                            thing4 = doc.data().b9;
-                            thing8 = doc.data().c9;
-                            thing16 = doc.data().d9;
-                            thing32 = doc.data().e9;
-                            thing64 = doc.data().f9;
-                            thing128 = doc.data().g9;
-                            thing256 = doc.data().h9;
-                            thing512 = doc.data().i9;
-                            thing1024 = doc.data().j9;
-                            thing2048 = doc.data().k9;
-                            thingName = doc.data().n9;
-                        }
-                        if (ngameNumberAdd3 == 10) {
-                            thing2 = doc.data().a10;
-                            thing4 = doc.data().b10;
-                            thing8 = doc.data().c10;
-                            thing16 = doc.data().d10;
-                            thing32 = doc.data().e10;
-                            thing64 = doc.data().f10;
-                            thing128 = doc.data().g10;
-                            thing256 = doc.data().h10;
-                            thing512 = doc.data().i10;
-                            thing1024 = doc.data().j10;
-                            thing2048 = doc.data().k10;
-                            thingName = doc.data().n10;
-                        }
-                        if (ngameNumberAdd3 == 11) {
-                            thing2 = doc.data().a11;
-                            thing4 = doc.data().b11;
-                            thing8 = doc.data().c11;
-                            thing16 = doc.data().d11;
-                            thing32 = doc.data().e11;
-                            thing64 = doc.data().f11;
-                            thing128 = doc.data().g11;
-                            thing256 = doc.data().h11;
-                            thing512 = doc.data().i11;
-                            thing1024 = doc.data().j11;
-                            thing2048 = doc.data().k11;
-                            thingName = doc.data().n11;
-                        }
-                        }
+                    if (event.currentTarget.getAttribute("data-yes") == "yes") {
+                        ngameNumberAdd3 = event.currentTarget.getAttribute("data-thing");
+                        db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+                            if (ngameNumberAdd3 == 2) {
+                                thing2 = doc.data().a2;
+                                thing4 = doc.data().b2;
+                                thing8 = doc.data().c2;
+                                thing16 = doc.data().d2;
+                                thing32 = doc.data().e2;
+                                thing64 = doc.data().f2;
+                                thing128 = doc.data().g2;
+                                thing256 = doc.data().h2;
+                                thing512 = doc.data().i2;
+                                thing1024 = doc.data().j2;
+                                thing2048 = doc.data().k2;
+                                thingName = doc.data().n2;
+                            }
+                            if (ngameNumberAdd3 == 3) {
+                                thing2 = doc.data().a3;
+                                thing4 = doc.data().b3;
+                                thing8 = doc.data().c3;
+                                thing16 = doc.data().d3;
+                                thing32 = doc.data().e3;
+                                thing64 = doc.data().f3;
+                                thing128 = doc.data().g3;
+                                thing256 = doc.data().h3;
+                                thing512 = doc.data().i3;
+                                thing1024 = doc.data().j3;
+                                thing2048 = doc.data().k3;
+                                thingName = doc.data().n3;
+                            }
+                            if (ngameNumberAdd3 == 4) {
+                                thing2 = doc.data().a4;
+                                thing4 = doc.data().b4;
+                                thing8 = doc.data().c4;
+                                thing16 = doc.data().d4;
+                                thing32 = doc.data().e4;
+                                thing64 = doc.data().f4;
+                                thing128 = doc.data().g4;
+                                thing256 = doc.data().h4;
+                                thing512 = doc.data().i4;
+                                thing1024 = doc.data().j4;
+                                thing2048 = doc.data().k4;
+                                thingName = doc.data().n4;
+                            }
+                            if (ngameNumberAdd3 == 5) {
+                                thing2 = doc.data().a5;
+                                thing4 = doc.data().b5;
+                                thing8 = doc.data().c5;
+                                thing16 = doc.data().d5;
+                                thing32 = doc.data().e5;
+                                thing64 = doc.data().f5;
+                                thing128 = doc.data().g5;
+                                thing256 = doc.data().h5;
+                                thing512 = doc.data().i5;
+                                thing1024 = doc.data().j5;
+                                thing2048 = doc.data().k5;
+                                thingName = doc.data().n5;
+                            }
+                            if (ngameNumberAdd3 == 6) {
+                                thing2 = doc.data().a6;
+                                thing4 = doc.data().b6;
+                                thing8 = doc.data().c6;
+                                thing16 = doc.data().d6;
+                                thing32 = doc.data().e6;
+                                thing64 = doc.data().f6;
+                                thing128 = doc.data().g6;
+                                thing256 = doc.data().h6;
+                                thing512 = doc.data().i6;
+                                thing1024 = doc.data().j6;
+                                thing2048 = doc.data().k6;
+                                thingName = doc.data().n6;
+                            }
+                            if (ngameNumberAdd3 == 7) {
+                                thing2 = doc.data().a7;
+                                thing4 = doc.data().b7;
+                                thing8 = doc.data().c7;
+                                thing16 = doc.data().d7;
+                                thing32 = doc.data().e7;
+                                thing64 = doc.data().f7;
+                                thing128 = doc.data().g7;
+                                thing256 = doc.data().h7;
+                                thing512 = doc.data().i7;
+                                thing1024 = doc.data().j7;
+                                thing2048 = doc.data().k7;
+                                thingName = doc.data().n7;
+                            }
+                            if (ngameNumberAdd3 == 8) {
+                                thing2 = doc.data().a8;
+                                thing4 = doc.data().b8;
+                                thing8 = doc.data().c8;
+                                thing16 = doc.data().d8;
+                                thing32 = doc.data().e8;
+                                thing64 = doc.data().f8;
+                                thing128 = doc.data().g8;
+                                thing256 = doc.data().h8;
+                                thing512 = doc.data().i8;
+                                thing1024 = doc.data().j8;
+                                thing2048 = doc.data().k8;
+                                thingName = doc.data().n8;
+                            }
+                            if (ngameNumberAdd3 == 9) {
+                                thing2 = doc.data().a9;
+                                thing4 = doc.data().b9;
+                                thing8 = doc.data().c9;
+                                thing16 = doc.data().d9;
+                                thing32 = doc.data().e9;
+                                thing64 = doc.data().f9;
+                                thing128 = doc.data().g9;
+                                thing256 = doc.data().h9;
+                                thing512 = doc.data().i9;
+                                thing1024 = doc.data().j9;
+                                thing2048 = doc.data().k9;
+                                thingName = doc.data().n9;
+                            }
+                            if (ngameNumberAdd3 == 10) {
+                                thing2 = doc.data().a10;
+                                thing4 = doc.data().b10;
+                                thing8 = doc.data().c10;
+                                thing16 = doc.data().d10;
+                                thing32 = doc.data().e10;
+                                thing64 = doc.data().f10;
+                                thing128 = doc.data().g10;
+                                thing256 = doc.data().h10;
+                                thing512 = doc.data().i10;
+                                thing1024 = doc.data().j10;
+                                thing2048 = doc.data().k10;
+                                thingName = doc.data().n10;
+                            }
+                            if (ngameNumberAdd3 == 11) {
+                                thing2 = doc.data().a11;
+                                thing4 = doc.data().b11;
+                                thing8 = doc.data().c11;
+                                thing16 = doc.data().d11;
+                                thing32 = doc.data().e11;
+                                thing64 = doc.data().f11;
+                                thing128 = doc.data().g11;
+                                thing256 = doc.data().h11;
+                                thing512 = doc.data().i11;
+                                thing1024 = doc.data().j11;
+                                thing2048 = doc.data().k11;
+                                thingName = doc.data().n11;
+                            }
                         });
+                    }
                     document.cookie = "game2=" + thing2;
                     document.cookie = "game4=" + thing4;
                     document.cookie = "game8=" + thing8;
