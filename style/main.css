@@ -20,10 +20,10 @@
   line-height: 42px;
   text-align: center;
 }
-.restart-button:active, .restart-button2:active, .save-button:active, .game-button:active, .continue-button:active, .start-new-button:active, .paused-button:active, .restart-button3:active {
+.restart-button:active, .restart-button2:active, .save-button:active, .2:active, .3:active, .4:active, .5:active, .6:active, .7:active, .8:active, .9:active, .10:active, .11:active, .continue-button:active, .start-new-button:active, .paused-button:active, .restart-button3:active {
 transform: scale(1.1,1.1);
 }
-.game-button:hover {
+.2:hover, .3:hover, .4:hover, .5:hover, .6:hover, .7:hover, .8:hover, .9:hover, .10:hover, .11:hover {
 curser: pointer;
 }
 .restore-message {
