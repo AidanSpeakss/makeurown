@@ -1,27 +1,52 @@
 var ready, gS, bS, uDS, gameStat, bestScor, user, check0, gscheck, bscheck, userId, gameNumberAdd, gameNumberAdd2, no, version, added;
 var game2048input, game1024input, game512input, game256input, game128input, game64input, game32input, game16input, game8input, game4input, game2input;
 var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing16, thing8, thing4, thing2;
-function readyCheck() {   
-db.collection("users").doc(firebase.auth().currentUser.uid + "ready").get().then(function(doc) {
-        if (doc.exists) {
-            db.collection("users").doc(firebase.auth().currentUser.uid + "ready").delete()
-            readyCheck();
+
+function readyCheck2() {
+    db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+        if (!doc.exists) {
+            readyCheck2();
         }
-               if (!doc.exists) {
-            db.collection("users").doc(firebase.auth().currentUser.uid + "ready").set({
-            placeholder: 0
-            });
-                               db.collection("users").doc("version").get().then(function(doc) {
         if (doc.exists) {
-            version = doc.data().version;
-        }
-    });
-                   startUp();
-                   getGame();
-                   loadSaves();
+            if (!doc.data()) {
+                readycheck2();
+            }
+            if (doc.data()) {
+                if (doc.data().bestScore && doc.data().gameState && doc.data().gn && doc.data().k9) {
+                    startUp();
+                    getGame();
+                    loadSaves();
+                }
+                if (!doc.data().bestScore || !doc.data().gameState || !doc.data().gn || !doc.data().k9) {
+                    readycheck2();
+                }
+            }
         }
     });
 }
+
+function readyCheck() {
+    db.collection("users").doc("version").get().then(function(doc) {
+        if (!doc.exists) {
+            readyCheck();
+        }
+        if (doc.exists) {
+            if (!doc.data()) {
+                readycheck();
+            }
+            if (doc.data()) {
+                if (doc.data().version) {
+                    version = doc.data().version;
+                    readyCheck2();
+                }
+                if (!doc.data().version) {
+                    readycheck();
+                }
+            }
+        }
+    });
+}
+
 function startUp() {
     user = firebase.auth().currentUser.uid + version;
     userId = firebase.auth().currentUser.uid;
@@ -232,16 +257,16 @@ function getGame() {
     check0 = null;
     gscheck = null;
     bscheck = null;
- if (db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+    if (db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.exists) {
                 return true;
             }
         })) {
         check0 = true;
-         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
- console.log(doc.data());   
+        db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+            console.log(doc.data());
         });
- }
+    }
     if (check0 == true) {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
             if (doc.data().gameState) {
@@ -274,7 +299,7 @@ function getGame() {
         });
         if (bscheck == true) {
             document.getElementsByClassName("best-container")[0].innerHTML = bS;
-                bscheck = false;
+            bscheck = false;
         }
     } else {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
