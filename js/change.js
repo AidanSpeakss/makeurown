@@ -232,8 +232,8 @@ function getGame() {
     check0 = null;
     gscheck = null;
     bscheck = null;
-    if (db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-            if (doc.exists) {
+ if (db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
+            if (doc.exists) {console.log(doc.data());
                 return true;
             }
         })) {
