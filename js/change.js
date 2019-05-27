@@ -12,7 +12,7 @@ function readyCheck2() {
                         return readyCheck();
             }
             if (doc.data()) {
-                if (doc.data().bestScore && doc.data().gameState && doc.data().gn && doc.data().k9) {
+                if (doc.data().bestScore.exists && doc.data().gameState.exists && doc.data().gn.exists && doc.data().k9.exists) {
                     startUp();
                     getGame();
                     loadSaves();
