@@ -20,6 +20,9 @@
   line-height: 42px;
   text-align: center;
 }
+.restart-button:active, .restart-button2:active, .save-button:active, .game-button:active, .continue-button:active, .start-new-button:active, .paused-button: active, .restart-button3:active {
+transform: scale(1.1,1.1);
+}
 .restore-message {
     display: none;
     position: absolute;
@@ -37,6 +40,7 @@
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; 
 }
+
 .save-button {
   display: inline-block;
   background: #8f7a66;
@@ -60,6 +64,9 @@
   height: 40px;
   line-height: 42px;
   text-align: center;
+}
+.game-button:hover {
+cursor: pointer;
 }
 @media screen and (max-width: 520px) {
   .lower-hide {
@@ -805,7 +812,6 @@ hr {
   height: 40px;
   line-height: 42px;
     }
-
 .game-explanation {
   margin-top: 50px; }
 
