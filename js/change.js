@@ -739,7 +739,7 @@ function loadSaves() {
             }
                                 if (gameNumberAdd3 == 10) { add.innerHTML = doc.data().n10 
             }
-                                if (dgameNumberAdd3 == 11) { add.innerHTML = doc.data().n11
+                                if (gameNumberAdd3 == 11) { add.innerHTML = doc.data().n11
             }
                 add.className = "game-button " + "game" + gameNumberAdd3;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
