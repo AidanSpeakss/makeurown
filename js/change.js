@@ -9,7 +9,7 @@ function readyCheck2() {
         }
         if (doc.exists) {
             if (!doc.data()) {
-                readycheck2();
+                readyCheck2();
             }
             if (doc.data()) {
                 if (doc.data().bestScore && doc.data().gameState && doc.data().gn && doc.data().k9) {
@@ -18,7 +18,7 @@ function readyCheck2() {
                     loadSaves();
                 }
                 if (!doc.data().bestScore || !doc.data().gameState || !doc.data().gn || !doc.data().k9) {
-                    readycheck2();
+                    readyCheck2();
                 }
             }
         }
@@ -32,7 +32,7 @@ function readyCheck() {
         }
         if (doc.exists) {
             if (!doc.data()) {
-                readycheck();
+                readyCheck();
             }
             if (doc.data()) {
                 if (doc.data().version) {
@@ -40,7 +40,7 @@ function readyCheck() {
                     readyCheck2();
                 }
                 if (!doc.data().version) {
-                    readycheck();
+                    readyCheck();
                 }
             }
         }
