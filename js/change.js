@@ -723,23 +723,23 @@ function loadSaves() {
                 
                 if (doc.data().gn == 2) { add.innerHTML = doc.data().n2 
             }
-                                if (doc.data().gn == 3) { add.innerHTML = doc.data().n3 
+                                if (gameNumberAdd3 == 3) { add.innerHTML = doc.data().n3 
             }
-                                if (doc.data().gn == 4) { add.innerHTML = doc.data().n4 
+                                if (gameNumberAdd3 == 4) { add.innerHTML = doc.data().n4 
             }
-                                if (doc.data().gn == 5) { add.innerHTML = doc.data().n5 
+                                if (gameNumberAdd3 == 5) { add.innerHTML = doc.data().n5 
             }
-                                if (doc.data().gn == 6) { add.innerHTML = doc.data().n6 
+                                if (gameNumberAdd3 == 6) { add.innerHTML = doc.data().n6 
             }
-                                if (doc.data().gn == 7) { add.innerHTML = doc.data().n7 
+                                if (gameNumberAdd3 == 7) { add.innerHTML = doc.data().n7 
             }
-                                if (doc.data().gn == 8) { add.innerHTML = doc.data().n8
+                                if (gameNumberAdd3 == 8) { add.innerHTML = doc.data().n8
             }
-                                if (doc.data().gn == 9) { add.innerHTML = doc.data().n9 
+                                if (gameNumberAdd3 == 9) { add.innerHTML = doc.data().n9 
             }
-                                if (doc.data().gn == 10) { add.innerHTML = doc.data().n10 
+                                if (gameNumberAdd3 == 10) { add.innerHTML = doc.data().n10 
             }
-                                if (doc.data().gn == 11) { add.innerHTML = doc.data().n11
+                                if (dgameNumberAdd3 == 11) { add.innerHTML = doc.data().n11
             }
                 add.className = "game-button " + "game" + gameNumberAdd3;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
