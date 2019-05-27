@@ -715,7 +715,7 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-        if (doc.data().gn < 11) {
+        if (doc.data().gn < 11 ) {
             gameNumberAdd3 = doc.data().gn;
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
@@ -789,7 +789,14 @@ function loadSaves() {
                 gameNumberAdd4--;
             }
         } else {
+            if(doc.data().gn =  11) {
+                var add2 = document.createElement("p");
+                add2.innerText = "No Saved Games, Maybe Make One?"
+                 document.getElementsByClassName("saved-games")[0].appendChild(add2);
+               }
+            else {
             window.alert("You already have 10 saved games. You can purchase more in the future, but for now this is the limit.");
+            }
         }
     });
 }
