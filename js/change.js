@@ -5,11 +5,11 @@ var thing2048, thing1024, thing512, thing256, thing128, thing64, thing32, thing1
 function readyCheck2() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
         if (!doc.exists) {
-            readyCheck2();
+                        return readyCheck2();
         }
         if (doc.exists) {
             if (!doc.data()) {
-                readyCheck2();
+                        return readyCheck2();
             }
             if (doc.data()) {
                 if (doc.data().bestScore && doc.data().gameState && doc.data().gn && doc.data().k9) {
@@ -18,7 +18,7 @@ function readyCheck2() {
                     loadSaves();
                 }
                 if (!doc.data().bestScore || !doc.data().gameState || !doc.data().gn || !doc.data().k9) {
-                    readyCheck2();
+                        return readyCheck2();
                 }
             }
         }
@@ -28,11 +28,11 @@ function readyCheck2() {
 function readyCheck() {
     db.collection("users").doc("version").get().then(function(doc) {
         if (!doc.exists) {
-            readyCheck();
+            return readyCheck();
         }
         if (doc.exists) {
             if (!doc.data()) {
-                readyCheck();
+                return readyCheck();
             }
             if (doc.data()) {
                 if (doc.data().version) {
@@ -40,7 +40,7 @@ function readyCheck() {
                     readyCheck2();
                 }
                 if (!doc.data().version) {
-                    readyCheck();
+                    return readyCheck();
                 }
             }
         }
