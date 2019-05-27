@@ -23,6 +23,9 @@
 .restart-button:active, .restart-button2:active, .save-button:active, .game-button:active, .continue-button:active, .start-new-button:active, .paused-button: active, .restart-button3:active {
 transform: scale(1.1,1.1);
 }
+.game-button:hover {
+curser: pointer;
+}
 .restore-message {
     display: none;
     position: absolute;
