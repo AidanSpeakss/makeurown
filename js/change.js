@@ -902,7 +902,6 @@ function loadSaves() {
                                 thingName = doc.data().n11;
                             }
                         });
-                    }
                     document.cookie = "game2=" + thing2;
                     document.cookie = "game4=" + thing4;
                     document.cookie = "game8=" + thing8;
@@ -917,6 +916,7 @@ function loadSaves() {
                     document.cookie = "gameName=" + thingName;
                     document.cookie = "images_changed=true";
                     reLoad("900");
+                    }
                 }, {once: false});
                 gameNumberAdd3--;
                 gameNumberAdd4--;
