@@ -54,17 +54,6 @@ function startUp() {
         console.log("get worked!");
         if (!doc.exists) {
             db.collection("users").doc(firebase.auth().currentUser.uid + version).set({
-                a1: null,
-                b1: null,
-                c1: null,
-                d1: null,
-                e1: null,
-                f1: null,
-                g1: null,
-                h1: null,
-                i1: null,
-                j1: null,
-                k1: null,
                 a2: null,
                 b2: null,
                 c2: null,
@@ -178,7 +167,17 @@ function startUp() {
                 gn: 1,
                 bestScore: null,
                 gameState: null,
-                test: true
+                test: true,
+                n2: null,
+                n3: null,
+                n4: null,
+                n5: null,
+                n6: null,
+                n7: null,
+                n8: null,
+                n9: null,
+                n10: null,
+                n11: null
             });
             reLoad("200");
         }
@@ -309,6 +308,7 @@ if (getCookie("images_changed") == "true") {
     var no512 = getCookie("game512");
     var no1024 = getCookie("game1024");
     var no2048 = getCookie("game2048");
+    var nameing = getCookie("gameName");
     addStyleString('  .tile.tile-2 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2 + '"); }');
     addStyleString('  .tile.tile-4 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no4 + '"); }');
     addStyleString('  .tile.tile-8 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no8 + '"); }');
@@ -320,6 +320,7 @@ if (getCookie("images_changed") == "true") {
     addStyleString('  .tile.tile-512 .tile-inner { background: unset; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no512 + '"); }');
     addStyleString('  .tile.tile-1024 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no1024 + '"); }');
     addStyleString('  .tile.tile-2048 .tile-inner { background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url("' + no2048 + '"); }');
+    document.getElementsByClassName("gameName")[0].innerText = nameing;
 }
 
 var saveGame = null;
@@ -443,6 +444,7 @@ document.body.getElementsByClassName("go")[0].addEventListener("click", function
     game512input = document.getElementsByClassName("input512")[0].value;
     game1024input = document.getElementsByClassName("input1024")[0].value;
     game2048input = document.getElementsByClassName("input2048")[0].value;
+    gameName1 = document.getElementsByClassName("nameGame")[0].value;
     document.cookie = "game2=" + game2input;
     document.cookie = "game4=" + game4input;
     document.cookie = "game8=" + game8input;
@@ -454,6 +456,7 @@ document.body.getElementsByClassName("go")[0].addEventListener("click", function
     document.cookie = "game512=" + game512input;
     document.cookie = "game1024=" + game1024input;
     document.cookie = "game2048=" + game2048input;
+    document.cookie = "gameName=" + gameName1;
     document.cookie = 'images_changed=true';
     saveCloud();
 })
@@ -525,22 +528,6 @@ function saveCloud() {
                 gameNumberAdd = gameNumberSet++;
                 console.log(gameNumberAdd);
                 gameNumberAdd2 = gameNumberAdd++;
-                if (gameNumberAdd == 1) {
-                    db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
-                        a1: game2input,
-                        b1: game4input,
-                        c1: game8input,
-                        d1: game16input,
-                        e1: game32input,
-                        f1: game64input,
-                        g1: game128input,
-                        h1: game256input,
-                        i1: game512input,
-                        j1: game1024input,
-                        k1: game2048input,
-                        gn: firebase.firestore.FieldValue.increment(1)
-                    });
-                }
                 if (gameNumberAdd == 2) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a2: game2input,
@@ -554,6 +541,7 @@ function saveCloud() {
                         i2: game512input,
                         j2: game1024input,
                         k2: game2048input,
+                        n2: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -571,6 +559,7 @@ function saveCloud() {
                         i3: game512input,
                         j3: game1024input,
                         k3: game2048input,
+                        n3: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -588,6 +577,7 @@ function saveCloud() {
                         i4: game512input,
                         j4: game1024input,
                         k4: game2048input,
+                        n4: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -605,6 +595,7 @@ function saveCloud() {
                         i5: game512input,
                         j5: game1024input,
                         k5: game2048input,
+                        n5: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -622,6 +613,7 @@ function saveCloud() {
                         i6: game512input,
                         j6: game1024input,
                         k6: game2048input,
+                        n6: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -639,6 +631,7 @@ function saveCloud() {
                         i7: game512input,
                         j7: game1024input,
                         k7: game2048input,
+                        n7: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -656,6 +649,7 @@ function saveCloud() {
                         i8: game512input,
                         j8: game1024input,
                         k8: game2048input,
+                        n8: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -673,6 +667,7 @@ function saveCloud() {
                         i9: game512input,
                         j9: game1024input,
                         k9: game2048input,
+                        n9: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
                     });
                 }
@@ -689,6 +684,7 @@ function saveCloud() {
                         i10: game512input,
                         j10: game1024input,
                         k10: game2048input,
+                        n10: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
@@ -706,6 +702,7 @@ function saveCloud() {
                         i11: game512input,
                         j11: game1024input,
                         k11: game2048input,
+                        n11: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
                     });
                 }
@@ -723,7 +720,27 @@ function loadSaves() {
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
                 gameNumberAdd4 = gameNumberAdd3 - 1;
-                add.innerHTML = "Game #" + gameNumberAdd4;
+                
+                if (doc.data().gn == 2) { add.innerHTML = doc.data().n2 
+            }
+                                if (doc.data().gn == 3) { add.innerHTML = doc.data().n3 
+            }
+                                if (doc.data().gn == 4) { add.innerHTML = doc.data().n4 
+            }
+                                if (doc.data().gn == 5) { add.innerHTML = doc.data().n5 
+            }
+                                if (doc.data().gn == 6) { add.innerHTML = doc.data().n6 
+            }
+                                if (doc.data().gn == 7) { add.innerHTML = doc.data().n7 
+            }
+                                if (doc.data().gn == 8) { add.innerHTML = doc.data().n8
+            }
+                                if (doc.data().gn == 9) { add.innerHTML = doc.data().n9 
+            }
+                                if (doc.data().gn == 10) { add.innerHTML = doc.data().n10 
+            }
+                                if (doc.data().gn == 11) { add.innerHTML = doc.data().n11
+            }
                 add.className = "game-button " + "game" + gameNumberAdd3;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd3)[0].addEventListener("click", function() {
