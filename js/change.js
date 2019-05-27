@@ -745,7 +745,9 @@ function loadSaves() {
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd3)[0].addEventListener("click", function() {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        var ne1024 = "k" + gameNumberAdd3;
+                        var nameNen = "n" + gameNumberAdd3;
+                        var ne2048 = "k" + gameNumberAdd3;
+                        var ne1024 = "j" + gameNumberAdd3;
                         var ne512 = "i" + gameNumberAdd3;
                         var ne256 = "h" + gameNumberAdd3;
                         var ne128 = "g" + gameNumberAdd3;
@@ -755,17 +757,18 @@ function loadSaves() {
                         var ne8 = "c" + gameNumberAdd3;
                         var ne4 = "b" + gameNumberAdd3;
                         var ne2 = "a" + gameNumberAdd3;
-                        thing2 = doc.data().ne2;
-                        thing4 = doc.data().ne4;
-                        thing8 = doc.data().ne8;
-                        thing16 = doc.data().ne16;
-                        thing32 = doc.data().ne32;
-                        thing64 = doc.data().ne64;
-                        thing128 = doc.data().ne128;
-                        thing256 = doc.data().ne256;
-                        thing512 = doc.data().ne512;
-                        thing1024 = doc.data().ne1024;
-                        thing2048 = doc.data().ne2048;
+                        thing2 = "doc.data()." + ne2;
+                        thing4 = "doc.data()." + ne4;
+                        thing8 = "doc.data()." + ne8;
+                        thing16 = "doc.data()." + ne16;
+                        thing32 = "doc.data()." + ne32;
+                        thing64 = "doc.data()." + ne64;
+                        thing128 = "doc.data()." + ne128;
+                        thing256 = "doc.data()." + ne256;
+                        thing512 = "doc.data()." + ne512;
+                        thing1024 = "doc.data()." + ne1024;
+                        thing2048 = "doc.data()." + ne2048;
+                        thingName = "doc.data()." + nameNen;
                     });
                     document.cookie = "game2=" + thing2;
                     document.cookie = "game4=" + thing4;
@@ -778,6 +781,7 @@ function loadSaves() {
                     document.cookie = "game512=" + thing512;
                     document.cookie = "game1024=" + thing1024;
                     document.cookie = "game2048=" + thing2048;
+                    document.cookie = "gameName=" + thingName;
                     document.cookie = "images_changed=true";
                     reLoad("900");
                 });
