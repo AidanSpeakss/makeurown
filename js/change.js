@@ -17,7 +17,7 @@ function readyCheck2() {
                     getGame();
                     loadSaves();
                 }
-                if (!doc.data().bestScore || !doc.data().gameState || !doc.data().gn || !doc.data().k9) {
+                else {
                         return readyCheck2();
                 }
             }
