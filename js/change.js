@@ -766,7 +766,7 @@ function loadSaves() {
                         thing128 = doc.data() + ne128;
                         thing256 = doc.data() + ne256;
                         thing512 = doc.data() + ne512;
-                        thing1024 = doc.data()." + ne1024;
+                        thing1024 = doc.data() + ne1024;
                         thing2048 = doc.data() + ne2048;
                         thingName = doc.data() + nameNen;
                     });
