@@ -723,7 +723,7 @@ function loadSaves() {
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
                 gameNumberAdd4 = gameNumberAdd3 - 1;
-                add.innerHTML = "Saved Game #" + gameNumberAdd4;
+                add.innerHTML = "Game #" + gameNumberAdd4;
                 add.className = "game-button " + "game" + gameNumberAdd3;
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
                 document.getElementsByClassName("game" + gameNumberAdd3)[0].addEventListener("click", function() {
