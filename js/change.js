@@ -506,7 +506,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             bestScore: bestScor
         });
         window.alert("Game Saved");
-},   once : true);
+}, once : true);
         readyCheck();
     } else {
         // No user is signed in.
