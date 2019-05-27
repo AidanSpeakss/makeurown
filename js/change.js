@@ -789,7 +789,7 @@ function loadSaves() {
                 gameNumberAdd4--;
             }
         } else {
-            if(doc.data().gn =  11) {
+            if(doc.data().gn =  1) {
                 var add2 = document.createElement("p");
                 add2.innerText = "No Saved Games, Maybe Make One?"
                  document.getElementsByClassName("saved-games")[0].appendChild(add2);
