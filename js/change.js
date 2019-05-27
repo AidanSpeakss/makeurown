@@ -12,7 +12,7 @@ function readyCheck2() {
                         return readyCheck();
             }
             if (doc.data()) {
-                if (doc.data().bestScore.exists && doc.data().gameState.exists && doc.data().gn.exists && doc.data().k9.exists) {
+                if (doc.data().test == "true") {
                     startUp();
                     getGame();
                     loadSaves();
@@ -178,7 +178,8 @@ function startUp() {
                 k11: null,
                 gn: 1,
                 bestScore: null,
-                gameState: null
+                gameState: null,
+                test: true
             });
         reLoad("200");
         }
