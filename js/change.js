@@ -220,7 +220,6 @@ if (localStorage.getItem('bestScore')) {
     bestScor = localStorage.getItem('bestScore');
 }
 // Subsequent queries will use persistence, if it was enabled successfully
-document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
 
 function saveGame() {
         db.collection("users").doc(firebase.auth().currentUser.uid + version).add({
@@ -508,6 +507,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             location.reload();
 
         });
+        document.getElementsByClassName("save-button")[0].addEventListener("click", saveGame());
         readyCheck();
     } else {
         // No user is signed in.
