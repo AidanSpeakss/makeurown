@@ -758,6 +758,7 @@ function loadSaves() {
                 add.setAttribute("data-thing", gameNumberAdd3);
                 add.setAttribute("data-yes", "yes");
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
+                if (document.getElementsByClassName("2")[0]) {
                 document.getElementsByClassName("2")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 2) {
@@ -790,6 +791,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("3")[0]) {
                 document.getElementsByClassName("3")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 3) {
@@ -822,6 +825,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("4")[0]) {
                 document.getElementsByClassName("4")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 4) {
@@ -854,6 +859,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("5")[0]) {
                 document.getElementsByClassName("5")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 5) {
@@ -886,6 +893,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("6")[0]) {
                 document.getElementsByClassName("6")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 6) {
@@ -918,6 +927,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("7")[0]) {
                 document.getElementsByClassName("7")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 7) {
@@ -950,6 +961,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("8")[0]) {
                 document.getElementsByClassName("8")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 8) {
@@ -982,6 +995,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("9")[0]) {
                 document.getElementsByClassName("9")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 9) {
@@ -1014,6 +1029,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("10")[0]) {
                 document.getElementsByClassName("10")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 10) {
@@ -1046,6 +1063,8 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
+                if (document.getElementsByClassName("11")[0]) {
                 document.getElementsByClassName("11")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                         if (ngameNumberAdd3 == 11) {
@@ -1078,6 +1097,7 @@ function loadSaves() {
                         reLoad("900");
                     });
                 });
+                }
                 gameNumberAdd3--;
                 gameNumberAdd4--;
             }
