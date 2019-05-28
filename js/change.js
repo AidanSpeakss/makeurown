@@ -761,7 +761,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("2")[0]) {
                 document.getElementsByClassName("2")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 2) {
                             thing2 = doc.data().a2;
                             thing4 = doc.data().b2;
                             thing8 = doc.data().c2;
@@ -774,7 +773,6 @@ function loadSaves() {
                             thing1024 = doc.data().j2;
                             thing2048 = doc.data().k2;
                             thingName = doc.data().n2;
-                        }
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -795,7 +793,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("3")[0]) {
                 document.getElementsByClassName("3")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 3) {
                             thing2 = doc.data().a3;
                             thing4 = doc.data().b3;
                             thing8 = doc.data().c3;
@@ -808,7 +805,6 @@ function loadSaves() {
                             thing1024 = doc.data().j3;
                             thing2048 = doc.data().k3;
                             thingName = doc.data().n3;
-                        }
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -829,7 +825,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("4")[0]) {
                 document.getElementsByClassName("4")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 4) {
                             thing2 = doc.data().a4;
                             thing4 = doc.data().b4;
                             thing8 = doc.data().c4;
@@ -842,7 +837,6 @@ function loadSaves() {
                             thing1024 = doc.data().j4;
                             thing2048 = doc.data().k4;
                             thingName = doc.data().n4;
-                        }
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -863,7 +857,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("5")[0]) {
                 document.getElementsByClassName("5")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 5) {
                             thing2 = doc.data().a5;
                             thing4 = doc.data().b5;
                             thing8 = doc.data().c5;
@@ -876,7 +869,6 @@ function loadSaves() {
                             thing1024 = doc.data().j5;
                             thing2048 = doc.data().k5;
                             thingName = doc.data().n5;
-                        }
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -897,7 +889,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("6")[0]) {
                 document.getElementsByClassName("6")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 6) {
                             thing2 = doc.data().a6;
                             thing4 = doc.data().b6;
                             thing8 = doc.data().c6;
@@ -910,7 +901,6 @@ function loadSaves() {
                             thing1024 = doc.data().j6;
                             thing2048 = doc.data().k6;
                             thingName = doc.data().n6;
-                        }
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -931,7 +921,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("7")[0]) {
                 document.getElementsByClassName("7")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 7) {
                             thing2 = doc.data().a7;
                             thing4 = doc.data().b7;
                             thing8 = doc.data().c7;
@@ -943,8 +932,7 @@ function loadSaves() {
                             thing512 = doc.data().i7;
                             thing1024 = doc.data().j7;
                             thing2048 = doc.data().k7;
-                            thingName = doc.data().n7;
-                        }
+                            thingName = doc.data().n7;                        
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -965,7 +953,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("8")[0]) {
                 document.getElementsByClassName("8")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 8) {
                             thing2 = doc.data().a8;
                             thing4 = doc.data().b8;
                             thing8 = doc.data().c8;
@@ -977,8 +964,7 @@ function loadSaves() {
                             thing512 = doc.data().i8;
                             thing1024 = doc.data().j8;
                             thing2048 = doc.data().k8;
-                            thingName = doc.data().n8;
-                        }
+                            thingName = doc.data().n8;                        
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -999,7 +985,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("9")[0]) {
                 document.getElementsByClassName("9")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 9) {
                             thing2 = doc.data().a9;
                             thing4 = doc.data().b9;
                             thing8 = doc.data().c9;
@@ -1012,7 +997,7 @@ function loadSaves() {
                             thing1024 = doc.data().j9;
                             thing2048 = doc.data().k9;
                             thingName = doc.data().n9;
-                        }
+                        
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -1033,7 +1018,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("10")[0]) {
                 document.getElementsByClassName("10")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 10) {
                             thing2 = doc.data().a10;
                             thing4 = doc.data().b10;
                             thing8 = doc.data().c10;
@@ -1046,7 +1030,7 @@ function loadSaves() {
                             thing1024 = doc.data().j10;
                             thing2048 = doc.data().k10;
                             thingName = doc.data().n10;
-                        }
+                        
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
@@ -1067,7 +1051,6 @@ function loadSaves() {
                 if (document.getElementsByClassName("11")[0]) {
                 document.getElementsByClassName("11")[0].addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-                        if (ngameNumberAdd3 == 11) {
                             thing2 = doc.data().a11;
                             thing4 = doc.data().b11;
                             thing8 = doc.data().c11;
@@ -1080,7 +1063,7 @@ function loadSaves() {
                             thing1024 = doc.data().j11;
                             thing2048 = doc.data().k11;
                             thingName = doc.data().n11;
-                        }
+                        
                         document.cookie = "game2=" + thing2;
                         document.cookie = "game4=" + thing4;
                         document.cookie = "game8=" + thing8;
