@@ -755,11 +755,9 @@ function loadSaves() {
                 }
                 add.className = "game-button";
                 add.id = gameNumberAdd3;
-                add.setAttribute("data-thing", gameNumberAdd3);
-                add.setAttribute("data-yes", "yes");
                 document.getElementsByClassName("saved-games")[0].appendChild(add);
-                if (document.getElementsByClassName("2")[0]) {
-                document.getElementsByClassName("2")[0].addEventListener("click", function(event) {
+                if (document.getElementById("2")) {
+                document.getElementById("2").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a2;
                             thing4 = doc.data().b2;
@@ -790,8 +788,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("3")[0]) {
-                document.getElementsByClassName("3")[0].addEventListener("click", function(event) {
+                if (document.getElementById("3")) {
+                document.getElementById("3").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a3;
                             thing4 = doc.data().b3;
@@ -822,8 +820,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("4")[0]) {
-                document.getElementsByClassName("4")[0].addEventListener("click", function(event) {
+                if (document.getElementById("4")) {
+                document.getElementById("4").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a4;
                             thing4 = doc.data().b4;
@@ -854,8 +852,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("5")[0]) {
-                document.getElementsByClassName("5")[0].addEventListener("click", function(event) {
+                if (document.getElementById("4")) {
+                document.getElementById("4").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a5;
                             thing4 = doc.data().b5;
@@ -886,8 +884,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("6")[0]) {
-                document.getElementsByClassName("6")[0].addEventListener("click", function(event) {
+                if (document.getElementById("6")) {
+                document.getElementById("6").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a6;
                             thing4 = doc.data().b6;
@@ -918,8 +916,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("7")[0]) {
-                document.getElementsByClassName("7")[0].addEventListener("click", function(event) {
+                if (document.getElementById("7")) {
+                document.getElementById("7").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a7;
                             thing4 = doc.data().b7;
@@ -950,8 +948,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("8")[0]) {
-                document.getElementsByClassName("8")[0].addEventListener("click", function(event) {
+                if (document.getElementById("8")) {
+                document.getElementById("8").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a8;
                             thing4 = doc.data().b8;
@@ -982,8 +980,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("9")[0]) {
-                document.getElementsByClassName("9")[0].addEventListener("click", function(event) {
+                if (document.getElementById("9")) {
+                document.getElementById("9").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a9;
                             thing4 = doc.data().b9;
@@ -1015,8 +1013,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("10")[0]) {
-                document.getElementsByClassName("10")[0].addEventListener("click", function(event) {
+                if (document.getElementById("10")) {
+                document.getElementById("10").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a10;
                             thing4 = doc.data().b10;
@@ -1048,8 +1046,8 @@ function loadSaves() {
                     });
                 });
                 }
-                if (document.getElementsByClassName("11")[0]) {
-                document.getElementsByClassName("11")[0].addEventListener("click", function(event) {
+                if (document.getElementById("11")) {
+                document.getElementById("11").addEventListener("click", function(event) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
                             thing2 = doc.data().a11;
                             thing4 = doc.data().b11;
