@@ -4,7 +4,7 @@ A 2048 clone where users can save there progress across devices, generate their 
 
 ### Screenshot
 <p align="center">
-  <img src="https://raw.githubusercontent.com/cdivry/2048-with-IMAGES/master/screenshot.png" alt="Screenshot"/>
+  <img src="https://github.com/AidanSpeakss/makeurown/raw/master/Screenshot_1.png" alt="Screenshot"/>
 </p>
 
 ## License
