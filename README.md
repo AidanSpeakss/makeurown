@@ -2,7 +2,7 @@
 A modified version of 2048, which adds lots of new functionality, including: 
 * Account creation powered by google firebase
 * Ability to save gamestate to an account
-* Ability to customize the fill of each file to a user selected image URL
+* Ability to change the fill of each tile to an image
 * Ability to save your tile custimizations as a profile to your account
 * Ability to switch between saved profiles allowing for easy customization
 
