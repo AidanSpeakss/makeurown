@@ -1,6 +1,10 @@
 # 2048: CUSTOM
-
-A 2048 clone where users can save there progress across devices, generate their own custum 2048 games with images or animated GIF's easily. And save those custume games to the cloud.
+A modified version of 2048, which adds lots of new functionality, including: 
+* Account creation powered by google firebase
+* Ability to save gamestate to an account
+* Ability to customize the fill of each file to a user selected image URL
+* Ability to save your tile custimizations as a profile to your account
+* Ability to switch between saved profiles allowing for easy customization
 
 ### Screenshot
 <p align="center">
