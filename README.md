@@ -1,4 +1,4 @@
-https://aidanspeakss.github.io/makeurown/
+Play the game: https://aidanspeakss.github.io/makeurown/
 
 # 2048: CUSTOM
 A modified version of 2048, which adds lots of new functionality, including: 
