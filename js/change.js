@@ -1139,8 +1139,6 @@ function loadSaves() {
                 var add2 = document.createElement("p");
                 add2.innerText = "No Saved Games, Maybe Make One?"
                 document.getElementsByClassName("saved-games")[0].appendChild(add2);
-            } else if(doc.data().gn == 11) {
-                window.alert("You already have 11 saved games. You can purchase more for $20 by sending me an email at: aidanrjob@gmail.com");
             }
         }
     });
