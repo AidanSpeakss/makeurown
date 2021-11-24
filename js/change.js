@@ -1135,12 +1135,12 @@ function loadSaves() {
                 gameNumberAdd4--;
             }
         } else {
-            if (doc.data().gn = 1) {
+            if (doc.data().gn == 1) {
                 var add2 = document.createElement("p");
                 add2.innerText = "No Saved Games, Maybe Make One?"
                 document.getElementsByClassName("saved-games")[0].appendChild(add2);
-            } else {
-                window.alert("You already have 9 saved games. You can purchase more in the future, but for now this is the limit.");
+            } else if(doc.data().gn == 11) {
+                window.alert("You already have 11 saved games. You can purchase more for $20 by sending me an email at: aidanrjob@gmail.com");
             }
         }
     });
