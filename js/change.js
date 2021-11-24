@@ -581,6 +581,7 @@ function saveCloud() {
                    console.log("da f, you didn't reach cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);   
                 }
                 if (gameNumberAdd == 4) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a4: game2input,
                         b4: game4input,
@@ -599,6 +600,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 5) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a5: game2input,
                         b5: game4input,
@@ -617,6 +619,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 6) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a6: game2input,
                         b6: game4input,
@@ -635,6 +638,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 7) {
+                    
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a7: game2input,
                         b7: game4input,
