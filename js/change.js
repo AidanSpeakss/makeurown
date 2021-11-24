@@ -535,6 +535,9 @@ function saveCloud() {
         if (doc.exists) {
             console.log(doc.data().gn);
             if (doc.data().gn) {
+                if(doc.data().gn++ > 11){
+                    window.alert("You can have up to 11 custom games per an account.");
+                } else {
                 console.log(doc.data().gn);
                 var gameNumberSet = doc.data().gn;
                 console.log(gameNumberSet);
@@ -760,6 +763,7 @@ function saveCloud() {
                                         reLoad("100");
                      });
                 }
+                }
                 
             }
         }
@@ -769,7 +773,7 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-        if (doc.data().gn < 11) {
+        if (doc.data().gn < 12) {
             gameNumberAdd3 = doc.data().gn;
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
