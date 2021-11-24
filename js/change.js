@@ -720,7 +720,7 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
                     });
                 }
-                reLoad("100");
+                //reLoad("100");
             }
         }
     });
