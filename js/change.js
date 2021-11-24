@@ -579,6 +579,12 @@ function saveCloud() {
                     });
                 } else {
                    console.log("da f, you didn't reach cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);   
+                                     console.log("gameNumberAdd: " + gameNumberAdd); 
+                    console.log("compare 3: " + gameNumberAdd == 3);
+                console.log("compare 6: " + gameNumberAdd == 6);
+                console.log("compare 7: " + gameNumberAdd == 7);
+                console.log("compare 8: " + gameNumberAdd == 8);
+              
                 }
                 if (gameNumberAdd == 4) {
                                         console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
