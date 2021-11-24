@@ -607,7 +607,10 @@ function saveCloud() {
                         n4: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 5) {
                                         console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
@@ -626,7 +629,10 @@ function saveCloud() {
                         n5: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 6) {
                                         console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
@@ -645,7 +651,10 @@ function saveCloud() {
                         n6: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 7) {
                     
@@ -664,7 +673,10 @@ function saveCloud() {
                         n7: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 8) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -682,7 +694,10 @@ function saveCloud() {
                         n8: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 9) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -699,7 +714,10 @@ function saveCloud() {
                         k9: game2048input,
                         n9: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 10) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -717,7 +735,10 @@ function saveCloud() {
                         n10: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 11) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -734,9 +755,12 @@ function saveCloud() {
                         k11: game2048input,
                         n11: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
-                //reLoad("100");
+                
             }
         }
     });
