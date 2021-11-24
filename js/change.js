@@ -577,6 +577,8 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                } else {
+                   console.log("da f, you didn't reach cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);   
                 }
                 if (gameNumberAdd == 4) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
