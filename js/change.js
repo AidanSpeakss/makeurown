@@ -535,6 +535,9 @@ function saveCloud() {
         if (doc.exists) {
             console.log(doc.data().gn);
             if (doc.data().gn) {
+                if(doc.data().gn++ > 11){
+                    window.alert("You can have up to 11 custom games per an account.");
+                } else {
                 console.log(doc.data().gn);
                 var gameNumberSet = doc.data().gn;
                 console.log(gameNumberSet);
@@ -560,6 +563,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 3) {
+                    console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a3: game2input,
                         b3: game4input,
@@ -576,8 +580,21 @@ function saveCloud() {
                         gn: firebase.firestore.FieldValue.increment(1)
 
                     });
+                } else {
+                   console.log("da f, you didn't reach cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);   
+                                     console.log("gameNumberAdd: " + gameNumberAdd); 
+                    console.log("compare 3: " + gameNumberAdd == 3);
+                    console.log(typeof gameNumberAdd);
+                    console.log(typeof 9);
+                console.log("compare 6: " + gameNumberAdd == 6);
+                console.log("compare 7: " + gameNumberAdd == 7);
+                console.log("compare 8: " + gameNumberAdd == 8);
+                    console.log("compare 8: " + gameNumberAdd == 9);
+              console.log("compare 8: " + gameNumberAdd == 10);
+                    console.log("compare 8: " + gameNumberAdd == 11);
                 }
                 if (gameNumberAdd == 4) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a4: game2input,
                         b4: game4input,
@@ -593,9 +610,13 @@ function saveCloud() {
                         n4: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 5) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a5: game2input,
                         b5: game4input,
@@ -611,9 +632,13 @@ function saveCloud() {
                         n5: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 6) {
+                                        console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a6: game2input,
                         b6: game4input,
@@ -629,9 +654,13 @@ function saveCloud() {
                         n6: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 7) {
+                    
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a7: game2input,
                         b7: game4input,
@@ -647,7 +676,10 @@ function saveCloud() {
                         n7: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 8) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -665,7 +697,10 @@ function saveCloud() {
                         n8: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 9) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -682,7 +717,10 @@ function saveCloud() {
                         k9: game2048input,
                         n9: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 10) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -700,7 +738,10 @@ function saveCloud() {
                         n10: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
 
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
                 if (gameNumberAdd == 11) {
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
@@ -717,9 +758,13 @@ function saveCloud() {
                         k11: game2048input,
                         n11: gameName1,
                         gn: firebase.firestore.FieldValue.increment(1)
-                    });
+                    }).then(() => {
+                    console.log("Document successfully updated!");
+                                        reLoad("100");
+                     });
                 }
-                reLoad("100");
+                }
+                
             }
         }
     });
@@ -728,7 +773,7 @@ function saveCloud() {
 
 function loadSaves() {
     db.collection("users").doc(firebase.auth().currentUser.uid + version).get().then(function(doc) {
-        if (doc.data().gn < 11) {
+        if (doc.data().gn < 12) {
             gameNumberAdd3 = doc.data().gn;
             while (gameNumberAdd3 >= 2) {
                 var add = document.createElement("p");
@@ -1094,12 +1139,10 @@ function loadSaves() {
                 gameNumberAdd4--;
             }
         } else {
-            if (doc.data().gn = 1) {
+            if (doc.data().gn == 1) {
                 var add2 = document.createElement("p");
                 add2.innerText = "No Saved Games, Maybe Make One?"
                 document.getElementsByClassName("saved-games")[0].appendChild(add2);
-            } else {
-                window.alert("You already have 9 saved games. You can purchase more in the future, but for now this is the limit.");
             }
         }
     });
