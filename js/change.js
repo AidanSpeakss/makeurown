@@ -560,6 +560,7 @@ function saveCloud() {
                     });
                 }
                 if (gameNumberAdd == 3) {
+                    console.log("Success, you've reached cloud save, here's your doc: " + firebase.auth().currentUser.uid + version);
                     db.collection("users").doc(firebase.auth().currentUser.uid + version).update({
                         a3: game2input,
                         b3: game4input,
